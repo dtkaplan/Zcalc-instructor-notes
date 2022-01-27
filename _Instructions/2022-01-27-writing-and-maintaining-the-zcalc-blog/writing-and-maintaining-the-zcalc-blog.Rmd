@@ -1,0 +1,32 @@
+---
+title: "Writing and maintaining the Zcalc blog"
+description: |
+  Instructions to authors and maintainers of this blog.
+author:
+  - name: Daniel Kaplan
+date: 2022-01-27
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+When writing for this blog, it's important to keep in mind the overall structure.
+
+The home page for the blog is contained in `index.Rmd` at the top level of the repository. That document, when compiled to HTML, will **not** generate a listing of blog entries. Instead, it is an ordinary `{distill}` Rmd file with links to the various blog directories.
+
+Those blog directories are `_Block-1`, `_Block-2`, ..., `_Block-6`, `_Manifestations`, and `_Instructions`. When creating a new posting, be sure to place it in the correct directory. For instance, to create a new posting relevant to Block-5 of the course, create the skeleton of the post this way:
+
+```{r eval=FALSE}
+distill::create_post("My new post", "Block-5")
+```
+
+The second argument is the directive to put the new post on the `Block-5` page.
+
+Along with the various `_Block-{n}` directories in the top level of the repo, there are files named `Block-1.Rmd`, `Block-2.Rmd`, and so on. These appear to have no content, but actually the content will be created when the website is built. After being built, each of those documents becomes a listing of the posts in the corresponding `_Block-{n}` directory. *You should not need to edit the `Block-{n}.Rmd` files.*
+
+

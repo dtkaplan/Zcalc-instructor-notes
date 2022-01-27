@@ -1,0 +1,32 @@
+---
+title: "Zcalc Instructor Notes"
+site: distill::distill_website
+---
+
+The Project MOSAIC [calculus textbook](https://projectmosaic.github.io/MOSAIC-Calculus) is divided into six blocks and a collection of "manifestations." Depending on the goals for the course being taught different blocks can be included.
+
+- Preface: What is calculus?
+
+- [Block 1: Introduction to functions and computing](Block-1.html)
+
+- [Block 2: Foundations for modeling](Block-2.html)
+
+- [Block 3: Differentiation](Block-3.html)
+
+- [Block 4: Anti-differentiation and accumulation](Block-4.html)
+
+- [Block 5: Linear combinations](Block-5.html)
+
+- [Block 6: Dynamics](Block-6.html)
+
+- [Manifestations](manifestations.html)
+    i. Operations on functions
+    ii. Interpolation and splines
+    iii. Optimization and constraint
+    iv. Probability and evidence
+    v. Present and future value
+    vi. Mechanics
+    
+-----
+
+[Writing for this blog](writing-instructions.html)

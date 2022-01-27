@@ -1,0 +1,5 @@
+---
+title: "Manifestations"
+site: distill::distill_website
+listing: Manifestations
+---

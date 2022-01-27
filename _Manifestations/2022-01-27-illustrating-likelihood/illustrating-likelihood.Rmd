@@ -1,0 +1,66 @@
+---
+title: "Illustrating likelihood"
+description: |
+  A short description of the post.
+author:
+  - name: Daniel Kaplan
+date: 2022-01-27
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+This classroom example/activity is connected the the *[Probability and Evidence](http://www.mosaic-web.org/MOSAIC-Calculus/block-4/probability-and-evidence.html)* chapter of the Manifestations Block.
+
+-----
+
+```{r include=FALSE}
+library(Zcalc)
+```
+
+After decades of searching for exo-planets---planets that orbit other suns---the **Musk Committee** authorized a mission to *Proxima Centauri b* located 4.25 light years from Earth. The purpose is to determine the habitability of this exoplanet.
+
+The mission is extremely constrained by the realities of interplanetary space flight. The longest travelling space probe, Voyager 1, was launched in 1977 and currently travelling at a speed of approximately 400 million miles per year. At this speed, it will take almost half a million years to reach *Proxima Centauri b*, although return signals will take only 4.25 years.
+
+During the ten year development phase of the mission, it is anticipated that improvements in ion propulsion will make it feasible to accelerate over a few months to roughly 40% of the speed of light, providing an outbound duration of only 12 years. The payload of such a probe must be extremely light, and must include a substantial nuclear-powered transmitter to create strong enough radio signals to be detected on Earth. This transmitter must remain in orbit around *Proxima*.
+
+The part of the probe that will land on *Proxima* consists of 100 darts, each of which weighs 3 oz. The darts will be scattered over the surface of *Proxima* to give a comprehensive view of the planet. Each dart is capable of basic measurements that can be translated into a go-or-no-go signal about habitability of the dart's immediate environment. This result will be transmitted to the orbiting high-power transmitter which will then forward the signals to Earth.
+
+Too little is known about *Proxima* to predict the probability that an individual dart will successfully land on the surface and be able to transmit a result. We need to anticipate the possibility that this probability will be low, even to the point of only one or several darts succeeding.
+
+The task assigned to our research group is to design the data processing protocols that will optimize interpretation of the data that is received. In the worst case, no darts will succeed and there will be no data to process. But if only one dart succeeds, it will hardly be plausible to conclude that all (or none) of the planet is habitable. 
+
+Needing an agile and efficient data processing routine, we are focusing on Bayesian inference.
+
+Our **prior** reflects our ignorance about *Proxima*: we know it exists and we know enough about its sun and orbital parameters to place it in the theoretical habital zone of its solar system. With almost complete ignorance, our prior is a uniform distribution ranging to 0% of the planet being habitable to 100%. Like this:
+
+```{r echo=FALSE}
+slice_plot(1 ~ p, domain(p=0:1)) %>%
+  gf_labs(x = "p = Proportion habitable", y = "Probability density", 
+          title = "Prior") %>%
+  gf_lims(y=c(0,2))
+```
+There are two likelihood functions, one for the dart reporting habitability (H) and another if the dart reports inhabitability (D, for "dead"). Each likelihood function gives the probability of seeing the actual data report *under the assumption* of what the proportion habitable is. For instance, if the proportion habitable were 30%, the H-likelihood function will output 30%, and the D-likelihood function will output 70%. On the other hand, if the proportion habitable is 90%, the H-likelihood function will ouput 90% and the D-likelihood function will output 10%. The complete functions as simple:
+$${\cal L}_H(p) = p \ \ \ \text{and}\ \ \ {\cal L}_D(p) = 1 - p$$
+
+In the event $n$ H signals and $m$ D signals are received, the posterior relative probability density will be $${\cal L}_H(p)^n {\cal L}_D(p)^m\ .$$
+
+For our brief to the *Musk Committee*, which will determine if our data-processing plan gets the go-ahead, we need to show them what the posterior will look like for various levels of $n$ and $m$ signals being received. Our previous proposal, to use "frequentist" techniques, produced 95% confidence intervals that were deemed to be uninformative for decision making in the case where fewer than 10 darts succeed. We believe that the Bayesian estimates will be more useful.
+
+Generate posterior distributions for these scenarios.
+
+<aside>
+The frequentist confidence intervals (Wald intervals) are not strictly relevant here. They would be important if the goal were to illustrate the philosophical divide between interval estimates (as produced by frequentist statistics) and the probability distribution produced in Bayesian analysis.
+</aside>
+
+1. $n=1, m=0$. (Frequentist confidence interval: NA)
+2. $n=0, m=1$. (Frequentist confidence interval: NA)
+3. $n=1, m=1$. (Frequentist confidence interval: 0 to 1)
+4. $n=5, m=5$  (Frequentist confidence interval: 0.19 to 0.81)
+5. $n=7, m=3$  (Frequentist confidence interval: 0.51 to 0.89)
+6. $n=35, m=15$ (Frequentist confidence interval: 0.57 to 0.83)

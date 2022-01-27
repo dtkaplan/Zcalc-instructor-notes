@@ -1,0 +1,12 @@
+name: "Zcalc-instructor_notes"
+title: "Zcalc Instructor Notes"
+description: |
+  Zcalc Instructor Notes
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article

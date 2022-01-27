@@ -1,0 +1,46 @@
+---
+title: "Zcalc Instructor Notes: Overview"
+description: |
+  These are instructor notes to support the USAFA Core Calculus courses, Math 141/142
+author:
+  - name: Daniel Kaplan
+    url: dtkaplan.github.io
+    affiliation: Macalester College and USAFA
+date: 01-27-2022
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+The Project MOSAIC [calculus textbook](https://projectmosaic.github.io/MOSAIC-Calculus) is divided into six blocks and a collection of "manifestations." Depending on the goals for the course being taught different blocks can be included.
+
+- Preface: What is calculus?
+
+- Block 1: Introduction to functions and computing
+
+- Block 2: Foundation for modeling
+
+- Block 3: Differentiation
+
+- Block 4: Anti-differentiation and accumulation
+
+- Block 5: Linear combinations
+
+- Block 6: Dynamics
+
+- [Manifestations](manifestations.html)
+    i. Operations on functions
+    ii. Interpolation and splines
+    iii. Optimization and constraint
+    iv. Probability and evidence
+    v. Present and future value
+    vi. Mechanics
+

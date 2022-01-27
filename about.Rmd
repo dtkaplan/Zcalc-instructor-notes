@@ -1,0 +1,13 @@
+---
+title: "About this blog"
+description: |
+  Navigating the blog and links to talks and articles about Zcalc
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Put in links to the USNA talk and the ASEE paper. 
+
+Also, explain how the categories and tags work.
