@@ -50,13 +50,15 @@ $${\cal L}_H(p) = p \ \ \ \text{and}\ \ \ {\cal L}_D(p) = 1 - p$$
 
 In the event $n$ H signals and $m$ D signals are received, the posterior relative probability density will be $${\cal L}_H(p)^n {\cal L}_D(p)^m\ .$$
 
+<section float: left;>
 For our brief to the *Musk Committee*, which will determine if our data-processing plan gets the go-ahead, we need to show them what the posterior will look like for various levels of $n$ and $m$ signals being received. Our previous proposal, to use "frequentist" techniques, produced 95% confidence intervals that were deemed to be uninformative for decision making in the case where fewer than 10 darts succeed. We believe that the Bayesian estimates will be more useful.
-
-Generate posterior distributions for these scenarios.
-
-<aside>
+</section>
+<aside float: right; style="width: 20em;">
 The frequentist confidence intervals (Wald intervals) are not strictly relevant here. They would be important if the goal were to illustrate the philosophical divide between interval estimates (as produced by frequentist statistics) and the probability distribution produced in Bayesian analysis.
 </aside>
+
+
+Generate posterior distributions for these scenarios.
 
 1. $n=1, m=0$. (Frequentist confidence interval: NA)
 2. $n=0, m=1$. (Frequentist confidence interval: NA)
