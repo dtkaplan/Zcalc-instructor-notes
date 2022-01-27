@@ -8,6 +8,7 @@ date: 2022-01-27
 output:
   distill::distill_article:
     self_contained: false
+preview: illustrating-likelihood_files/figure-html5/thumbnail-1.png
 ---
 
 
@@ -86,7 +87,7 @@ slice_plot(posterior(p) ~ p, domain(p=0:1))
 
 To normalize this, calculate the total area under the curve and divide `posterior()` by that:
 
-```{r}
+```{r thumbnail}
 area <- Integrate(posterior(p) ~ p, domain(p=0:1))
 normalized_posterior <- makeFun(posterior(p)/area ~ p)
 slice_plot(normalized_posterior(p) ~ p, domain(p=0:1)) %>%
