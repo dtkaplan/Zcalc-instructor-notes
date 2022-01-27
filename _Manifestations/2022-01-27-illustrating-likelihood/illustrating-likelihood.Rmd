@@ -1,7 +1,7 @@
 ---
 title: "Illustrating likelihood"
 description: |
-  A short description of the post.
+  A simple illustration of likelihood suitable for use in class. There's a long (fictional) setup just for fun, but you can skip that if you want.
 author:
   - name: Daniel Kaplan
 date: 2022-01-27
@@ -62,5 +62,31 @@ The frequentist confidence intervals (Wald intervals) are not strictly relevant 
 2. $n=0, m=1$. (Frequentist confidence interval: NA)
 3. $n=1, m=1$. (Frequentist confidence interval: 0 to 1)
 4. $n=5, m=5$  (Frequentist confidence interval: 0.19 to 0.81)
-5. $n=7, m=3$  (Frequentist confidence interval: 0.51 to 0.89)
+5. $n=7, m=3$  (Frequentist confidence interval: 0.41 to 0.99)
 6. $n=35, m=15$ (Frequentist confidence interval: 0.57 to 0.83)
+
+
+## R commands
+
+Define the likelihood functions like this:
+
+```{r}
+L_H <- makeFun(p ~ p)
+L_D <- makeFun(1-p ~ p)
+```
+
+The posterior function (unnormalized) will be the product of ${\cal L}_H()$ and ${\cal L}_D()$ compounded by the number of observations of each possible result (H for habitable, D for dead). So for 7 H and 3 D (as in item 5. above) the posterior will be
+
+```{r}
+posterior <- makeFun(L_H(p)^7 * L_D(p)^3 ~ p)
+slice_plot(posterior(p) ~ p, domain(p=0:1))
+```
+
+To normalize this, calculate the total area under the curve and divide `posterior()` by that:
+
+```{r}
+area <- Integrate(posterior(p) ~ p, domain(p=0:1))
+normalized_posterior <- makeFun(posterior(p)/area ~ p)
+slice_plot(normalized_posterior(p) ~ p, domain(p=0:1)) %>%
+  gf_labs(y="Probability density")
+```
