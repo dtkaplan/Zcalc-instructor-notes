@@ -1,0 +1,32 @@
+---
+title: "Objective tracking"
+description: |
+  How to use the objective tracking system
+author:
+  - name: Daniel Kaplan
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Having a list of course objectives makes it easier to check that you've done everything you promised to do. If each objective is given an ID, the possibility exists for annotating text, exercises, etc. with a link to the objective, and thereby to list exactly where in the materials each objective is being addressed.
+
+For *MOSAIC Calculus*, the objectives are stored in the `{Znotes}` package. Editing, to add or modify objectives, requires editing files in the `inst/Objectives` file of that package. (Remember to push your changes to the GitHub repository after you've edited.)
+
+To add an objective, use the addin `new_objective` that comes with `{Znotes}`. This will place a partially filled objective where the cursor is placed in the objectives document that you are editing.
+
+Objectives documents are formatted as YAML. It is recommended that you create an objective document for each major theme of objectives. Then add new objective to that document. They will inherit the name of the document as the `Topic:` field in the YAML. Of course, you're free to cut and paste objectives from one document to another.
+
+An important feature of the system is that each objective in a document has a unique ID that is generated automatically by the `new_objective` addin. If you duplicate objectives, the ID will no longer be unique. You can change the ID by hand to restore its uniqueness. Remember to change the ID both in the top-level YAML and in the `ID:` field of the objective. (We can streamline this process if there's need.)
+
+## Basics
+
+Use the ID to refer to an objective. We'll write software in `{Znotes}` to handle making the necessary connections between documents.
+
+`Znotes::objective2dataframe()` will translate the YAML contents of an objectives document into a data frame. This can be the basis for programming the connections and listing of objectives for a given lesson or text location or exercise.  
+
+
+

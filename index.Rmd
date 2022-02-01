@@ -30,3 +30,5 @@ The Project MOSAIC [calculus textbook](https://projectmosaic.github.io/MOSAIC-Ca
 -----
 
 [Writing for this blog](writing-instructions.html)
+
+[Keeping track of objectives](ObjectiveTracking/Using-objectives.html)
