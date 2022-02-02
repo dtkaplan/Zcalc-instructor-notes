@@ -1,0 +1,22 @@
+---
+title: "Florida Polytechnic, Feb 15, 2022"
+author: "Daniel Kaplan"
+date: "1/10/2022"
+output: html_document
+---
+
+**Title**
+
+An Engineering-oriented Core Calculus Course
+
+**Abstract**
+
+s the traditional calculus sequence the best mathematical preparation for students planning to major in engineering and other STEM disciplines? In this talk, I’ll describe an alternative 2-semester approach currently being piloted at the United States Air Force Academy (USAFA). Key features of the new course are that it is accessible and engaging to students with a wide range of mathematical aptitudes, backgrounds, and intended STEM majors.
+
+The course includes some “advanced” topics not usually found in introductory calculus: functions of multiple variables, linear algebra, and differential equations, all set in a computing and modeling context. I’ll describe how the USAFA course manages to include such a wide range of mathematical topics in a two-semester course and why such an approach could be beneficial to a STEM-only school such as Florida Poly.
+
+A draft textbook for the course, "MOSAIC Calculus," is available freely online at mosaic-web.org/MOSAIC-Calculus/
+
+**Bio**
+
+Danny Kaplan is distinguished visiting professor at USAFA. He is Professor Emeritus of Mathematics, Statistics, and Computer Science at Macalester College, where he introduced new curricula in calculus, scientific computing, applied math, and statistics. He has written several textbook on a variety of topics: nonlinear dynamics, scientific programming, statistical modeling, and data science. He received the Lifetime Achievement Award from the Consortium for the Advancement of Undergraduate Statistics Education. His doctorate is in biomedical engineering from Harvard University. He also holds a master's degree in Engineering-Economy Systems from Stanford.

@@ -1,0 +1,22 @@
+---
+title: "US Naval Academy Feb 11, 2022"
+author: "Daniel Kaplan"
+date: "1/10/2022"
+output: html_document
+---
+
+**Title**
+
+Remodeling the mathematics core at the Air Force Academy
+
+**Abstract**
+
+USAFA has had a two-semester core calculus course for about 60 years. Based on a traditional Calc I/II sequence, it has changed incrementally over the years. Several years ago, USAFA determined that incremental change is insufficient and that a new core course should be developed from scratch. The new course is oriented around modeling and computation and includes topics not usually seen in Calc I/II such as dimensional analysis, linear algebra, and dynamics.
+
+USAFA does not have tracks in its core curriculum, so the new course has to be accessible to all cadets, regardless of math background, aptitude, or intended major. In this talk, I'll briefly outline the course, focusing mainly on how the course can be accessible while being engaging and meaningful for students who have had previous calculus and who are heading toward STEM majors.
+
+A draft textbook for the course, "MOSAIC Calculus," is available freely online at mosaic-web.org/MOSAIC-Calculus/
+
+**Bio**
+
+Danny Kaplan is distinguished visiting professor at USAFA, where for two years he has worked on the new calculus core. He is Professor Emeritus of Mathematics, Statistics, and Computer Science at Macalester College, where he introduced new curricula in calculus, scientific computing, applied math, and statistics. He has written textbooks on a variety of topics: nonlinear dynamics, scientific programming, statistical modeling, and data science. (His statistical modeling book was used briefly at USNA.) He received the Lifetime Achievement Award from the Consortium for the Advancement of Undergraduate Statistics Education. His doctorate is in biomedical engineering from Harvard University. He also holds a master's degree in Engineering-Economy Systems from Stanford.
