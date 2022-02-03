@@ -27,7 +27,7 @@ The Project MOSAIC [calculus textbook](https://projectmosaic.github.io/MOSAIC-Ca
     iii. Optimization and constraint
     iv. Probability and evidence
     v. Present and future value
-        - Project: [Retirement and after](Projects/Expectation/expectation.html)
+        - Project: [Retirement and after](Projects/Retirement/retirement.html)
     vi. Mechanics
 
 - [Block 5: Linear combinations](Block-5.html)

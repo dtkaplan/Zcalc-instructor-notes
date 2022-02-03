@@ -1,6 +1,6 @@
 ---
 title: "Using the SIR Model"
-subtitle: "Math 142Z Block 2 Project"
+subtitle: "*MOSAIC Calculus* Project"
 ---
 
 
