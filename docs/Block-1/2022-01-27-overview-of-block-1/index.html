@@ -87,7 +87,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-<title>Zcalc Instructor Notes: Overview of Block 1</title>
+<title>Instructor Notes: Overview of Block 1</title>
 
 <meta property="description" itemprop="description" content="The motivations and objectives for Block 1"/>
 
@@ -99,21 +99,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Daniel Kaplan"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Zcalc Instructor Notes: Overview of Block 1"/>
+<meta property="og:title" content="Instructor Notes: Overview of Block 1"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="The motivations and objectives for Block 1"/>
 <meta property="og:url" content="dtkaplan.github.io/Zcalc-instructor-notes/Block-1/2022-01-27-overview-of-block-1/"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:site_name" content="Zcalc Instructor Notes"/>
+<meta property="og:site_name" content="Instructor Notes"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Zcalc Instructor Notes: Overview of Block 1"/>
+<meta property="twitter:title" content="Instructor Notes: Overview of Block 1"/>
 <meta property="twitter:description" content="The motivations and objectives for Block 1"/>
 <meta property="twitter:url" content="dtkaplan.github.io/Zcalc-instructor-notes/Block-1/2022-01-27-overview-of-block-1/"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="Zcalc Instructor Notes: Overview of Block 1"/>
+<meta name="citation_title" content="Instructor Notes: Overview of Block 1"/>
 <meta name="citation_fulltext_html_url" content="dtkaplan.github.io/Zcalc-instructor-notes/Block-1/2022-01-27-overview-of-block-1/"/>
 <meta name="citation_online_date" content="2022/01/27"/>
 <meta name="citation_publication_date" content="2022/01/27"/>
@@ -1880,10 +1880,7 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refs = $(this).attr('data-cites').split(" ");
-      var refHtml = refs.map(function(ref) {
-        return "<p>" + $('#ref-' + ref).html() + "</p>";
-      }).join("\n");
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -2075,7 +2072,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Overview of Block 1","description":"The motivations and objectives for Block 1","authors":[{"author":"Daniel Kaplan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-01-27T00:00:00.000-07:00","citationText":"Kaplan, 2022"}
+{"title":"Overview of Block 1","description":"The motivations and objectives for Block 1","authors":[{"author":"Daniel Kaplan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-01-27T00:00:00.000+00:00","citationText":"Kaplan, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2083,7 +2080,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="../../index.html" class="title">Zcalc Instructor Notes</a>
+<a href="../../index.html" class="title">Instructor Notes</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
@@ -2127,11 +2124,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="appendix-bottom">
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Kaplan (2022, Jan. 27). Zcalc Instructor Notes: Overview of Block 1. Retrieved from dtkaplan.github.io/Zcalc-instructor-notes/Block-1/2022-01-27-overview-of-block-1/</pre>
+  <pre class="citation-appendix short">Kaplan (2022, Jan. 27). Instructor Notes: Overview of Block 1. Retrieved from dtkaplan.github.io/Zcalc-instructor-notes/Block-1/2022-01-27-overview-of-block-1/</pre>
   <p>BibTeX citation</p>
   <pre class="citation-appendix long">@misc{kaplan2022overview,
   author = {Kaplan, Daniel},
-  title = {Zcalc Instructor Notes: Overview of Block 1},
+  title = {Instructor Notes: Overview of Block 1},
   url = {dtkaplan.github.io/Zcalc-instructor-notes/Block-1/2022-01-27-overview-of-block-1/},
   year = {2022}
 }</pre>

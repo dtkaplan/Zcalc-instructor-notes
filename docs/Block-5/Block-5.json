@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\nThe instructor can easily see that the Block-5 chapters are about linear algebra. But the word “algebra” is missing in the title of the block. Instead, the title is Linear Combinations. In part, this is intended to help unify the text, since linear combinations appear in all of the first 4 Blocks. But also the title was selected because the canonical topics found in just about any linear algebra book are not included—for good reason.\nmatrices as rectangular arrays of numbers\ndeterminant\ngaussian elimination\nnull space\nThe approach\nThe software\nrbind(), cbind(), %dot% and so on.\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-01-27T13:40:20-07:00",
+    "last_modified": "2022-01-27T14:57:48-07:00",
     "input_file": {}
   }
 ]

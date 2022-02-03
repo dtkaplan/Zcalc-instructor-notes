@@ -1,0 +1,385 @@
+## How fast does the  bike go?
+
+```{r include=FALSE}
+library(Zcalc)
+library(Znotes)
+library(dplyr)
+library(tidyr)
+library(DT)
+```
+
+We want to build a model of how fast a bike goes.
+
+For simplicity, we'll hold fixed the strength and endurance of the rider, the road surface, curves, traffic, etc.
+
+We'll focus on two inputs: the steepness of the route and the gear that the bicycle is in.
+
+- Steepness $s$:  The  grade in percent, from -10 to 10. Positive  means uphill, negative means downhill.
+- Gear $g$: A number from 0 to 10. Higher numbers correspond to higher speed at a fixed pedaling period. So if we know the  gear and the pedaling period,  we know exactly the speed of the bike.  But, typically bicyclists hold their pedaling  period approximately constant, whatever the speed. (This has to do with the efficiency of muscle contraction.)
+
+Our model will be velocity as a function of steepness and gear: $V(s, g)$. What should it look like?
+
+## Questions for thinking about the relationships.
+
+::: {.instructor-note}
+This is a set of starter questions about about how $V()$ is related to $s$ and $g$. They are all asked in terms of partial derivatives.
+
+The first two, "simple or complicated," are about whether the sign of the partial derivative w.r.t. a variable changes as that variable changes. If so, there is an extremum. We'll call that "complicated." If the partial stays the same sign, that's a "simple" relationship. "Simple" and "complicated" are not technical terms.
+:::
+
+Questions  in  terms  of derivatives:
+
+
+
+- $\partial_s V(s, g)$.
+    - Simple or complicated?
+    - If simple, positive  or  negative,  large or  small (or zero).
+        - negative. We go faster with less steepness.
+        - large. The range of steepness corresponds to a factor of roughly 10 in speed.
+- $\partial_g V(s, g)$
+    - Simple or complicated?
+        - complicated. An increase in gear can either increase  or  decrease speed. (Too hard a gear kills speed. Too easy a gear thwarts speed. We want a gear that's just  right.)
+        - If simple, positive  or  negative,  large or  small (or zero).
+- $\partial_{gs} V(s, g)$ and $\partial_{sg} V(s, g)$. Note: these are equal at all points where the function $V()$ is smooth.
+    - Does $\partial_s V(s, g)$ depend on Gear?
+          - yes.
+    - Equivalently, does $\partial_g V(s, g)$ depend on Steepness.
+          - This one is easier to think about. For negative steepness,  optimal gear is higher. For positive steepness,  optimal gear is lower.
+
+::: {.instructor-note}
+This table gives some values for the bike's velocity as a function of hill steepness and gear.
+
+* Note that the optimal gear is at the extremes of $g$ for steep uphill or downhill, and in the middle of $g$ for biking on the flat.
+* Note that the speed steadily increases, regardless of $g$ when the steepness becomes more negative.
+:::
+
+* Some "data" about $V(s, g)$
+
+$V(s,g)$            |  $g=1$   | $g=5$    |  $g=10$
+--------------------|:--------:|:--------:|:------:
+$s=10$ (uphill)     |  2       | 1 mph    | 0
+$s=0$ (flat)        |  9       | 12 mph   | 6
+$s=-10$ (downhill)  |  12      | 16 mph   | 20
+
+* Some "data" about $\partial_s V(s,g)$: it's negative, everywhere.
+
+* Some "data" about $\partial_g V(s,g)$: there's an optimal (maximum speed) gear at each speed. $\partial_g V(s,g)$ will be zero near the optimum, negative to the right and positive to the left.
+
+::: {.instructor-note}
+Emphasize that these are values for the **partial derivative** of $V()$ with respect to $g$, that is, how the bike speed changes when gear is increased. "Holding everything else constant" means that we can consider the pattern separately for each individual value of $s$. That is, we only have to consider the *horizontal* pattern in the table in each row separately. When going steeply uphill ($s=10$), the optimal gear is low ($g=1$) so increasing the gear will slow the bike. Similarly, when going downhill the optimal gear is hard ($g=10$) so increasing $g$ from a low value will increase the speed of the bike. On a flat road, the optimal gear is near the middle.
+:::
+
+$\partial_g V(s,g)$ |   $g=1$  | $g=5$ | $g=10$
+--------------------|:--------:|:--------:|:------:
+$s=10$ (uphill)     |  zero+   | neg      | vneg
+$s=0$ (flat)        |  pos     | zero     | neg
+$s=-10$ (downhill)  |  vpos    | pos      | zero-
+
+## A polynomial framework
+
+Our general purpose tool for constructing local models of functions of two variables is the polynomial.
+
+We imagine that there is an output that is a function of two inputs: $f(x,y)$.  The polynomial function that we will use will be $$ f(x,y) = a_0 + a_1 x + a_2 y + a_3 x y + a_4 x^2 + a_5 y^2$$
+
+Note that the six parameters have been subscripted with a number.  This is just for convenience in referring to them.  You can call them ``a naught'', ``a one,'' ``a two'', and so on.  Whatever the names, each of them is just a scalar.
+
+Depending on the values of the parameters $a_0, a_1, a_2, a_3, a_4, a_5$, this function can take on all sorts of shapes.  But, in general,
+**not all of the terms are needed**.
+
+
+$a_0$: The **constant term**.  This sets a typical value of $f(x,y)$, but doesn't depend on either $x$ or $y$.  It is almost always included by default.
+
+
+$a_1 x$ The **linear term in $x$**. Produces a simple dependence on the input $x$; if the input $x$  changes, then the output $f(x,y)$ will change.
+
+$a_2 y$ Likewise, the **linear term in $y$**. This produces a simple dependence on the input $y$.
+
+$a_4 x^2$ The **quadratic term in $x$** can do two things.  It is  absolutely needed in the model if there is a maximum or minimum with  respect to $x$.  But, even if there is no extremum, if there is an  important change in $\frac{\Delta f}{\Delta x}$ as $x$ changes, then  there should be this quadratic term.  Example: economists often speak of diminishing marginal returns --- doubling the amount of investment doesn't lead to a doubling in output per dollar of  investment.
+
+$a_5 y^2$ The **quadratic term in $y$**. Like the quadratic term in $x$, it's needed for there to be an extremum with respect to $y$, or a change in $\frac{\Delta f}{\Delta y}$.
+
+$a_3 x y$ The **interaction term**.  This term expresses how the inputs $x$ and $y$ interact: perhaps interfering with one another or reinforcing one another.  Whenever the output will depend on $x$ differently for different values of $y$, or vice versa, there should be an interaction term included in the model.
+
+Almost always, we include the constant and linear terms in a model, although we might discover that they are not needed if other terms are added.  The question is generally whether to include the quadratic and bilinear terms.
+
+::: {.instructor-note}
+Note that the coefficients are named in accordance with the input variables that follow.
+:::
+
+BICYCLE: We'll write the model as
+
+$$ V(s,g) = a_0 + a_s s + a_g g + a_{sg} s g + a_{ss} s^2 + a_{gg} g^2$$
+
+In order to decide which of these terms to include in the model $v(s,g)$, it helps to ask the following questions about the two quadratic terms and interaction terms:
+
+1. Is there an extremum with respect to $g$?  That is, holding $s$ fixed, is there a value of $g$ at which $f(s,g)$ takes on a maximum or minimum value?  If there is, you will want to include the quadratic term in $g$.
+
+BICYCLE: There is an optimum, a gear where speed is maximal.
+
+2. If there is an extremum with respect to $g$, does its position or magnitude depend on the value of $s$?  If so, include the interaction term.
+
+BICYCLE: The optimal gear varies with steepness
+
+3. If there isn't an extremum with respect to $g$, does the slope with respect to $g$ depend on $s$? If so, include the interaction term even though there isn't a quadratic term in $g$.
+
+BICYCLE: Not applicable
+
+4. The same questions should be asked with respect to $s$ to decide whether to include the quadratic term in $s$.
+    i. Is there an optimum with respect to $s$?
+
+        BICYCLE: No.
+
+    ii. Does the position of the optimum w.r.t. $s$ depend on $g$.
+
+        BICYCLE: Not applicable
+
+    iii. Does the slope with respect to $s$ depend on $g$.
+
+        BICYCLE: We don't have a clear opinion of this.
+
+Both $s$ and $g$ participate in the interaction term, but sometimes one of the variables gives you a clearer indication that an interaction is important.  Include it if warranted for **either** of the variables $s$ and $g$.
+
+BICYCLE: We include interaction term per question (2); we don't need the answer to 4.iii
+
+## Positive or negative?
+
+A good practice when building models is to figure out, based on what we already know, whether the various terms $s$ and $g$ terms will appear positively or negatively. (We don't have to worry about $a_0$.)
+
+Now that we've thrown out the $a_{ss} s^2$ terms, our model looks like:
+$$V(s, g) \approx a_0 \pm a_s s \pm a_g g \pm a_{gs} gs \pm a_{gg} g^2$$
+
+We want to assign + or - (or perhaps zero) to each of the four $\pm$ signs in our model.
+
+- $a_{gg} g^2$ needs to be negative. Reason: There is a *maximum* with respect to $g$ and the second derivative is always negative near a maximum.
+
+$$V(s,  g) \approx a_0  \pm  a_s  s \pm  a_g g  \pm a_{gs} gs - a_{gg} g^2$$
+
+Lets look at $$\partial_s V(s,g) = \pm a_s \pm a_{gs} g$$
+
+- $a_{s} s$ term needs to be negative. Reason: speed goes down as $s$ grows from zero, holding gear constant.
+
+- $a_{gs} g$ term needs to be negative. If you are in a high gear (suitable for going downhill), $V$ will decrease more sharply as $s$ increases.
+
+Let's think  about $$\partial_g V(s,g) = \pm a_g - a_{gs}s - 2 a_{gg}g.$$ (We already know $a_{gg}g^2$ and $a_{gs} sg$ terms are negative.)
+
+- $a_g$ term must be positive, since there are some conditions with $s=0$ (flat) when increasing gear increases speed. (E.g. $g$ is set inappropriately small, so you would go faster in a higher gear. )
+
+Putting this together, we expect that our model will look like:
+
+$$V(s,  g) \approx a_0  -  a_s  s +  a_g g  - a_{gs} gs - a_{gg} g^2$$
+
+We might use this result if we had to assign values to the coefficients without any other info.
+
+Or, since we have data to fit the model to, we can use our sign expectation to check whether the model (or our reasoning) is making sense.
+
+
+## Fitting the model to data
+
+
+Our data ...
+
+$V(s,g)$            |  $g=0$   | $g=5$    |  $g=10$
+--------------------|:--------:|:--------:|:------:
+high s (uphill)     |  2       | 1 mph    | 0
+zero s (flat)       |  9       | 12 mph   | 6
+low s (downhill)    |  12      | 16 mph   | 20
+
+
+::: {.instructor-note}
+The proper form of a data table has one column for each variable. The printed table above is a form of graphic, much like a surface plot.
+
+In the `lm()` formula, arithmetic operations are enclosed in `I()` to override the default interpretation where, say, `s*g` would expand to `s + g + s:g`. Don't use the `poly()` function to create the 2nd-order terms. The model values will be fine but the coefficients will be difficult to interpret since `lm()` will use orthogonal polynomials.
+:::
+
+```{r}
+Bicycle_speed <- tibble::tribble(
+    ~ s, ~ g, ~ V,
+    8, 1, 2,
+    8, 5, 1,
+    8, 10,0,
+    0, 1, 9,
+    0, 5, 12,
+    0, 10, 6,
+    -8, 1, 12,
+    -8, 5, 16,
+    -8, 10, 20
+)
+
+mod <- lm(V ~ s + g + I(s*g) + I(g^2), data = Bicycle_speed)
+coef(mod)
+```
+
+::: {.instructor-note}
+The signs we figured out from our understanding of the situation.
+
+- $a_s$ negative
+- $a_g$ positive
+- $a_{gs}$ negative
+- $a_{gg}$ negative
+- There is no $a_{ss}$ term in our model.
+
+We got the signs right! This doesn't prove our reasoning is correct, but it makes us a bit more confident in our model.
+:::
+
+
+```{r warning=FALSE, eval=FALSE}
+# SOMETHING IS WRONG HERE
+Vfun <- makeFun(mod)
+contour_plot(Vfun(s=s, g=g) ~ s + g, domain(s=c(-10,10), g=c(0, 10)))
+
+```
+
+For each steepness, there is an optimal gear:
+
+```{r eval=FALSE}
+slice_plot(Vfun(s=-8, g) ~ g, domain(g=c(0,10)), color="red",
+           label_text = "downhill") %>%
+  slice_plot(Vfun(s=0, g) ~ g, color = "green",
+             label_text = "flat") %>%
+  slice_plot(Vfun(s=8, g) ~ g, color = "blue",
+             label_text = "uphill")
+```
+
+## Where does our model disagree with the data
+
+```{r}
+Bicycle_speed$resid <- resid(mod)
+pivot_wider(Bicycle_speed, names_from = g, values_from = V, -resid)
+pivot_wider(Bicycle_speed, names_from = g, values_from = resid, -V)
+```
+## Why include gear?
+
+Why not build a simpler model, $V(s)$?
+
+This might be good for some purposes, e.g. predicting how long it will take to bike a route.
+
+::: {.instructor-note}
+I propose that the "application" for Block 3 be using this model to calculate how much better a 15-speed bike would be than a 1-speed or 3-speed bike over a given terrain (specified as a series of piecewise linear segments). The figure of merit would be how long it takes to complete the route. For each segment, compute from the steepness the optimal gear then round that off to the nearest gear number. This gives a velocity for that segment, which can then be turned into time by dividing the length of the segment by the velocity. Sum up the times over all segments.
+:::
+
+But for other purposes, e.g. figuring out what happens if you have only one gear, we need a model that includes $g$.
+
+
+
+## Partial derivatives algebraically
+
+The model we developed for the speed of a bicycle $V$ as a function of steepness $s$ of the road and bike gear $g$ is a second-order polynomial in $s$ and $g$ with five terms:
+
+$$V(s, g) = a_0 + a_s s + a_g g + a_{sg} s g + a_{gg}g^2$$
+
+
+```{r daily-digital-33-QA1, echo=FALSE}
+askMC(
+  prompt = "The complete second-order polynomial in two variables has six terms. Which one is missing in $V(s, g)$",
+    "+$a_{ss} s^2$+" = "",
+    "$a_{gg} g^3$" = "That's a third-order term.",
+    "$a_{gg} g^{-2}$" = "The low-order polynomial framework doesn't include negative powers.",
+    "$a_{g} g$" = "That's in the model!",
+    "$a_{sg} g/s$" = "The low-order polynomial framework doesn't include negative powers."
+)
+```
+
+```{r daily-digital-33-QA2, echo=FALSE}
+askMC(
+  prompt = "Which of these is $\\partial_g V(s, g)$?",
+    "+$a_{g} + a_{sg} s + 2 a_{gg} g$+" = "",
+    "$a_0 + a_{g} + a_{sg} s + 2 a_{gg} g$" = "",
+    "$a_{g} g + a_{sg} g + 2 a_{gg} g$" = "",
+    "$a_{s} s + a_{sg} gs + a_{gg} g^2$" = "",
+    "$a_{g} + a_{sg} s + 2 a_{gg}$" = ""
+)
+```
+
+```{r daily-digital-33-QA3, echo=FALSE}
+askMC(
+  prompt = "Which of these is $\\partial_s V(s, g)$?",
+    "+$a_{s} + a_{sg} g$+" = "",
+    "$a_{g} g + a_{sg} s + 2 a_{ss} s$" = "The function $V(s,g)$ doesn't have any $a_{ss} g^2$ term.",
+    "$a_{g} g + a_{sg} s + 2 a_{gg} g$" = "There is a $a_{gg} g^2$ term in the model. But that doesn't contribute anything to $\\partial_s V()$ because that term has no dependence on $s$.",
+    "$a_s s + a_{sg} sg$" = "You forgot to differentiate these terms with repect to $s$."
+)
+```
+
+```{r daily-digital-33-QA4, echo=FALSE}
+askMC(
+  prompt = "Which of these is $\\partial_{sg} V(s, g)$?",
+    "+$a_{sg}$+" = "",
+    "$a_{sg} s$" = "",
+    "$a_{sg} g$" = "",
+    "$a_{sg} sg$" = ""
+)
+```
+
+```{r daily-digital-33-QA5, echo=FALSE}
+askMC(
+  prompt = "Which of these is $\\partial_{ss} V(s, g)$?",
+    "+$0$+" = "",
+    "$2a_{ss} s$" = "",
+    "$a_{ss} s$" = "",
+    "$2 a_{ss} g$" = "",
+    "$a_{sg}$" = ""
+)
+```
+
+
+## Bicycling with missing terms
+
+The following code chunk will fit the low-order polynomial model of the bicycle to the data used in class. The results are shown in 4 different ways:
+
+1. The coefficients on the model
+2. A contour plot of the model
+3. A surface plot of the model
+4. A slice plot showing speed as a function of gear for three different slopes of road.
+
+You might find some of these displays more useful than others. Feel free to comment out (with a `#`) the ones that you don't find useful.
+
+Notice that the "model formula" in the `lm()` function is
+
+`V ~ s + g + I(s*g) + I(g^2)`
+
+This expression contains just the *variables* in the model. The `lm()` function does the work of finding the best coefficients for a linear combination of those terms. In the following questions, you're going to remove terms (such as `+ I(s*g)` from the model formula) to see what happens to the model. In one of the questions, you'll extend the formula with a `- 1` (which suppresses the intercept term that is ordinarily included in models).
+
+```{r daily-digital-33-sandbox1, results="hide", warning=FALSE}
+Bicycle_speed <- tibble::tribble(
+    ~ s, ~ g, ~ V,
+    8, 1, 2,
+    8, 5, 1,
+    8, 10,0,
+    0, 1, 9,
+    0, 5, 12,
+    0, 10, 6,
+   -8, 1, 12,
+   -8, 5, 16,
+   -8, 10, 20
+)
+# fit the model to the data
+mod <- lm(V ~ s + g + I(s*g) + I(g^2) , data = Bicycle_speed)
+knitr::kable(coef(mod))
+mod_fun <- makeFun(mod) # turn the statistical model into a function
+dom <- domain(s = c(-8, 8), g = c(1, 10))
+contour_plot(mod_fun(s, g) ~ s + g, dom)
+interactive_plot(mod_fun(s, g) ~ s + g, dom)
+slice_plot(mod_fun(s=0, g) ~ g, domain(g=c(1,10)),
+           color = "red", label_text = "flat") %>%
+  slice_plot(mod_fun(s = -5, g) ~ g, color = "black",
+             label_text = "downhill") %>%
+  slice_plot(mod_fun(s = 5, g) ~ g, color = "blue",
+             label_text = "uphill")%>%
+  gf_labs(y = "Bike velocity (mph)", x = "Gear #")
+```
+
+
+**Essay 1**: The `lm()` function automatically adds an \"intercept\" term to the model. You can suppress this by ending the model formula with `-1`. Explain briefly what happens when you suppress the intercept and to what extent that model makes sense for the bicycle situation.
+
+
+Restore the R statements to their original form before you answer this question.
+
+**Essay 2**: The interaction term in the model is included by the `+ I(s*g)` component of the model formula. (Don't get confused: \"Interaction\" and \"intercept\" are completely different things.) Take out the interaction term, refit and re-display the model. Explain briefly what happens when you suppress the interaction term and to what extent that model makes sense for the bicycle situation.
+
+Restore the R commands to their original form before you answer this question.
+
+**Essay 3**: Suppose you add in a quadratic term in `s` to the model. Explain briefly whether this changes the model a lot or not. Also, look at the coefficients found by `lm()` for this extended model. What about those coefficients accounts for whether the model changed by a little or a lot.
+
+Restore the R commands to their original form before you answer this question.
+
+**Essay 4**: Add a new plot to the code box. It should be just like the slice-plot that was originally there, but instead of each slice holding road slope constant and showing velocity as a function of gear, change things so that gear is held constant and the plot shows velocity as a function of road slope. Explain in everyday terms what this new plot displays about the model and say whether you think it makes sense.
