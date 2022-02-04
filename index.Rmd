@@ -1,5 +1,5 @@
 ---
-title: "Zcalc Instructor Notes"
+title: "Instructor notes for MOSAIC Calculus"
 site: distill::distill_website
 ---
 

@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "path": "Block-3/2022-02-04-objective-functions/",
+    "title": "Objective functions",
+    "description": "Examples of classical objective function settings",
+    "author": [
+      {
+        "name": "Daniel Kaplan",
+        "url": {}
+      }
+    ],
+    "date": "2022-02-04",
+    "categories": [],
+    "contents": "\nObjective: L-NLS0Y\nStudents need practice constructing objective functions to understand that the objective function output is the quantity to be optimized and that the object function input(s) are the “policy variables” or “decision variables” that are at hand to accomplish the optimization.\nAs objects for drill, there is a large number of “classical problems.” This PDF file contains several pages from Granville and Smith (1911), Elements of the differential and integral calculus. According to US copyright law, this work is in the public domain because 100 years have passed since publication. So feel free to draw examples.\n\n\n\n",
+    "preview": "Block-3/2022-02-04-objective-functions/cover-page.png",
+    "last_modified": "2022-02-04T16:16:32-07:00",
+    "input_file": {},
+    "preview_width": 533,
+    "preview_height": 557
+  }
+]

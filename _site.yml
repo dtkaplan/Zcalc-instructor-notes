@@ -1,7 +1,7 @@
-name: "Zcalc-instructor_notes"
-title: "Zcalc Instructor Notes"
+name: "MOSAIC-Calc-instructor-notes"
+title: "Instructor Notes"
 description: |
-  Zcalc Instructor Notes
+  Instructor notes to accompany *MOSAIC Calculus*
 output_dir: "docs"
 navbar:
   right:
