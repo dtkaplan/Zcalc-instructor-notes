@@ -4,7 +4,7 @@ description: |
   Motivation and objectives of Block 5
 author:
   - name: Daniel Kaplan
-date: 2022-01-27
+date: 2022-01-01
 output:
   distill::distill_article:
     self_contained: false
