@@ -5,6 +5,134 @@ date: "1/10/2022"
 output: html_document
 ---
 
+## Introduction
+
+- A new calculus core at USAFA
+
+    + Core required of all cadets: Calc I/II
+
+    + New:  
+        - Enhance student engagement to increase number of students majoring in STEM disciplines.
+        - Faculty discontent: Why are we teaching this stuff?
+      
+
+## Timeline
+
++ circa 2017: USAFA determined to replace Calc I/II 
+    - USAFA identified Macalester's "Applied Multivariate Calculus I" as a model, a course I developed in 2003-2012
+
+
++ late 2018: I was recruited to lead the curricular development.
+    - Increase connections to statistics and data science.
+    - Increase connections to physics and engineering.
+    - Add a meaningful computational component.
+    
++ July 2020: Project started
+
++ August 2020: Prototype course commenced. 
+    - 3 faculty teaching 150 cadets.
+    - Initial textbook Kilty and McAllister, *Mathematical Modeling and Applied Calculus*
+    
++ August 2021: Phased expansion
+    - 12 faculty teaching 400 cadets
+    - Home grown textbook: *MOSAIC Calculus*
+
++ August 2022: Anticipated full deployment: 
+    - approximately 25 faculty and 800 cadets
+
+## This presentation
+
+- First time I've talked about this project outside USAFA.
+
+- Due to COVID and simultaneous development and deployment, there was never a chance properly to plan and stage the course.
+    - Only one senior USAFA faculty involved in first year (+ two captains)
+    - USAFA gave me practically a *tabula rasa*
+
+- I'd like to talk with you about the design of the course, choices made, and choices that might have been made instead.
+    - The format as an all-students-in core was a given.
+    
+## Aside: Consequences of a core
+
+- All cadets take the same course.
+    - Exceptions for students who place out and want to start in Calc III.
+    
+- About 2/3 of students in first semester had some high-school exposure to calculus. 
+
+- Major challenge: Remain accessible to all students while still engaging to students who have seen calculus.
+
+    
+## A broader opportunity?
+
+It's not often that someone is given the chance and resources to develop a new calculus course from scratch.
+
++ I determined to take advantage and try to produce sufficient materials and support for the course to be picked up by other institutions.
+    - Two years time *without teaching duties* to work on the project.
+    - USAFA instructors who needed to learn the approach and material with hardly any advance preparation.
+
+## A calculus construction kit
+
+Design philosophy: Future users of the course should be able to design their own courses, adding new components as suits their environment:
+
+Examples:
+
+- A proof based component about limits
+- Components closely tied to specific engineering fields, biology, etc.
+- A modeling practicum
+
+The course should be modular.
+
+## Analogy: Modular housing
+
+Many different modular housing systems are on the market. 
+
+They provide a set of components that can be put together to suit the homeowner's needs and tastes.
+
+You cannot readily mix and match different companies' systems.
+
+- Size of a unit:
+    - fraction of a wall
+    - complete wall
+    - complete envelope
+    
+- Wiring and plumbing
+    - pre-integrated in wall or floor
+    - channels for custom installation
+    
+- Does it require professional assembly?
+
+- Site/foundation requirements.
+    
+
+## A calculus "API"
+
+Components I could plausibly define:
+
+1. A minimum set of **algebra skills** needed for success in the course.
+
+- straight lines, slopes and y-intercept
+- recognize roots of a quadratic polynomial
+- simple exponent manipulation, distinguish between $x^n$ and $n^x$
+
+
+2. A minimum set of **notation** that needs to be assimilated.
+
+3. **Computing framework** to provide a non-algebra means to work with calculus concepts.
+
+Components are needed for a comprehensive solution but that I could not define on my own:
+
+- Course support software, including homework systems.
+
+- Interactive graphics system for developing concepts. 
+
+
+
+
+
+
+
+## 
+
+
 **Title**
 
 Remodeling the mathematics core at the Air Force Academy
