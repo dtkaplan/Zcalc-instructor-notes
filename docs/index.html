@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #20794d; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.sc { color: #20794d; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,28 +85,43 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
-
   <!--radix_placeholder_meta_tags-->
+<<<<<<< HEAD
   <title>Instructor Notes: Instructor notes for MOSAIC Calculus</title>
+=======
+  <title>Instructor Notes: *MOSAIC Calculus*</title>
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<<<<<<< HEAD
   <meta property="og:title" content="Instructor Notes: Instructor notes for MOSAIC Calculus"/>
+=======
+  <meta property="og:title" content="Instructor Notes: *MOSAIC Calculus*"/>
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Instructor Notes"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
+<<<<<<< HEAD
   <meta property="twitter:title" content="Instructor Notes: Instructor notes for MOSAIC Calculus"/>
+=======
+  <meta property="twitter:title" content="Instructor Notes: *MOSAIC Calculus*"/>
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
+<<<<<<< HEAD
   {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["Instructor notes for MOSAIC Calculus"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+=======
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","site"]}},"value":[{"type":"character","attributes":{},"value":["*MOSAIC Calculus*"]},{"type":"character","attributes":{},"value":["Instructor Notes"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1860,10 +1875,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refs = $(this).attr('data-cites').split(" ");
-        var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
-        }).join("\n");
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2054,7 +2066,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
+<<<<<<< HEAD
 {"title":"Instructor notes for MOSAIC Calculus","authors":[]}
+=======
+{"title":"*MOSAIC Calculus*","authors":[]}
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2077,7 +2093,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
+<<<<<<< HEAD
 <h1>Instructor notes for MOSAIC Calculus</h1>
+=======
+<h1>MOSAIC Calculus</h1>
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2089,20 +2109,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><p>Preface: What is calculus?</p></li>
 <li><p><a href="Block-1.html">Block 1: Introduction to functions and computing</a></p></li>
-<li><p><a href="Block-2.html">Block 2: Foundations for modeling</a></p></li>
-<li><p><a href="Block-3.html">Block 3: Differentiation</a></p></li>
-<li><p><a href="Block-4.html">Block 4: Anti-differentiation and accumulation</a></p></li>
-<li><p><a href="Block-5.html">Block 5: Linear combinations</a></p></li>
-<li><p><a href="Block-6.html">Block 6: Dynamics</a></p></li>
-<li><p><a href="manifestations.html">Manifestations</a></p>
+<li><p><a href="Block-2.html">Block 1b: Foundations for modeling</a></p>
+<ul>
+<li>Project: <a href="Projects/Lessons-from-ebola/Lessons-from-ebola.html">Lessons from Ebola</a></li>
+</ul></li>
+<li><p><a href="Block-3.html">Block 2: Differentiation</a></p>
+<ul>
+<li>Projects:
+<ul>
+<li><a href="Projects/Biking/Biking-speed.html">How fast does a bicycle go?</a></li>
+<li><a href="Projects/Walking/Walking-uphill.html">How to walk uphill</a></li>
+</ul></li>
+</ul></li>
+<li><p><a href="Block-4.html">Block 3: Anti-differentiation and accumulation</a></p>
+<ul>
+<li>Project: <a href="Projects/Fuel-consumption/narrative.html">Driving with integrals</a></li>
+</ul></li>
+<li><p><a href="manifestations.html">Block 4: Manifestations</a></p>
 <ol type="i">
 <li>Operations on functions</li>
 <li>Interpolation and splines</li>
 <li>Optimization and constraint</li>
 <li>Probability and evidence</li>
-<li>Present and future value</li>
+<li>Present and future value
+<ul>
+<li>Project: <a href="Projects/Retirement/retirement.html">Retirement and after</a></li>
+</ul></li>
 <li>Mechanics</li>
 </ol></li>
+<li><p><a href="Block-5.html">Block 5: Linear combinations</a></p>
+<ul>
+<li>Project: <a href="Projects/Engine-scaling/Engine-scaling.html">Least squares and engine scaling</a></li>
+</ul></li>
+<li><p><a href="Block-6.html">Block 6: Dynamics</a></p>
+<ul>
+<li>Project: <a href="Projects/SIR-model/using-the-SIR-model.html">Using a model to set policy</a></li>
+</ul></li>
 </ul>
 <hr />
 <p><a href="writing-instructions.html">Writing for this blog</a></p>

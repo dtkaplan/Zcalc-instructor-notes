@@ -1,0 +1,74 @@
+---
+title: "142Z Project 2: Dynamics"
+author: "Daniel Kaplan"
+---
+
+```{r include=FALSE}
+library(etude2)
+library(mosaic)
+library(mosaicCalc)
+```
+
+## Objectives
+
+MAKE THE PROJECT ABOUT THE DYNAMICS OF NEWTON'S METHOD, Maybe about zero-finding and optimization on functions of two variables.
+
+
+## Raw material that was previously an exercise.
+
+Last semester we introduced an *iterative* technique for finding the zeros of a function $f(x)$, that is, finding a value $x^\star$ such that $f(x^\star) = 0$. The method, called Newton's method, involves making a starting guess $x_0$ for the location of the zero and then refining this guess according to the famous formula $$x_{i+1} = x_i - \frac{f(x_i)}{\partial_x f(x_i)}$$
+
+We can use this method to find, for instance, $\sqrt{10}$. We do this by creating a function that's easy to calculate which has a zero at $x^\star = \sqrt{10}$:
+$$f(x) \equiv x^2 - 10$$
+
+Finding $\partial_x f(x)$ is easy, so the famous formula becomes, for the special case of our $f()$
+$$x_{i+1} \equiv N(x_i) \equiv x_i - \frac{x_i^2 - 10}{2 x_i}$$
+We've called the dynamics function $N()$, in honor of Newton. Applying $N()$ to $x_i$ is called "taking a Newton step."
+
+Start with a very rough guess for $x^\star$, say $x_0 = 1$. Applying the formula once gives $x_1 = 1 - -9/2 = 5.5$. 
+
+Using the sandbox, implement the function $N(x)$. Apply it once to $x_0=1$ to make sure that you have the dynamics right. 
+
+```{r nstep, exercise=TRUE, exercise.cap="Newton steps", exercise.nlines=6}
+N <- makeFun( 0 ~ x)
+x_0 <- 1
+N(x_0)    # this is x_1
+N(N(x_0)) # this is x_2
+```
+```{r nstep1, echo=FALSE}
+etude2::etudeQ(
+  "Using $N()$ as the dynamics and starting with $x_0 = 1$, what is $x_5$?",
+  "5.5" = "That's $x_1$.",
+  "3.659091" = "That's $x_2$.",
+  "3.141593" = "That's $\\pi$, which incidentally is $\\neq \\sqrt{10}$.",
+  "3.196005" = "That's $x_3$.",
+  "3.162456" = "That's $x_4$.",
+  "3.162354",
+  "+3.162278+",
+  random_answer_order = FALSE
+)
+```
+
+```{r nstep2, echo=FALSE}
+etude2::etudeQ(
+  "Modify `N()` to find $\\sqrt{20}$. Starting at $x_0=1$, how many times do you have to apply your new `N()` to get an answer right to within 1% of the true number?",
+  "After 2 steps we get 4.202" = "No, after 2 steps you would get 6.202, which is about 40% away from the true answer.",
+  "After 3 steps we get 4.713." = "That's about 6% away from the true number.",
+  "After 3 steps we get 4.472." = "That's not the right answer for $x_3$.",
+  "After 4 steps we get 4.472." = "That's not the right answer for $x_4$.",
+  "+After 4 steps we get 4.478.+" = "Right. A bit closer than 1% to the true answer.",
+  random_answer_order = FALSE
+)
+```
+
+```{r nstep3, echo=FALSE}
+etude2::etudeQ(
+  "Modify your `N()` once again to find $\\sqrt[3]{10}$. (That is, the cube-root of 10.) Starting at $x_0 = 1$, take 3 Newton steps. What is $x_3$?",
+  "2.154" = "That's $x_{5}$.",
+  "+2.320+",
+  "2.875" = "That's $x_2$.",
+  "2.912",
+  random_answer_order = FALSE
+  
+)
+```

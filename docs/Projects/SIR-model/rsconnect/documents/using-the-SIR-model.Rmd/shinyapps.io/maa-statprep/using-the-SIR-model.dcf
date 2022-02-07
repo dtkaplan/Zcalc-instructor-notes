@@ -1,0 +1,12 @@
+name: using-the-SIR-model
+title: using-the-SIR-model
+username:
+account: maa-statprep
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3804076
+bundleId: 4399198
+url: https://maa-statprep.shinyapps.io/using-the-SIR-model/
+when: 1616786112.77212
+asMultiple: FALSE
+asStatic: FALSE

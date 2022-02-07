@@ -1880,10 +1880,7 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refs = $(this).attr('data-cites').split(" ");
-      var refHtml = refs.map(function(ref) {
-        return "<p>" + $('#ref-' + ref).html() + "</p>";
-      }).join("\n");
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -2075,7 +2072,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Overview of Block 1","description":"The motivations and objectives for Block 1","authors":[{"author":"Daniel Kaplan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-01-27T00:00:00.000-07:00","citationText":"Kaplan, 2022"}
+{"title":"Overview of Block 1","description":"The motivations and objectives for Block 1","authors":[{"author":"Daniel Kaplan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-01-27T00:00:00.000+00:00","citationText":"Kaplan, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->

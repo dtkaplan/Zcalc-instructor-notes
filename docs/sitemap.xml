@@ -2,66 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/about.html</loc>
-    <lastmod>2022-01-27T13:36:23-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-1.html</loc>
-    <lastmod>2022-01-27T13:03:03-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-2.html</loc>
-    <lastmod>2022-01-27T13:07:00-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-3.html</loc>
-    <lastmod>2022-01-27T13:07:38-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-4.html</loc>
-    <lastmod>2022-01-27T13:10:20-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-5.html</loc>
-    <lastmod>2022-01-27T13:10:46-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-6.html</loc>
-    <lastmod>2022-01-27T13:11:18-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/</loc>
+<<<<<<< HEAD
     <lastmod>2022-02-04T16:19:35-07:00</lastmod>
+=======
+    <lastmod>2022-02-03T12:00:53-07:00</lastmod>
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/manifestations.html</loc>
-    <lastmod>2022-01-27T13:02:28-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/writing-instructions.html</loc>
-    <lastmod>2022-01-27T13:13:49-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/posts/overview/</loc>
-    <lastmod>2022-01-27T12:56:33-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-1/2022-01-27-overview-of-block-1/</loc>
-    <lastmod>2022-01-27T13:09:19-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
   <url>
+<<<<<<< HEAD
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-3/2022-02-04-objective-functions/</loc>
     <lastmod>2022-02-04T16:16:32-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-5/2022-01-27-overview-of-block-5/</loc>
     <lastmod>2022-01-27T13:40:20-07:00</lastmod>
+=======
+    <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-5/2022-01-01-overview-of-block-5/</loc>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
+  </url>
+  <url>
+    <loc>dtkaplan.github.io/Zcalc-instructor-notes/Block-5/2022-01-27-computing/</loc>
+    <lastmod>2022-02-05T16:15:55-07:00</lastmod>
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Manifestations/2022-01-27-illustrating-likelihood/</loc>
-    <lastmod>2022-01-27T15:44:48-07:00</lastmod>
+    <lastmod>2022-01-27T15:41:11-07:00</lastmod>
   </url>
   <url>
     <loc>dtkaplan.github.io/Zcalc-instructor-notes/Instructions/2022-01-27-writing-and-maintaining-the-zcalc-blog/</loc>
-    <lastmod>2022-01-27T13:26:37-07:00</lastmod>
+    <lastmod>2022-01-27T14:57:48-07:00</lastmod>
   </url>
 </urlset>

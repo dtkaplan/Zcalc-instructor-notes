@@ -1,0 +1,230 @@
+---
+title: "Using the SIR Model"
+subtitle: "*MOSAIC Calculus* Project"
+---
+
+
+```{r include=FALSE, echo=FALSE, context="setup"}
+etude2::load_learnr_safely()
+library(Zcalc)
+library(Znotes)
+```
+
+In this project you will work with a differential equation model of the spread of contagious disease in order to make sense of the past, the prognosis of the COVID pandemic, and to examine the impact of policies such as social distancing and vaccination.
+
+The model we will use and develop is called the *SIR-model*. The name reflects the three population groups at the core of the model: people *susceptible* to infection, people who are currently *infective*, and people who had the disease but are no longer infective, the so-called *recovered* group. That we implement the model using differential equations should in no way be interpreted as our having captured in detail the real-world mechanisms of contagion. The SIR model can at best make only rough, tentative approximations to the future course of an epidemic. There are many important phenomena completely outside the scope of the model, such as the evolution of new variants of the virus, the role of super-spreader events, and so on. That being said these *SIR-models* are commonly used including by the Pandemic Math Team which helps model the pandemic at USAFA and has served as a standard for the pandemic response across the Air Force.
+
+The utility of the model is not for detailed prediction. Instead, the model provides 
+
+* a framework for translating limited information from various sources into a format that can be compared to typical (incomplete) records of disease spread over time
+* estimates of the population fraction who remain susceptible at the end of an outbreak and how this might be influenced by various public-health interventions
+* information about the possibility of the disease becoming *endemic*, that is, a permanent feature of the environment
+
+The model, like many others we've seen, consists of a *state* that describes the instantaneous "position" of the system and dynamical rules that describe the instantaneous *rate of change* of the state as a function of the state itself. In constructing the dynamical rules, we'll take note of an appropriate time scale, and we'll follow the pattern of using *parsimonious*, *low-order polynomials*.
+
+We'll imagine the state as consisting of the number of people in three different *compartments*:
+
+- people who are susceptible $S$
+- people who are currently infective $I$
+- people who are neither susceptible or infective, who we lump under the name "recovered" $R$. 
+
+The dynamical rules describe the rates at which people move from one compartment to another. Those flows are rooted in some basic, everyday biology:
+
+i. contact between infective and susceptible people will, at some level of probability, convert a susceptible into an infective.
+ii. after a characteristic amount of time, infective people no longer remain infective and enter the "recovered" compartment.
+
+Schematically, the flows are *one-way* only:
+
+*Susceptible* $\implies$ *Infective* $\implies$ *Recovered*
+
+Other patterns of flow might be appropriate depending on the circumstances. For instance, at the time of writing (March 2021) there is uncertainty whether those recovered from COVID might at some time regain susceptibility. Another sort of flow is evidenced by a very recent Ebola transmission [traced to a person who had again become infective after recovering five years previously](https://www.sciencemag.org/news/2021/03/new-ebola-outbreak-likely-sparked-person-infected-5-years-ago). In some diseases---herpes, malaria---people can be *latent* carriers whose infectiveness comes and goes over periods of month or years.
+
+With COVID, we have seen large scale changes in the number of sick on a time scale of months or seasons. Since overall population changes little on that time scale, we start with an assumption that the model does not have to incorporate birth rates.
+
+
+Now to describe the dynamics in a population of size $N$:
+
+The susceptible compartment has no inward flow. The outward flow is governed by the interaction between susceptibles and infectives. This gives simply $$\dot{S} = - \beta \frac{S I}{N}$$
+Think of $S I$ as the total number of theoretically possible contacts each day between susceptibles and infectives. Each susceptible person could in principle meet any of the $I$ infectives. since there are $S$ different susceptibles, the total number of potential meetings is $SI$. The negative sign is because the people are *leaving* the compartment (Once again the flow is one way, so no one becomes susceptible).
+
+What's the $N$ doing in $\beta \frac{S I}{N}$? Suppose the $N$ weren't there. Then the dimension of $\beta$ would need to be $T^{-1} \mbox{people}^{-1}$ in order to produce the units of $\dot{S}$ which are $\mbox{people}/T$. It's convenient to be able to make an estimate of $\beta$ in a population of one size and be able to apply it to a population of another size. The $N$ takes care of this for us. 
+
+Hardly any of these potential meetings ever happens. And even if a meeting does happen, it will not necessarily lead to the susceptible becoming infective. All of this is meant to be captured by the parameter $\beta$, for which we anticipate that $\beta$ is much less than 1 (that is, $\beta \ll 1)$.
+
+The infective compartment has a flow in and another flow out. The flow in is exactly those same people who flowed out of the susceptible compartment, the rate of which is $\beta\,SI$. But the infective people eventually recover. This will be represented as a term $\alpha I$, giving
+
+$$\dot{I} = \beta\, \frac{S I}{N} - \alpha I$$
+Why divide by $N$? We'd like $\beta$ to tell us about how fast the epidemic spreads. So it should have dimension of $1/time$. 
+
+
+
+Finally, the $\alpha I$ recovery is a flow *into* the recovered compartment:
+
+$$\dot{R} = \alpha I$$
+
+Only two unknown parameters: $\alpha$ and $\beta$. N is the size of the population, which we know.
+
+## Estimating $\alpha$
+
+At the start of the pandemic, the Centers for Disease Control and other public health organization recommended that people who tested positive for COVID, or those in close contact with someone who tested positive, isolate themselves for two weeks. 
+
+Let's reverse-engineer $\alpha$ from this recommendation. For those in isolation, who ideally have no contact with susceptibles, the dynamics and corresponding solution for this scenerio are $$\dot{I} = -\alpha I\ \ \ \implies\ \ \ I(t) = I(0) e^{-\alpha t}$$
+Consider 100 people in isolation. Some will presumably recover faster than others but as a group, after two weeks the proportion still *not* recovered will be $e^{-14 \alpha}$. The recommendation is framed to produce a very small probability that a person at the end of the two-week isolation will still be infective. 
+
+**Essay 1**: State what you think is a "very small probability" might be and explain what that probability means in the context of this problem (For instance, if X number of people become infected and quarantined, we would expect Y number of people to still be in state I at the end of two weeks).
+
+**Essay 2**: (Give a short answer.) Assume the very small probability through experimental trials is 0.1% after two weeks. What is the corresponding $\alpha$ value. Do not include units and round your answer to the nearest hundreth. (You'll enter the units in the next question.)
+
+```{r sir-2b, echo=FALSE, results="markup"}
+askMC(
+  "What are the appropriate units for $\\alpha$?",
+  "people/day",
+  "days/person",
+  "1/persons",
+  "+1/days+",
+  "1/(person-days)"
+)
+```
+
+## Estimating $\beta$
+
+To estimate $\beta$, we can look at the exponential growth in the cumulative number of cases seen in the early phases of the outbreak. Exponential growth is, of course, characterized by a *doubling time*. Estimates for the doubling time ranged from about 10 days to about 40 days, depending on location. To simplify, let's use 20 days as the doubling time.
+
+Imagine a region containing $N = 100,000$ people. Public health statistics are often given in rates per 100,000 (or per 10,000 or per 1000), so this is a convenient number mathematically.
+
+Near the start of the epidemic, almost everyone is susceptible and there is just a small number of infectives or recovered. So we can treat $S$ as approximately constant, say $S_0 = 100,000$.
+
+The dynamics of $I$ are
+
+$$\dot{I} = (\beta S/N - \alpha) I$$ with a solution, when $S$ is constant $$I(t) = I(0) \exp((\beta S/N - \alpha) t)$$
+
+For a doubling time of about 20 days in the beginning, when $S \approx N$, we should set $\beta$ such that $$\beta - \alpha = \frac{\ln(2)}{20}$$
+
+
+**Essay 3**: Based upon your previous answer for $$\alpha$$, what is your estimate for $$\beta$$? Do not include your units. Assume a doubling period of 20 days and round your answer to the nearest hundredth. (You'll address the units in the next question.)
+
+
+```{r sir-3b, echo=FALSE, results="markup"}
+askMC(
+  "What are the appropriate units for $\\beta$? (Assume that $N$, the population size has units of *persons*.)",   
+  "people/day",
+  "days/person",
+  "1/persons",
+  "+1/days+",
+  "1/(person-days)"
+)
+```
+
+
+
+
+**Essay 4**: Explain how you know the units for $\beta$. In your answer, be sure to include what the units are for S, I, and N.
+
+
+## Running the model
+
+Having estimated the parameters $\alpha$ and $\beta$ we have in effect *calibrated* the model and we're ready to go. The initial conditions will be $S(0) = 100000$, $I(0) =$ small, and $R(0)=0$.
+
+Here are the differential equations and the commands for numerical integration. The parameters have been set up so that you need only specify your value for $\alpha$ and for the doubling time. $\beta$ is calculated based on those two quantities. 
+
+```{r p4, results="hide"}
+# parameters
+N <- 100000 #initial condition for S
+alpha <- 0.2 #something you will change along with the next line doubling time
+doubling_time <- 20 # days
+beta <- alpha + log(2)/doubling_time
+# tilde expressions for dynamics
+Sdot <- dS ~ - beta * S * I / N 
+Idot <- dI ~   beta * S * I / N - alpha * I
+Rdot <- dR ~                    + alpha * I
+# turn the crank
+Soln <- integrateODE(Sdot, Idot, Rdot, 
+                     S=100000, I=100, R=0, 
+                     N = N, beta = beta, alpha=alpha, 
+                     tdur=list(from=0, to=500, dt=.2)) #this step finds the solution to the differential equations, additionally there are important initial conditions in this formula that you will want to change at later steps in this project
+traj_plot(S(t) ~ t, Soln)
+traj_plot(I(t) ~ t, Soln) %>% gf_refine(scale_y_log10())
+traj_plot(R(t) ~ t, Soln)
+```
+
+Two quantities are of particular interest in public health: the fraction of the population that falls ill and the peak rate of new infection. The latter is relevant to the peak load on the medical system. The former indicates how likely a "average" person is to get the disease at some point in the outbreak. You can read both these quantities off the graphs.
+
+The peak rate of infection and the population fraction are presumably related to the parameters $\alpha$ and $\beta$. Try modifying these slightly to see what the relationship is.  You'll have to be careful in interpreting the meaning of "slightly." You want the changes to be "slight" in terms of the physical meaning of the parameters, perhaps doubling or halving the physical manifestation of the numerical value of the parameters. 
+
+**Essay 5**: How does halving the quantity "doubling time" affect the population fraction? Ensure you have the value for alpha that you calculated to start in the code.
+
+**Essay 6**: How does doubling the quantity "doubling time" affect the peak infection rate?
+
+**Essay 7**: How does doubling the quantity "recovery rate" affect the population fraction? Ensure your doubling rate has been returned to a value of 20.
+
+**Essay 8**: How does halving the quantity "recovery rate" affect the peak infection rate?
+
+For the previous answers you should use your calculated $\alpha$ and $\beta$ from before. In order to better understand the affect of these parameters, you can see what happens when the parameter changes aren't slight, try doubling $\beta$ while leaving $\alpha$ alone. You can accomplish this by inserting a line `beta <- ` your number in place of the existing calculation of $\beta$.  Use R to calculate what the doubled value of $\beta$ should be.
+
+
+**Essay 9**: Describe how that doubling of $\\beta$ changes the course of the epidemic. Be sure to mention the the terms "peak rate of infection" and "population fraction" in your answer.
+
+## Intervening
+
+Many different forms of public-health interventions are available, e.g. mask wearing, closing businesses or schools, vaccination. In terms of the model, these all come down to adjusting the values of the parameters $\alpha$ and/or $\beta$, or changing the initial conditions of the model. 
+
+For instance, the effect of social distancing might be modeled by increasing the doubling time for transmission. Vaccination could be modeled by moving people from the $S$ compartment to the $R$ compartment. You can do this in the code by manipulating the terms in the IntegrateODE function.
+
+**Essay 10**: Suppose at the start of the epidemic you could vaccinate 70% of the population with a vaccine that is only 50% effective. Run the model to find out how would this change the population fraction and peak infection rate. Your answer should be supported by numbers and not simply be guesses about what would occur."
+
+**Essay 11**: [Short Answer] Herd immunity refers to a situation where the number of infectives does not grow. Try moving various fractions of the population from $S$ to $R$ to find the threshold for herd immunity. What is this threshold when you use your previously calculated alpha and beta values?
+
+Another way to intervene is to change $\alpha$. You might think that $\alpha$ depends only on the biology of recovery, but this is not so. For instance, you can sequester people identified as infected or at high risk of becoming infective. Tools such as contact tracing are useful for this.
+
+One of the strategies used in China to contain the outbreak in March and April 2020 was to isolate infectives. Voluntarily or not, those with a positive COVID test were removed from their families and placed in hospitals, some of which had been [specially constructed at short notice](https://www.usnews.com/news/health-news/articles/2021-01-16/china-builds-hospital-in-5-days-after-surge-in-virus-cases#:~:text=BEIJING%20(AP)%20%E2%80%94%20China%20on,people%20or%20goods%20from%20abroad.). Widespread, rapid testing and response can also help to reduce the time that an infective is in contact with susceptibles.
+
+**Essay 12**: Would sequestering infectives correspond to an increase in $\alpha$ or a decrease? Investigate the effect of such a change on the course of the epidemic and report your results. Your answer should be numerically supported.
+
+## An endemic future?
+
+A feature of the SIR model as stated here is that the rate of new infectives eventually falls to zero; the outbreak comes to an end. In the real world, however, diseases can become *endemic*, meaning that there is always a background rate of new infections that can smolder until such time as the susceptible population recovers. One mechanism for this is births. The classic childhood illnesses of your grandparents' time---measles, mumps, rubella, even polio---were endemic and new outbreaks would occur as the number of susceptible children accumulated over years.
+
+Let's explore another possibility about which there has been considerable speculation. Imagine that "recovered" people regain their susceptibility at a low rate, perhaps over the course of a year or more. 
+
+This would change the $R$ component of the SIR model to look like $$\dot{R} = \alpha I - \gamma R$$ where that flow out of $R$ would become a flow *into* $S$. The value of $\gamma$ sets the time scale for becoming susceptible again.
+
+```{r sir-12b, echo=FALSE, results="markup"}
+askMC(
+  "What are the appropriate units for $\\gamma$?",   
+  "people/day",
+  "days/person",
+  "1/persons",
+  "+1/days+",
+  "1/(person-days)"
+)
+```
+
+
+**Essay 13**: Explain how an endemic state would show up in the graph of $I(t)$ versus $t$.
+
+
+Congratulations on finishing the project! The R code below will help  you play around with the model to understand even more.
+
+```{r p100}
+# parameters
+N <- 100000
+alpha <- 0.2
+doubling_time <- 20 # days
+beta <- alpha + log(2)/doubling_time
+gamma <- 0.003
+# tilde expressions for dynamics
+Sdot <- dS ~ - beta * S * I / N             + gamma*R
+Idot <- dI ~   beta * S * I / N - alpha * I
+Rdot <- dR ~                    + alpha * I - gamma*R
+# turn the crank
+Soln <- integrateODE(Sdot, Idot, Rdot, 
+                     S=100000, I=100, R=0, 
+                     N = N, beta = beta, alpha=alpha, 
+                     gamma = gamma, tdur=list(from=0, to=5000, dt=.2))
+traj_plot(S(t) ~ t, Soln)
+traj_plot(I(t) ~ t, Soln) %>% gf_refine(scale_y_log10())
+traj_plot(R(t) ~ t, Soln)
+```
+
+
+

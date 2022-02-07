@@ -1,5 +1,6 @@
 ---
-title: "Instructor notes for MOSAIC Calculus"
+title: "*MOSAIC Calculus*"
+subtitle: "Instructor Notes"
 site: distill::distill_website
 ---
 
@@ -9,23 +10,33 @@ The Project MOSAIC [calculus textbook](https://projectmosaic.github.io/MOSAIC-Ca
 
 - [Block 1: Introduction to functions and computing](Block-1.html)
 
-- [Block 2: Foundations for modeling](Block-2.html)
+- [Block 1b: Foundations for modeling](Block-2.html)
+    - Project: [Lessons from Ebola](Projects/Lessons-from-ebola/Lessons-from-ebola.html)
 
-- [Block 3: Differentiation](Block-3.html)
+- [Block 2: Differentiation](Block-3.html)
+    - Projects:
+        - [How fast does a bicycle go?](Projects/Biking/Biking-speed.html)
+        - [How to walk uphill](Projects/Walking/Walking-uphill.html)
 
-- [Block 4: Anti-differentiation and accumulation](Block-4.html)
+- [Block 3: Anti-differentiation and accumulation](Block-4.html)
+    - Project: [Driving with integrals](Projects/Fuel-consumption/narrative.html)
 
-- [Block 5: Linear combinations](Block-5.html)
-
-- [Block 6: Dynamics](Block-6.html)
-
-- [Manifestations](manifestations.html)
+- [Block 4: Manifestations](manifestations.html)
     i. Operations on functions
     ii. Interpolation and splines
     iii. Optimization and constraint
     iv. Probability and evidence
     v. Present and future value
+        - Project: [Retirement and after](Projects/Retirement/retirement.html)
     vi. Mechanics
+
+- [Block 5: Linear combinations](Block-5.html)
+    - Project: [Least squares and engine scaling](Projects/Engine-scaling/Engine-scaling.html)
+
+- [Block 6: Dynamics](Block-6.html)
+    - Project: [Using a model to set policy](Projects/SIR-model/using-the-SIR-model.html)
+
+
     
 -----
 

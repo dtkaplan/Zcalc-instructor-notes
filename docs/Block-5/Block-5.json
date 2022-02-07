@@ -1,6 +1,6 @@
 [
   {
-    "path": "Block-5/2022-01-27-overview-of-block-5/",
+    "path": "Block-5/2022-01-01-overview-of-block-5/",
     "title": "Overview of Block 5",
     "description": "Motivation and objectives of Block 5",
     "author": [
@@ -13,7 +13,24 @@
     "categories": [],
     "contents": "\nThe instructor can easily see that the Block-5 chapters are about linear algebra. But the word “algebra” is missing in the title of the block. Instead, the title is Linear Combinations. In part, this is intended to help unify the text, since linear combinations appear in all of the first 4 Blocks. But also the title was selected because the canonical topics found in just about any linear algebra book are not included—for good reason.\nmatrices as rectangular arrays of numbers\ndeterminant\ngaussian elimination\nnull space\nThe approach\nThe software\nrbind(), cbind(), %dot% and so on.\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-01-27T13:40:20-07:00",
+    "last_modified": "2022-01-27T14:57:48-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "Block-5/2022-01-27-computing/",
+    "title": "Computing in Block 5",
+    "description": "Options for structuring computer commands",
+    "author": [
+      {
+        "name": "Daniel Kaplan",
+        "url": {}
+      }
+    ],
+    "date": "2022-01-27",
+    "categories": [],
+    "contents": "\nDescribe %dot%, %onto%, and %perp%.\nIt’s possible to use cbind() and rbind() in the reverse order than we do in the text, so that the construction statement looks like the matrix itself.\n\n     [,1] [,2]\n[1,]    1   10\n[2,]    2   11\n[3,]    3   12\n\nThis is well suited to presenting the matrix as it will appear. We don’t do this because we want to emphasize that a matrix is a collection of vectors, and we use only column vectors in the text.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-02-05T16:15:55-07:00",
     "input_file": {}
   }
 ]

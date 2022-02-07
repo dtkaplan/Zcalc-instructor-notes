@@ -4,7 +4,12 @@
     <title>Instructor Notes</title>
     <link>dtkaplan.github.io/Zcalc-instructor-notes</link>
     <atom:link href="dtkaplan.github.io/Zcalc-instructor-notes/writing-instructions.xml" rel="self" type="application/rss+xml"/>
+<<<<<<< HEAD
     <description>Instructor notes to accompany *MOSAIC Calculus*
+=======
+    <description>Instructor Notes to go along with the *MOSAIC Calculus*
+text
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate>

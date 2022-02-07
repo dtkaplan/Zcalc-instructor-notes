@@ -4,6 +4,7 @@
     <title>Instructor Notes</title>
     <link>dtkaplan.github.io/Zcalc-instructor-notes</link>
     <atom:link href="dtkaplan.github.io/Zcalc-instructor-notes/Block-3.xml" rel="self" type="application/rss+xml"/>
+<<<<<<< HEAD
     <description>Instructor notes to accompany *MOSAIC Calculus*
 </description>
     <generator>Distill</generator>
@@ -17,5 +18,12 @@
       <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
       <media:content url="dtkaplan.github.io/Zcalc-instructor-notes/Block-3/2022-02-04-objective-functions/cover-page.png" medium="image" type="image/png" width="533" height="557"/>
     </item>
+=======
+    <description>Instructor Notes to go along with the *MOSAIC Calculus*
+text
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate>
+>>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
   </channel>
 </rss>
