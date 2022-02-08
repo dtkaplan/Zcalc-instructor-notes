@@ -186,6 +186,7 @@ Students should be able to sketch the pattern-book functions on demand, identify
 
 Must also know derivative and anti-derivative of every pattern-book and basic-modeling function.
 
+
 ## Graphics
 
 - Graph of function of one input
@@ -194,6 +195,7 @@ Must also know derivative and anti-derivative of every pattern-book and basic-mo
 - Path 
 - Inequality constraint
 - Point plot for data
+
 
 ## Quantities vs numbers
 
