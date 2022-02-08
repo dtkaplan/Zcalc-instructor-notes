@@ -112,7 +112,7 @@ Components I could plausibly define:
 - straight lines, slopes and y-intercept
 - recognize roots of a quadratic polynomial
 - simple exponent manipulation, distinguish between $x^n$ and $n^x$
-
+- recognize functional notation, functions with one, two, ... inputs.
 
 2. A minimum set of **notation** that needs to be assimilated.
 
@@ -124,13 +124,95 @@ Components are needed for a comprehensive solution but that I could not define o
 
 - Interactive graphics system for developing concepts. 
 
+## Notation
+
+Principles:
+i. By looking at a bit of notation, you should be able to say what kind of thing it refers to.
+i. Strive to have one way of saying something and to be consistent.
+i. Notation for all functions should support functions of multiple inputs.
+i. Make **definition** explicit.
+i. Strive to be compatible with computer notation and parallel it if possible. Example: hardly any computer language will let you name something `f'` or `df/dx`.
+i. Avoid ambiguous terms, even if they are traditional.
+
+Functions: A name followed by a parenthesis. So $\sin(x)$ not $\sin x$. Can use $\sin()$ to name the function.
+    - exception: exponentials are often written with superscripts rather than parentheses: $e^{kt}$, $x^n$.
+
+Function inputs: From back of alphabet: u, v, w, x, y, z.  (These are *inputs*, not "variables." Let's leave "variables" for statistics.)
+
+Function evaluation: $f(t=3)$
+
+Function definition: 
+    - $f(x) \equiv x e^{kx}$
+    - `f <- makeFun(x * exp(k*x) ~ x)`
+    - NEVER $y = 2 x^2$ 
+
+Parameters: Following tradition, e.g. $k$, $P$, $A$, $\omega$, 
+
+Coefficients: Mostly from front of alphabet. Numerical subscripts. 
+
+Specific values of inputs: e.g. 
+    - $x_0$
+    - $x^\star$ for argmax. But maybe I shouldn't allow superscripts.
+
+Vectors and matrices are decorated with harpoons: $\stackrel{\rightharpoonup}{\mathbf u}$ and $\stackrel{\leftrightharpoons}{\mathbf A}$.
+
+Derivatives: 
+  - $\partial_t f(t)$. 
+  - `dt_f`
+
+## Small set of core functions
+
+"Pattern-book functions" don't have parameters but do have English names. All have a single input.
+
+- $\text{one}()$
+- $\text{identity}()$
+- $\text{recip}()$
+- Exponential: $e^x$
+- Power-law: $x^p$
+- Logarithm: $\ln()$
+- Sinusoid: $\sin()$ 
+- Gaussian: $\text{dnorm}()$
+- Sigmoid: $\text{pnorm}()$
+
+"Basic modeling functions" have parameters, e.g.
+
+- $\sin\left(\frac{2\pi}{P} t\right)$
+- $\text{dnorm}(x, \text{mean}, \text{sd})$
+- $e^{kt}$
+
+Students should be able to sketch the pattern-book functions on demand, identify gaps in domain (e.g. $\ln()$ and $\text{recip}()$) and horizontal and vertical asymptotes.
+
+Must also know derivative and anti-derivative of every pattern-book and basic-modeling function.
+
+## Quantities vs numbers
+
+The inputs to basic modeling functions are ***quantities*** and have a dimension and units. The outputs are also quantities.
+
+Functions created by differentiation or anti-differentiation (typically) have different output dimension.
+
+## Linear algebra
+
+Directed at two settings:
+
+1. Least squares modeling: $A \vec{x} \approx b$, find $x$ that makes the approximation the best possible.
+2. Eigenvalues/vectors (in dynamics)
+
+Matrices are collections of (column) vectors. A matrix times a vector is a linear combination of the column vectors.
+
+High level operations and concepts: 
+- projection of a vector onto a subspace
+- decomposition into projection and residual
+- solving for $\vec{x}$ 
+- Conversion of $A$ into $Q$.
+
+Topics that are ignored:
+
+- determinants: not on topic
+- inverses/singular matrices: not needed  
+
+## Dynamics
 
 
-
-
-
-
-## 
 
 
 **Title**
