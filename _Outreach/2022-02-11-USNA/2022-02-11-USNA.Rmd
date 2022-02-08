@@ -114,6 +114,8 @@ Components I could plausibly define:
 - simple exponent manipulation, distinguish between $x^n$ and $n^x$
 - recognize functional notation, functions with one, two, ... inputs.
 
+This is for students starting at Block 1. 
+
 2. A minimum set of **notation** that needs to be assimilated.
 
 3. **Computing framework** to provide a non-algebra means to work with calculus concepts.
@@ -186,7 +188,6 @@ Students should be able to sketch the pattern-book functions on demand, identify
 
 Must also know derivative and anti-derivative of every pattern-book and basic-modeling function.
 
-
 ## Graphics
 
 - Graph of function of one input
@@ -221,7 +222,9 @@ High level operations and concepts:
 Topics that are ignored:
 
 - determinants: not on topic
-- inverses/singular matrices: not needed  
+- inverses/singular matrices: not needed since hardly any
+of our matrices will be square
+- gaussian elimination or similar non-trivial
 
 ## Dynamics
 
