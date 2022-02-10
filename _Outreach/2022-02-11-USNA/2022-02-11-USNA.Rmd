@@ -10,11 +10,14 @@ output: html_document
 - A new calculus core at USAFA
 
     + Core required of all cadets: Calc I/II
+        - There's a third core "math" course not in the perview of this project: Statistics
 
     + New:  
         - Enhance student engagement to increase number of students majoring in STEM disciplines.
-        - Faculty discontent: Why are we teaching this stuff?
+        - Faculty discontent with traditional course: Why are we teaching this stuff?
       
+- This talk contains my views, as a private citizen, and doesn't necessarily reflect any official view of the USAFA.
+
 
 ## Timeline
 
@@ -39,6 +42,75 @@ output: html_document
 
 + August 2022: Anticipated full deployment: 
     - approximately 25 faculty and 800 cadets
+
+## Goals for USAFA Calculus
+
+- Provide a useful introduction to 
+
+    - The use and analysis of multivariate functions and multi-dimensional space.
+
+    - Develop basic competencies in the mathematics and phenomena of dynamical systems, e.g. behavior and analysis of ordinary differential equations.
+
+    - Lay the foundations for building and understanding models based on data. 
+        - Not including statistical inference. 2022-2023 project will be about statistics. I would like to tie it closely to the calculus core, but that's just my view.
+    
+- Be accessible and meaningful to students who haven't studied calculus previously.
+
+- Fit into 6 credit hours over two semesters.
+
+## The elephant in the room
+
+1. Many students don't succeed with differential or integral calculus.
+2. Because they don't succeed in the introductory phases, they traditionally don't reach the more "advanced" topics we set as our goals. (Previous slide.) 
+    - Very few fields outside of engineering, physics, and engineering have any requirements in these advanced topics.
+    - Traditionally, intro- or mid-level stats does not either. But is this sustainable in an era of data-science and machine learning? 
+
+## Review: Some ways to deal with low success rates
+
+1. Change the goal: Don't require calculus. Substitute statistics instead.
+    i. A solid idea for students in health sciences, where the calculus had no genuine connections to the downstream courses.
+2. Divide students by aptitude. 
+    i. Remediation such as pre-calculus or "college algebra."
+        - Poor record of leading to success.
+    ii. Streamlined courses such as "business calculus."
+        - "Business calculus" doesn't reach the topics we're interested in here.
+    iii. Place high-aptitude students into advanced courses.
+        - Doesn't address the core problem of low success rates.
+    
+USAFA has a "core course" philosophy, so these approaches don't apply.
+
+## A third way
+
+This is a metaphor.
+
+> *The "Third Way" is used to refer to a set of political beliefs and principles that is neither extremely right-wing nor extremely left-wing.* --- Collins Dictionary
+
+> *Third way, in politics, a proposed alternative between two hitherto dominant models, namely left-wing and right-wing political groups.* --- Encyclopaedia Britannica
+
+> *A political movement in which the development of business* [substitute: "skills for downstream study"] *is balanced with the needs of society* [substitute: "accessibility to students].* --- Cambridge English dictionary
+
+
+
+
+## A third way?
+
+Note the ***?***
+
+We have almost 20 years of experience with this approach at Macalester College:
+
+- Initially, a "terminal" course, *Applied Calculus* to support students whose major requires "a single semester" of calculus.
+    i. Unexpectedly turned into a gateway to advanced study for students who never knew there were genuine **applications** of math. This doubled the number of math majors and led to new majors in *Applied Math and Statistics* and, recently, *Data Science*.
+        - The doubling occurred < 2010. Since then, enrollment has continued to soar, but this is due to external factors. Math/Applied/Stat/Data-Science majors are now about 10% of all graduates.
+- Now is the first of a three-course sequence: *Applied Multivariate Calculus I/II/III*
+- About half of all students take one or more of the courses.
+
+**But only half**. A sort of self-selected tracking so not representative of the situations in a core course.
+
+- Finishing two years experience at USAFA, 500+ students. But little data yet on downstream success. 
+
+## Our third way
+
+
 
 ## This presentation
 
