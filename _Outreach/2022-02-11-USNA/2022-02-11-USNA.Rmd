@@ -1,8 +1,14 @@
 ---
 title: "Remodeling the mathematics core at USAFA"
 author: "Daniel Kaplan"
-date: "US Naval Academy Feb 11, 2022"
-output: ioslides_presentation
+date: "USNA 02-11-2022"
+output:
+  beamer_presentation:
+    theme: AnnArbor
+    colortheme: dolphin
+    fonttheme: structurebold
+  ioslides_presentation: null
+  slidy_presentation: default
 ---
 
 ## Introduction
@@ -107,8 +113,6 @@ What evidence do we have that this will work. Some, but limited.
 - Initially, a "terminal" course, *Applied Calculus* to support students whose major requires "a single semester" of calculus.
     i. Unexpectedly turned into a gateway to advanced study for students who never knew there were genuine **applications** of math. This doubled the number of math majors and led to new majors in *Applied Math and Statistics* and, recently, *Data Science*.
     ii. The doubling occurred < 2010. Since then, enrollment has continued to soar, but due to external factors. 
-    
-## *Applied Calculus* (cont.)
 - Now is the first of a three-course sequence: *Applied Multivariate Calculus I/II/III*
 - About half of all students take one or more of the courses.
 
@@ -170,10 +174,15 @@ Example: is finite-difference derivative numerically stable as $dt$ gets smaller
     
 ## Calculus techniques
 
-That is, the computational techniques used in applications of calculus
+The computational techniques used in applications of calculus
     
 - Small, enumerated set of calculus operations: "something you do to a function."
-    - function evaluation, differentiation, anti-differentiation, solving, argmax, iteration.
+    i. function evaluation, 
+    i. differentiation, 
+    i. anti-differentiation, 
+    i. solving, 
+    i. argmax, 
+    i. iteration.
     
 - All have computational implementation.
 - Most have graphical implementation.
@@ -229,8 +238,11 @@ Derivatives:
 
 "Pattern-book functions" don't have parameters but do have English names. All have a single input.
 
-- $\text{one}()\ \ \ \ \ \text{identity}()\ \ \ \ \  \text{recip}()$
-- Exponential: $e^x$ &  Logarithm: $\ln()$
+- $\text{one}()$
+- $\text{identity}()$
+- $\text{recip}()$
+- Exponential: $e^x$ 
+- Logarithm: $\ln()$
 - Power-law: $x^p$
 - Sinusoid: $\sin()$ 
 - Gaussian: $\text{dnorm}()$
