@@ -1,0 +1,93 @@
+---
+title: "ASEE June 2022 Paper"
+author:
+  - name: Danny Kaplan
+  - name: Michael Brilleslyper
+date: Draft as of 01-30-2022
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+This paper describes a new calculus course founded in a radical rethinking of the priority of calculus topics and the extent to which "advanced" topics such as multivariate functions, linear algebra, and differential equations can be meaningfully included in a two-semester introductory course that is a suitable preparation for engineering and other STEM disciplines. In addition, we sought  to make strong connections between calculus and other components of a modern student's quantitative education: data and computing. The textbook for the course is [freely available online](http://www.mosaic-web.org/MOSAIC-Calculus/).
+
+Two widely acknowledged sources of concern about how calculus is taught are (a) the high rate of attrition in calculus courses, which acts as a substantial barrier to students completing studies in STEM fields and (b) broad dissatisfaction among faculty in other disciplines that the required calculus courses have not prepared students well for their downstream courses. The rate of attrition for pre-engineering students who start calculus in their first year of university is roughly 50%. (The problem is far, far worse at the community college level.) As for (b), some of this stems from the emphasis on theory (e.g. limits, convergence) in many calculus courses, some stems from failing to use realistic and relevant contexts, some from students using high-school calculus courses to replace university courses, some from a failure in many calculus courses to develop basic modeling skills, and some from unreasonable expectations and the general need to review calculus topics before using them in a new context. 
+
+There are many perspectives on how to address these concerns. [CITE: "A systematic review of models for calculus course innovations" (2019 Watson, Ghanat, et al.)] Among these are the calculus reform movement which successfully introduced graphical and word formats for describing functions, moving calculus courses to applied departments, bringing disciplinary subject experts to enliven mathematics department courses, shifting to modeling rather than mathematical theory as the organizing theme, providing prequels to calculus courses such as the modeling course that starts off the core curriculum at USMA [(https://s3.amazonaws.com/usma-media/inline-images/academics/academic_departments/mathematical_sciences/pdfs/Core_Math_Book_AY22_signed.pdf).)] or the EGR 1010 at Wright State University [[web page](https://engineering-computer-science.wright.edu/research/engineering-mathematics-topics-and-materials)]]
+
+In our redesign of calculus, we sought to frame an essential core of calculus concepts that can be the basis for work in all STEM fields, and sought to frame the presentation of those topics in a way that is widely accessible to prospective STEM students. That essential core includes topics that are typically regarded as "advanced" such as linear algebra and differential equations. In order to make room for those topics not typically found in a two-semester sequence, we had to carefully reconsider the inclusion of some early topics that are widely considered to be the canon of calculus. We've also had to find means to make the advanced topics accessible to students at the Calc I level.
+
+## Core topics
+
+The two-semester course is based on a set of core calculus topics that we identified as being central to quantitative work in STEM areas. Many of these will be uncontroversial. 
+
+1. Constructing functions for modeling purposes
+2. Dimensional analysis and units 
+3. Differentiation and anti-differentiation
+4. Accumulation
+5. Optimization
+6. Dynamics and oscillation
+7. Vectors and linear combinations
+
+This list avoids using names of courses. For instance, items (6) and (7) will be recognized by many as "differential equations" and "linear algebra." In covering a topic we take care to choose only features that are essential to our purpose. Much of the material in conventional courses is there out of tradition and because the courses were designed without attention to how the subject matter would be used in students' later courses and work. 
+
+For example, a typical linear algebra course will treat determinants and matrix inverses with an eye to finding exact and unique solutions and use Gaussian elimination as a solution technique. We cover none of these topics. Instead, we focus on vector decomposition and solutions to overdetermined systems of equations: tools for the sorts of problems encountered in elementary physics and in statistics.
+
+Dynamics and oscillation emphasizes constructing models and the phenomena seen in dynamical systems. The many techniques of solution encountered in traditional differential equations courses are not covered, except for linear, constant coefficient equations. Our objective is for students to be comfortable working with oscillation. (Another side objective is to introduce eigenvalues and eigenvalues.)
+
+## Advanced but accessible
+
+There are two dominant approaches to providing accessibility to calculus topics. They are so pervasive that they are often taken for granted and unnoticed. One is the provision of pre-calculus courses or remediation to prepare students for calculus. The second is the division of students, according to mathematical aptitude, into courses with different levels of difficulty and pacing. Remediation entails its own difficulty, since it imposes extra burdens rather than removing them. Division of students, often done not based directly on ability but rather by discipline (e.g. "business calculus"), raises the question of whether the students in the most accessible calculus courses are getting the preparation they need to study alongside students who take more advanced courses. Division also makes it difficult for faculty in downstream courses to know what students learned in calculus and how they learned it.
+
+Our course was designed to be compatible with a "core curriculum" style, where the large majority of students are taking exactly the same courses, even if they have had nominal contact with the topics in high-school. The core curriculum style has advantages as well as disadvantages, which we won't debate here. Since USAFA has a core curriculum, designing course to fit in this framework was a given. Thus, the course had to be suited to a considerable diversity of mathematical aptitudes. The core is required of all students, so the courses have to be accessible to students with their actual math background as opposed to some ideal background. Furthermore, the institution wanted the course to increase the motivation of students to major in STEM disciplines, so the course has to demonstrate convincingly the genuine power of mathematics to the sciences.
+
+Our approach to accessibility to a diverse audience involves three major strategies. The first is to arrange the subjects and their presentation as much as possible to play to students' cognitive strengths rather than weaknesses. The second is motivational: to make sure that students see genuine connections with their downstream courses as opposed to topics of theoretical interest that will never be encountered again in their careers.
+
+The third strategy can be described as "avoiding gratuitous algebra." Society has many decades of experience with teaching and learning algebra. It is clear that many or most students do not gain a mastery of the subject that suits them for success in traditional calculus courses. It is also clear that we should not expect a pedagogical innovation that will lead students to such mastery. 
+
+Algebra is a natural language for calculus and we are skeptical that a meaningful calculus course can be taught without it. Yet much of the algebra encountered in traditional calculus courses is not necessary. Take l'Hopital's rule as an example. The indeterminate forms involved do not often come up in applications and, when they do, they can be easily resolved by making a plot of the function involved. Another example is Taylor Series. What's taught under that name is more properly called Taylor Polynomials, since the issues of convergence cannot be handled without the tools of the complex plane. The most commonly used polynomial expansions are linear and occasionally quadratic. Constructing higher order terms seems mainly to be a source of exercises in computing derivatives. Much the same is true for l'Hopital's rule.
+
+Much algebra is eliminated by focusing the course on a compact set of "pattern-book" functions that are frequently seen in applications and that are closely connected through differentiation and anti-differentiation. In addition to the usual exponential, power-law, logarithmic, and sinusoid functions, we include the gaussian and its sigmoidal-shaped anti-derivative. Hump and sigmoidal functions are important for constructing models, and the gaussian and it's anti-derivative appear in many applications.
+
+But not all algebra is eschewed. Students are drilled to learn the symbolic derivatives and anti-derivatives of every one of the pattern-book functions. Typically, these derivatives and anti-derivatives are themselves members of the pattern-book family. They are also drilled to learn derivatives and anti-derivatives of the pattern-book functions composed with a linear interior function. The general chain rule and product rule are also covered, again emphasizing the pattern-book functions.
+
+In dynamics, quantitative analysis of linear dynamics near fixed points is covered algebraically. Although many aspects of dynamics can be presented visually, including eigenvectors, there appears to be little alternative to algebra when introducing complex exponentials and resonance. Fortunately, these topics come at the end of the course, helping to avoid student anxiety. And, although we handle initial-value problems generally, we avoid constructing explicit solutions when complex exponentials are involved, focusing instead on stability and frequency.
+
+## Graphics and computing
+
+Pretty much every topic in the two-semester course is presented in three ways: symbolic manipulation, graphics, and computational (which encompasses the production of graphics.) Students can largely succeed in the course by mastering the graphic solution of problems. Early on this includes functions with two inputs, so students make considerable use of contour plots. Gradients are studied algebraically, but also thoroughly in terms of their properties graphically in the context of contour plots. 
+
+In the dynamics section, we take advantage of the representation of high-order equations by systems of first-order equations. We work extensively with two-dimensional systems that can be graphed as a flow and where fixed points can be identified through the length of the flow vectors. Students learn to use a numerical ODE solver, so trajectories in any differential equation problem they are posed can be readily found. For the most part the emphasis is on identifying fixed points and solving the linearized equations around fixed points.
+
+Students construct linear combinations throughout the course in a variety of contexts. In the second semester, we introduce techniques for finding the coefficients on linear combinations of high-dimensional vectors. But the techniques are developed first graphically and geometrically in two-dimensional spaces. One the computer, students work with constructing orthogonal bases for subspaces using basic operations, e.g. dot products, subtraction, and so on. Only for the large-scale problems is black-box computer software used. Even there, basic computations are used to demonstrate that the solution has the necessary properties. 
+
+Not every student has an aptitude for quantitative analysis of graphics, but many do and can succeed in the course by demonstrating their understanding of the mathematical topics. This dramatically increases the accessibility of the course to algebraically limited students.
+
+Very few students come with meaningful preparation in technical computing. As a partial substitute for algebraic manipulation, students are expected to be able to problem solve using software. The use of software also expands the range of problems students can solve, for instance constructing functions from data by fitting or with splines or basis set expansions.
+
+One of our goals in using computing is to enhance their preparation for computer programming courses. There are some basic skills and concepts that can be mastered in the context of a calculus course, giving the students a head start in programming. Students learn to use computer notation carefully, to identify the elements of syntax (e.g. names, function application, argument lists), and get practice with the typographical skills needed to construct computer commands. To a very great extent, only three types of objects are created by the operators used in the course: functions, data frames, and graphics. All three of these can be the inputs to further computations. The commands used in the course are tightly integrated and use a shared interface. So the commands for drawing a graph of a function are practically identical to the commands for integrating a function and are very similar to commands for fitting functions to data or constructing derivatives and anti-derivatives, finding zeros of functions, finding argmax/argmin, and iteration. 
+
+For the course, learning computing is essentially learning a form of notation. Programming constructions such as loops and accumulators, branching, and indexing are not needed and not covered. (A considerable amount of work was needed to make the computing so easy.) We use the R language, which not only is effective for calculus but makes a direct connection to statistics and data science, which students study later in the core curriculum. Other institutions might prefer to use software systems such as MATLAB. We think it would be challenging to both students and faculty to use a language such as Python. Ironically, systems that are very powerful for symbolic calculations, such as Mathematica, are we think too close to traditional mathematical notation for students to gain the perspective that comes with using a designed rather than traditional notation.
+
+## Results
+
+It is not foreordained that we can achieve general accessibility of the course to students with diverse preparations and aptitudes. As we gain experience with the course, we find ways to streamline and unify topics and to avoid inconsistency in notation. But the basic premise that we can teach calculus concepts and methods, including "advanced" topics, in a way that applies and transfers well to students' future studies needs empirical testing. 
+
+There is already more than a decade's experience with many components of the approach at Macalester College. The germ of our course comes from Macalester's introductory course Applied Multivariate Calculus I. That course has been a considerable success at Macalester. As described in [David Bressoud (2018) "Calculus as a modeling course at Macalester College"], "Learning why calculus is useful has attracted many students into further courses. It has also led to beefing up our upper division applied mathematics and statistics options." 
+
+The success of the Macalester course is heartening. The course is required for several majors, but not uniformly for all students. Thus the Macalester experience does not cover the full range of student aptitudes and attitudes encountered in a require core course.
+
+Also heartening is our experience with innovations in other topics such as teaching introductory statistics as multivariate statistical modeling [citation to ISM] and integrating professional-level computing into statistics courses. These innovations were initially treated with extreme skepticism, but have since became widespread practices nationally. Still, this experience is no demonstration that the USAFA course will succeed.
+
+The first cohort of 150 students took the new calculus course in 2020-2021. The second, with 400 students, took the course in 2021-2022. In the short term, we can only conduct internal evaluation of the course: looking at student performance on exams, student course evaluations which can reveal attitudes towards the course's utility and accessibility, and, importantly, the ability of faculty to engage with and master an approach which is very different from their previous experience. For certain components of the course, such as symbolic differentiation and anti-differentiation, we have inserted into our exam questions from the traditional calculus course to assess whether the students in the new course achieve a comparable level of mechanical skills. [Preliminary indications are that they do. We hope to have much more data released for publication at the end of this academic year.]
+
+Such internal evaluation can help to identify imminent failure but not to assess ultimate success. For that, we will be monitoring student progress in downstream courses in other departments, looking at possible changes in enrollment patterns, and interviewing faculty in other departments for their appraisal of student preparedness. 
+
+For the 550 students who took the new course in 2020-21 and 2021-22, we have a ready control group: the 1050 students who took the conventional course at the same time. This may not give a complete picture because the new course is both being refined and being taught largely by senior, experienced faculty. From 2022 on, the new course will completely replace the conventional one, so we will have only historical controls. 
+
+

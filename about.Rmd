@@ -11,3 +11,6 @@ knitr::opts_chunk$set(echo = FALSE)
 Put in links to the USNA talk and the ASEE paper. 
 
 Also, explain how the categories and tags work.
+
+
+- 2022-02-11 USNA *Remodeling the mathematics core at USAFA* [html](Outreach/2022-02-11-USNA/2022-02-11-USNA.html) [pdf](Outreach/2022-02-11-USNA/2022-02-11-USNA.pdf)

@@ -86,635 +86,37 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Instructor Notes: *MOSAIC Calculus*</title>
+  <title>ASEE June 2022 Paper</title>
 
 
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-01-30"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-01-30"/>
+  <meta name="article:author" content="Danny Kaplan"/>
+  <meta name="article:author" content="Michael Brilleslyper"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Instructor Notes: *MOSAIC Calculus*"/>
+  <meta property="og:title" content="ASEE June 2022 Paper"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Instructor Notes"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Instructor Notes: *MOSAIC Calculus*"/>
+  <meta property="twitter:title" content="ASEE June 2022 Paper"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","site"]}},"value":[{"type":"character","attributes":{},"value":["*MOSAIC Calculus*"]},{"type":"character","attributes":{},"value":["Instructor Notes"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["ASEE June 2022 Paper"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Danny Kaplan"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Michael Brilleslyper"]}]}]},{"type":"character","attributes":{},"value":["Draft as of 01-30-2022"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["asee-june-2022-paper_files/anchor-4.2.2/anchor.min.js","asee-june-2022-paper_files/bowser-1.9.3/bowser.min.js","asee-june-2022-paper_files/distill-2.2.21/template.v2.js","asee-june-2022-paper_files/header-attrs-2.11/header-attrs.js","asee-june-2022-paper_files/jquery-3.6.0/jquery-3.6.0.js","asee-june-2022-paper_files/jquery-3.6.0/jquery-3.6.0.min.js","asee-june-2022-paper_files/jquery-3.6.0/jquery-3.6.0.min.map","asee-june-2022-paper_files/popper-2.6.0/popper.min.js","asee-june-2022-paper_files/tippy-6.2.7/tippy-bundle.umd.min.js","asee-june-2022-paper_files/tippy-6.2.7/tippy-light-border.css","asee-june-2022-paper_files/tippy-6.2.7/tippy.css","asee-june-2022-paper_files/tippy-6.2.7/tippy.umd.min.js","asee-june-2022-paper_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2030,15 +1432,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="asee-june-2022-paper_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="asee-june-2022-paper_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="asee-june-2022-paper_files/popper-2.6.0/popper.min.js"></script>
+  <link href="asee-june-2022-paper_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="asee-june-2022-paper_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="asee-june-2022-paper_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="asee-june-2022-paper_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="asee-june-2022-paper_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="asee-june-2022-paper_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="asee-june-2022-paper_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -2050,81 +1453,74 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"*MOSAIC Calculus*","authors":[]}
+{"title":"ASEE June 2022 Paper","authors":[{"author":"Danny Kaplan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Michael Brilleslyper","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-01-30T00:00:00.000+00:00","citationText":"Kaplan & Brilleslyper, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Instructor Notes</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>MOSAIC Calculus</h1>
+<h1>ASEE June 2022 Paper</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
 </div>
 
+<div class="d-byline">
+  Danny Kaplan  
+  
+,   Michael Brilleslyper  
+  
+<br/>Draft as of 01-30-2022
+</div>
 
 <div class="d-article">
-<p>The Project MOSAIC <a href="https://projectmosaic.github.io/MOSAIC-Calculus">calculus textbook</a> is divided into six blocks and a collection of “manifestations.” Depending on the goals for the course being taught different blocks can be included.</p>
-<ul>
-<li><p>Preface: What is calculus?</p></li>
-<li><p><a href="Block-1.html">Block 1: Introduction to functions and computing</a></p></li>
-<li><p><a href="Block-2.html">Block 1b: Foundations for modeling</a></p>
-<ul>
-<li>Project: <a href="Projects/Lessons-from-ebola/Lessons-from-ebola.html">Lessons from Ebola</a></li>
-</ul></li>
-<li><p><a href="Block-3.html">Block 2: Differentiation</a></p>
-<ul>
-<li>Projects:
-<ul>
-<li><a href="Projects/Biking/Biking-speed.html">How fast does a bicycle go?</a></li>
-<li><a href="Projects/Walking/Walking-uphill.html">How to walk uphill</a></li>
-</ul></li>
-</ul></li>
-<li><p><a href="Block-4.html">Block 3: Anti-differentiation and accumulation</a></p>
-<ul>
-<li>Project: <a href="Projects/Fuel-consumption/narrative.html">Driving with integrals</a></li>
-</ul></li>
-<li><p><a href="manifestations.html">Block 4: Manifestations</a></p>
-<ol type="i">
-<li>Operations on functions</li>
-<li>Interpolation and splines</li>
-<li>Optimization and constraint</li>
-<li>Probability and evidence</li>
-<li>Present and future value
-<ul>
-<li>Project: <a href="Projects/Retirement/retirement.html">Retirement and after</a></li>
-</ul></li>
-<li>Mechanics</li>
-</ol></li>
-<li><p><a href="Block-5.html">Block 5: Linear combinations</a></p>
-<ul>
-<li>Project: <a href="Projects/Engine-scaling/Engine-scaling.html">Least squares and engine scaling</a></li>
-</ul></li>
-<li><p><a href="Block-6.html">Block 6: Dynamics</a></p>
-<ul>
-<li>Project: <a href="Projects/SIR-model/using-the-SIR-model.html">Using a model to set policy</a></li>
-</ul></li>
-</ul>
-<hr />
-<p><a href="writing-instructions.html">Writing for this blog</a></p>
-<p><a href="ObjectiveTracking/Using-objectives.html">Keeping track of objectives</a></p>
+<p>This paper describes a new calculus course founded in a radical rethinking of the priority of calculus topics and the extent to which “advanced” topics such as multivariate functions, linear algebra, and differential equations can be meaningfully included in a two-semester introductory course that is a suitable preparation for engineering and other STEM disciplines. In addition, we sought to make strong connections between calculus and other components of a modern student’s quantitative education: data and computing. The textbook for the course is <a href="http://www.mosaic-web.org/MOSAIC-Calculus/">freely available online</a>.</p>
+<p>Two widely acknowledged sources of concern about how calculus is taught are (a) the high rate of attrition in calculus courses, which acts as a substantial barrier to students completing studies in STEM fields and (b) broad dissatisfaction among faculty in other disciplines that the required calculus courses have not prepared students well for their downstream courses. The rate of attrition for pre-engineering students who start calculus in their first year of university is roughly 50%. (The problem is far, far worse at the community college level.) As for (b), some of this stems from the emphasis on theory (e.g. limits, convergence) in many calculus courses, some stems from failing to use realistic and relevant contexts, some from students using high-school calculus courses to replace university courses, some from a failure in many calculus courses to develop basic modeling skills, and some from unreasonable expectations and the general need to review calculus topics before using them in a new context.</p>
+<p>There are many perspectives on how to address these concerns. [CITE: “A systematic review of models for calculus course innovations” (2019 Watson, Ghanat, et al.)] Among these are the calculus reform movement which successfully introduced graphical and word formats for describing functions, moving calculus courses to applied departments, bringing disciplinary subject experts to enliven mathematics department courses, shifting to modeling rather than mathematical theory as the organizing theme, providing prequels to calculus courses such as the modeling course that starts off the core curriculum at USMA [(<a href="https://s3.amazonaws.com/usma-media/inline-images/academics/academic_departments/mathematical_sciences/pdfs/Core_Math_Book_AY22_signed.pdf" class="uri">https://s3.amazonaws.com/usma-media/inline-images/academics/academic_departments/mathematical_sciences/pdfs/Core_Math_Book_AY22_signed.pdf</a>).)] or the EGR 1010 at Wright State University [<a href="https://engineering-computer-science.wright.edu/research/engineering-mathematics-topics-and-materials">web page</a>]]</p>
+<p>In our redesign of calculus, we sought to frame an essential core of calculus concepts that can be the basis for work in all STEM fields, and sought to frame the presentation of those topics in a way that is widely accessible to prospective STEM students. That essential core includes topics that are typically regarded as “advanced” such as linear algebra and differential equations. In order to make room for those topics not typically found in a two-semester sequence, we had to carefully reconsider the inclusion of some early topics that are widely considered to be the canon of calculus. We’ve also had to find means to make the advanced topics accessible to students at the Calc I level.</p>
+<h2 id="core-topics">Core topics</h2>
+<p>The two-semester course is based on a set of core calculus topics that we identified as being central to quantitative work in STEM areas. Many of these will be uncontroversial.</p>
+<ol type="1">
+<li>Constructing functions for modeling purposes</li>
+<li>Dimensional analysis and units</li>
+<li>Differentiation and anti-differentiation</li>
+<li>Accumulation</li>
+<li>Optimization</li>
+<li>Dynamics and oscillation</li>
+<li>Vectors and linear combinations</li>
+</ol>
+<p>This list avoids using names of courses. For instance, items (6) and (7) will be recognized by many as “differential equations” and “linear algebra.” In covering a topic we take care to choose only features that are essential to our purpose. Much of the material in conventional courses is there out of tradition and because the courses were designed without attention to how the subject matter would be used in students’ later courses and work.</p>
+<p>For example, a typical linear algebra course will treat determinants and matrix inverses with an eye to finding exact and unique solutions and use Gaussian elimination as a solution technique. We cover none of these topics. Instead, we focus on vector decomposition and solutions to overdetermined systems of equations: tools for the sorts of problems encountered in elementary physics and in statistics.</p>
+<p>Dynamics and oscillation emphasizes constructing models and the phenomena seen in dynamical systems. The many techniques of solution encountered in traditional differential equations courses are not covered, except for linear, constant coefficient equations. Our objective is for students to be comfortable working with oscillation. (Another side objective is to introduce eigenvalues and eigenvalues.)</p>
+<h2 id="advanced-but-accessible">Advanced but accessible</h2>
+<p>There are two dominant approaches to providing accessibility to calculus topics. They are so pervasive that they are often taken for granted and unnoticed. One is the provision of pre-calculus courses or remediation to prepare students for calculus. The second is the division of students, according to mathematical aptitude, into courses with different levels of difficulty and pacing. Remediation entails its own difficulty, since it imposes extra burdens rather than removing them. Division of students, often done not based directly on ability but rather by discipline (e.g. “business calculus”), raises the question of whether the students in the most accessible calculus courses are getting the preparation they need to study alongside students who take more advanced courses. Division also makes it difficult for faculty in downstream courses to know what students learned in calculus and how they learned it.</p>
+<p>Our course was designed to be compatible with a “core curriculum” style, where the large majority of students are taking exactly the same courses, even if they have had nominal contact with the topics in high-school. The core curriculum style has advantages as well as disadvantages, which we won’t debate here. Since USAFA has a core curriculum, designing course to fit in this framework was a given. Thus, the course had to be suited to a considerable diversity of mathematical aptitudes. The core is required of all students, so the courses have to be accessible to students with their actual math background as opposed to some ideal background. Furthermore, the institution wanted the course to increase the motivation of students to major in STEM disciplines, so the course has to demonstrate convincingly the genuine power of mathematics to the sciences.</p>
+<p>Our approach to accessibility to a diverse audience involves three major strategies. The first is to arrange the subjects and their presentation as much as possible to play to students’ cognitive strengths rather than weaknesses. The second is motivational: to make sure that students see genuine connections with their downstream courses as opposed to topics of theoretical interest that will never be encountered again in their careers.</p>
+<p>The third strategy can be described as “avoiding gratuitous algebra.” Society has many decades of experience with teaching and learning algebra. It is clear that many or most students do not gain a mastery of the subject that suits them for success in traditional calculus courses. It is also clear that we should not expect a pedagogical innovation that will lead students to such mastery.</p>
+<p>Algebra is a natural language for calculus and we are skeptical that a meaningful calculus course can be taught without it. Yet much of the algebra encountered in traditional calculus courses is not necessary. Take l’Hopital’s rule as an example. The indeterminate forms involved do not often come up in applications and, when they do, they can be easily resolved by making a plot of the function involved. Another example is Taylor Series. What’s taught under that name is more properly called Taylor Polynomials, since the issues of convergence cannot be handled without the tools of the complex plane. The most commonly used polynomial expansions are linear and occasionally quadratic. Constructing higher order terms seems mainly to be a source of exercises in computing derivatives. Much the same is true for l’Hopital’s rule.</p>
+<p>Much algebra is eliminated by focusing the course on a compact set of “pattern-book” functions that are frequently seen in applications and that are closely connected through differentiation and anti-differentiation. In addition to the usual exponential, power-law, logarithmic, and sinusoid functions, we include the gaussian and its sigmoidal-shaped anti-derivative. Hump and sigmoidal functions are important for constructing models, and the gaussian and it’s anti-derivative appear in many applications.</p>
+<p>But not all algebra is eschewed. Students are drilled to learn the symbolic derivatives and anti-derivatives of every one of the pattern-book functions. Typically, these derivatives and anti-derivatives are themselves members of the pattern-book family. They are also drilled to learn derivatives and anti-derivatives of the pattern-book functions composed with a linear interior function. The general chain rule and product rule are also covered, again emphasizing the pattern-book functions.</p>
+<p>In dynamics, quantitative analysis of linear dynamics near fixed points is covered algebraically. Although many aspects of dynamics can be presented visually, including eigenvectors, there appears to be little alternative to algebra when introducing complex exponentials and resonance. Fortunately, these topics come at the end of the course, helping to avoid student anxiety. And, although we handle initial-value problems generally, we avoid constructing explicit solutions when complex exponentials are involved, focusing instead on stability and frequency.</p>
+<h2 id="graphics-and-computing">Graphics and computing</h2>
+<p>Pretty much every topic in the two-semester course is presented in three ways: symbolic manipulation, graphics, and computational (which encompasses the production of graphics.) Students can largely succeed in the course by mastering the graphic solution of problems. Early on this includes functions with two inputs, so students make considerable use of contour plots. Gradients are studied algebraically, but also thoroughly in terms of their properties graphically in the context of contour plots.</p>
+<p>In the dynamics section, we take advantage of the representation of high-order equations by systems of first-order equations. We work extensively with two-dimensional systems that can be graphed as a flow and where fixed points can be identified through the length of the flow vectors. Students learn to use a numerical ODE solver, so trajectories in any differential equation problem they are posed can be readily found. For the most part the emphasis is on identifying fixed points and solving the linearized equations around fixed points.</p>
+<p>Students construct linear combinations throughout the course in a variety of contexts. In the second semester, we introduce techniques for finding the coefficients on linear combinations of high-dimensional vectors. But the techniques are developed first graphically and geometrically in two-dimensional spaces. One the computer, students work with constructing orthogonal bases for subspaces using basic operations, e.g. dot products, subtraction, and so on. Only for the large-scale problems is black-box computer software used. Even there, basic computations are used to demonstrate that the solution has the necessary properties.</p>
+<p>Not every student has an aptitude for quantitative analysis of graphics, but many do and can succeed in the course by demonstrating their understanding of the mathematical topics. This dramatically increases the accessibility of the course to algebraically limited students.</p>
+<p>Very few students come with meaningful preparation in technical computing. As a partial substitute for algebraic manipulation, students are expected to be able to problem solve using software. The use of software also expands the range of problems students can solve, for instance constructing functions from data by fitting or with splines or basis set expansions.</p>
+<p>One of our goals in using computing is to enhance their preparation for computer programming courses. There are some basic skills and concepts that can be mastered in the context of a calculus course, giving the students a head start in programming. Students learn to use computer notation carefully, to identify the elements of syntax (e.g. names, function application, argument lists), and get practice with the typographical skills needed to construct computer commands. To a very great extent, only three types of objects are created by the operators used in the course: functions, data frames, and graphics. All three of these can be the inputs to further computations. The commands used in the course are tightly integrated and use a shared interface. So the commands for drawing a graph of a function are practically identical to the commands for integrating a function and are very similar to commands for fitting functions to data or constructing derivatives and anti-derivatives, finding zeros of functions, finding argmax/argmin, and iteration.</p>
+<p>For the course, learning computing is essentially learning a form of notation. Programming constructions such as loops and accumulators, branching, and indexing are not needed and not covered. (A considerable amount of work was needed to make the computing so easy.) We use the R language, which not only is effective for calculus but makes a direct connection to statistics and data science, which students study later in the core curriculum. Other institutions might prefer to use software systems such as MATLAB. We think it would be challenging to both students and faculty to use a language such as Python. Ironically, systems that are very powerful for symbolic calculations, such as Mathematica, are we think too close to traditional mathematical notation for students to gain the perspective that comes with using a designed rather than traditional notation.</p>
+<h2 id="results">Results</h2>
+<p>It is not foreordained that we can achieve general accessibility of the course to students with diverse preparations and aptitudes. As we gain experience with the course, we find ways to streamline and unify topics and to avoid inconsistency in notation. But the basic premise that we can teach calculus concepts and methods, including “advanced” topics, in a way that applies and transfers well to students’ future studies needs empirical testing.</p>
+<p>There is already more than a decade’s experience with many components of the approach at Macalester College. The germ of our course comes from Macalester’s introductory course Applied Multivariate Calculus I. That course has been a considerable success at Macalester. As described in [David Bressoud (2018) “Calculus as a modeling course at Macalester College”], “Learning why calculus is useful has attracted many students into further courses. It has also led to beefing up our upper division applied mathematics and statistics options.”</p>
+<p>The success of the Macalester course is heartening. The course is required for several majors, but not uniformly for all students. Thus the Macalester experience does not cover the full range of student aptitudes and attitudes encountered in a require core course.</p>
+<p>Also heartening is our experience with innovations in other topics such as teaching introductory statistics as multivariate statistical modeling [citation to ISM] and integrating professional-level computing into statistics courses. These innovations were initially treated with extreme skepticism, but have since became widespread practices nationally. Still, this experience is no demonstration that the USAFA course will succeed.</p>
+<p>The first cohort of 150 students took the new calculus course in 2020-2021. The second, with 400 students, took the course in 2021-2022. In the short term, we can only conduct internal evaluation of the course: looking at student performance on exams, student course evaluations which can reveal attitudes towards the course’s utility and accessibility, and, importantly, the ability of faculty to engage with and master an approach which is very different from their previous experience. For certain components of the course, such as symbolic differentiation and anti-differentiation, we have inserted into our exam questions from the traditional calculus course to assess whether the students in the new course achieve a comparable level of mechanical skills. [Preliminary indications are that they do. We hope to have much more data released for publication at the end of this academic year.]</p>
+<p>Such internal evaluation can help to identify imminent failure but not to assess ultimate success. For that, we will be monitoring student progress in downstream courses in other departments, looking at possible changes in enrollment patterns, and interviewing faculty in other departments for their appraisal of student preparedness.</p>
+<p>For the 550 students who took the new course in 2020-21 and 2021-22, we have a ready control group: the 1050 students who took the conventional course at the same time. This may not give a complete picture because the new course is both being refined and being taught largely by senior, experienced faculty. From 2022 on, the new course will completely replace the conventional one, so we will have only historical controls.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

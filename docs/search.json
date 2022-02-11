@@ -5,115 +5,16 @@
       "title": "About this blog",
       "description": "Navigating the blog and links to talks and articles about Zcalc",
       "author": [],
-      "contents": "\nPut in links to the USNA talk and the ASEE paper.\nAlso, explain how the categories and tags work.\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:37-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:17-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "Block-1.html",
-      "title": "Block 1",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:38-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:18-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "Block-2.html",
-      "title": "Block 2",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:38-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:19-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "Block-3.html",
-      "title": "Block 3",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:39-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:20-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "Block-4.html",
-      "title": "Block 4",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:39-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:21-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "Block-5.html",
-      "title": "Block 5",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:40-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:21-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "Block-6.html",
-      "title": "Block 6",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:40-07:00"
-    },
-    {
-      "path": "index.html",
-      "title": "Instructor notes for MOSAIC Calculus",
-      "author": [],
-      "contents": "\nThe Project MOSAIC calculus textbook is divided into six blocks and a collection of “manifestations.” Depending on the goals for the course being taught different blocks can be included.\nPreface: What is calculus?\nBlock 1: Introduction to functions and computing\nBlock 2: Foundations for modeling\nBlock 3: Differentiation\nBlock 4: Anti-differentiation and accumulation\nBlock 5: Linear combinations\nBlock 6: Dynamics\nManifestations\nOperations on functions\nInterpolation and splines\nOptimization and constraint\nProbability and evidence\nPresent and future value\nMechanics\n\nWriting for this blog\nKeeping track of objectives\n\n\n\n",
-      "last_modified": "2022-02-04T16:19:41-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:22-07:00"
+      "contents": "\nPut in links to the USNA talk and the ASEE paper.\nAlso, explain how the categories and tags work.\n2022-02-11 USNA Remodeling the mathematics core at USAFA html pdf\n\n\n\n",
+      "last_modified": "2022-02-11T10:06:41-05:00"
     },
     {
       "path": "index.html",
       "title": "*MOSAIC Calculus*",
       "author": [],
       "contents": "\nThe Project MOSAIC calculus textbook is divided into six blocks and a collection of “manifestations.” Depending on the goals for the course being taught different blocks can be included.\nPreface: What is calculus?\nBlock 1: Introduction to functions and computing\nBlock 1b: Foundations for modeling\nProject: Lessons from Ebola\n\nBlock 2: Differentiation\nProjects:\nHow fast does a bicycle go?\nHow to walk uphill\n\n\nBlock 3: Anti-differentiation and accumulation\nProject: Driving with integrals\n\nBlock 4: Manifestations\nOperations on functions\nInterpolation and splines\nOptimization and constraint\nProbability and evidence\nPresent and future value\nProject: Retirement and after\n\nMechanics\n\nBlock 5: Linear combinations\nProject: Least squares and engine scaling\n\nBlock 6: Dynamics\nProject: Using a model to set policy\n\nWriting for this blog\nKeeping track of objectives\n\n\n\n",
-      "last_modified": "2022-02-05T16:19:23-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "manifestations.html",
-      "title": "Manifestations",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:42-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:23-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
-    },
-    {
-      "path": "writing-instructions.html",
-      "title": "Writing for the Zcalc blog",
-      "author": [],
-      "contents": "\n\n\n\n",
-<<<<<<< HEAD
-      "last_modified": "2022-02-04T16:19:42-07:00"
-=======
-      "last_modified": "2022-02-05T16:19:24-07:00"
->>>>>>> 17f362f2d1bc75e2e080031357c27881ad9ebe2e
+      "last_modified": "2022-02-11T10:06:42-05:00"
     }
   ],
-  "collections": ["posts/posts.json", "Block-1/Block-1.json", "Block-2/Block-2.json", "Block-3/Block-3.json", "Block-4/Block-4.json", "Block-5/Block-5.json", "Block-6/Block-6.json", "Manifestations/Manifestations.json", "Instructions/Instructions.json"]
+  "collections": ["posts/posts.json"]
 }
