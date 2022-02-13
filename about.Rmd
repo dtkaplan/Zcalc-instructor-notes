@@ -14,3 +14,5 @@ Also, explain how the categories and tags work.
 
 
 - 2022-02-11 USNA *Remodeling the mathematics core at USAFA* [html](Outreach/2022-02-11-USNA/2022-02-11-USNA.html) [pdf](Outreach/2022-02-11-USNA/2022-02-11-USNA.pdf)
+- 2022-02-15 Florida Polytechnic  *An Engineering-oriented Calculus Core* [html](Outreach/2022-02-15-Florida-Polytechnic/2022-02-15-Florida-Polytechnic.html) [pdf](Outreach/2022-02-15-Florida-Polytechnic/2022-02-15-Florida-Polytechnic.pdf)
+
