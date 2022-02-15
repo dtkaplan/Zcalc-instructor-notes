@@ -3,12 +3,12 @@ title: "An Engineering-oriented Calculus Core"
 author: "Daniel Kaplan"
 date: "Florida Poly 02-15-2022"
 output:
+  slidy_presentation: default
+  ioslides_presentation: null
   beamer_presentation:
     theme: AnnArbor
     colortheme: dolphin
     fonttheme: structurebold
-  ioslides_presentation: null
-  slidy_presentation: default
 ---
 
 ## Math at Florida Poly
@@ -31,11 +31,15 @@ output:
 ## A Compact Core
 
 - Taken by all students
-- Accessible to all students
-- Comprehensive---topics that all downstream courses can build on.
+    - Something new for students with previous calculus
+    - Shared experience
+- Accessible to students without previous calculus
+- Comprehensive---topics that all downstream courses can build on
+    - Avoid pre-mature branching. ("Can I manage MAC 2313?" "Do I want to commit a semester to it?")
+- Short enough to complete in first year.
         
 
-## Third way: description
+## Accessible yet engaging
 
 How to make calculus more comprehensive yet accessible.
 
@@ -48,7 +52,7 @@ How to make calculus more comprehensive yet accessible.
     - Make it possible to determine from the symbol what kind of thing is being referred to.
     - Have a close computer-language equivalent for names and operations.
 
-## Third way: description (cont.)
+## Accessible but engaging (cont.)
 
 - **Avoid gratuitous algebra.**
     - Very little drill on differentiation and anti-differentiation of functions made up for the purpose of drill.
