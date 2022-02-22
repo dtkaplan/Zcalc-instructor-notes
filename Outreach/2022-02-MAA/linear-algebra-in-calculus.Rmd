@@ -1,0 +1,76 @@
+---
+title: "Linear Algebra in Introductory Calculus"
+description: |
+  A new article created using the Distill format.
+author:
+  - name: Daniel T. Kaplan
+    affiliation: Macalester College and US Air Force Academy
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The use of mathematics in the worlds of science, management, and the economy has increased dramatically in the last half century. Much of this relates to the collection and interpretation of data, now routinely performed at a scale unanticipated even 25 years ago. Statistics, data science, and machine learning are now an part of the professional toolkit for workers in the information economy.
+
+This paper discusses an opportunity, via linear algebra, for the university-level mathematics curriculum for forge genuine connections to statistics and data science and the foundations of machine learning.
+
+The substantial change in the university-level mathematical sciences curriculum in the last 50 years is seen the ubiquitous offering of introductory statistics courses. Statistics has practically become part of general education at the university level and is the technical subject required by the widest range of fields.
+
+The flavor of statistics most widely taught has little or no connection to the historical mainspring of university mathematics: calculus. Indeed, statistics is often seen as an *alternative* to calculus or pre-calculus. For students in many fields such as the health or social sciences, where requirements for calculus and its pre-requisites form a major, unneeded barrier to entry into professional work, statistics as an alternative to calculus makes good sense.
+
+The disconnect between statistics and calculus is unfortunate in other ways (Kaplan 2013). One problem is that the conventional introductory statistics course is based on arithmetic procedures from the late 1800s and early 1900s and therefore fails to provide the concepts and methods needed for large scale work with data in realistically complex settings. Machine learning and Bayesian statistics are virtually inaccessible to graduates of introductory statistics.
+
+Another unfortunate consequence of the separation of statistics and calculus is that those students whose work necessitates a solid introduction to calculus cannot apply the concepts and skills that they learn to their statistics studies; introductory statistics courses are not set up to draw on appropriate topics from calculus.
+
+The same is true going the other way. There is little or no content in the first three or four semesters of a conventional calculus curriculum designed to foster statistical thinking. It seems likely this is due to the calculus curriculum being set before the advent of widespread professional use of data and the misconception among many mathematicians that formal probability is at the core of statistics. (In fact, simple notions of randomness coupled to modern computing are an effective way of introducing statistics. See LOCK 5, George Cobb Ptolemaic curriculum.)
+
+A major opportunity for substantial connections between calculus and statistics arises in what is usually a fourth- or fifth-semester course: linear algebra. In practice, this opportunity is lost due to two problems: 1) only a very small fraction of students starting in Calc I will ever reach linear algebra; and 2) the topics selected for the mainstream linear algebra curriculum focus on issues such as Gaussian elimination, the invertibility of matrices, and determinants that are largely irrelevant to statistics.
+
+Neither of the above two problems is an inevitable consequence of the nature of calculus or of linear algebra. The modeling-based calculus, statistics, and computing curriculum promoted by Project MOSAIC is one attempt to circumvent such problems. The statistics arm of Project MOSAIC centers on modeling, randomization, and accessible high-level computing. The calculus arm of the project focuses on a short, accessible, and comprehensive introduction to calculus. Here, "comprehensive" refers to including functions of multiple variables, differential equations, and linear algebra in the first one or two semesters of calculus.
+
+This paper describes how concepts and methods of linear algebra well suited to professional work with data are presented in the MOSAIC calculus curriculum. 
+
+[Austin's idea: connections of calculus to "Statistical Rethinking"
+
+]
+
+## Calculus background to linear algebra
+
+
+
+
+## A Linear algebra core
+
+Anton & Busby (2003) identify the fundamental concepts as "R^n^, orthogonality, linear combinations, spanning, subspaces, linear independence (*not one of ours*), and dimension." These are encountered in chapter 1 of their book
+
+
+"Target problem"
+
+"Dot product" because we write it as a dot!
+
+Vectors are explicit showing arrows.
+
+Matrices are explicit showing two different arrows.
+
+
+
+
+
+
+## References
+
+- Daniel T. Kaplan (2013) "Calculus and Statistics" *AMSTAT NEWS*, [link](https://magazine.amstat.org/blog/2013/07/01/calculus-and-statistics/)
+
+- Lock 5
+
+- George Cobb, Ptolemaic Curriculum
+
+- Daniel T. Kaplan (2022) *MOSAIC Calculus*
+
+- Howard Anton and Robert Busby (2003) *Contemporary Linear Algebra* Wiley
+
+
+
