@@ -33,18 +33,56 @@ Neither of the above two problems is an inevitable consequence of the nature of 
 
 This paper describes how concepts and methods of linear algebra well suited to professional work with data are presented in the MOSAIC calculus curriculum. 
 
-[Austin's idea: connections of calculus to "Statistical Rethinking"
-
-]
+[Austin's idea: connections of calculus to "Statistical Rethinking"]
 
 ## Calculus background to linear algebra
 
+A student who completes the traditional first two semesters of calculus, browsing the ample shelf of linear algebra texts, would be hard pressed to see any connection of their calculus studies to what is found in the linear algebra textbooks. There are exceptions, but a prevalent way of introducing linear algebra often starts with systems of linear equations and how to solve them. A person unaware of the manifold uses of linear algebra might see the subject as an extension of high-school algebra, where the solution of two linear equations in two unknowns is a standard topic.
 
+Why linear algebra should be postponed to late in the calculus sequence is, to me, something of a mystery. Some possible reasons: calculus is seen as a topic of higher priority; vectors are typically introduced in third-semester calculus; linear algebra is, in some curricular organizations, allied with differential equations, which typically comes late in the calculus sequence.
 
+In the MOSAIC curriculum, calculus is taught from a modeling perspective. This means that students are, from the beginning, learning fundamentals of mathematical modeling. This includes a basic set of functions, e.g. exponential, power-law, log, sinusoidal, etc. and ways of putting the basic functions together to form models. The three main ways of combining functions are composition, multiplication, and linear combination. The term "linear combination" comes early in the MOSAIC curriculum. Students first encounter it in the selection of parameters in models of simple oscillatory phenomena ($A + B \sin(2 \pi \omega t)$) or exponential decay ($A + B e^{-kt}$) in choosing $A$ and $B$ to match the model function to data.
+
+Another important theme in the MOSAIC curriculum is using low-order polynomial approximations---including in two or more variables---as a modeling framework. For instance, in the case of a function with two inputs, the modeler's task is to choose which terms to include from among the following:
+
+$$f(x, y) \equiv \underbrace{a_0 + a_x x + a_y y}_{\text{almost always}} + \underbrace{a_{xy} x y}_{\text{interaction}} + \underbrace{a_{xx} x^2 + a_{yy} y^2}_{\text{quadratic terms}}$$
+This is, of course, a linear combination of the functions $1, x, y, xy, x^2,$ and $y^2$.
+
+Students learn to incorporate an interaction term if the effect of $x$ on the output depends on $y$, and to include one or both quadratic terms only if the phenomenon being modeled involves an extremum. Once such decisions have been made, the task of modeling is to infer the signs and magnitudes of the coefficients in the linear combination. This can be done to correspond with an understanding of the mechanism of the system, or to match the model to example cases with inputs and outputs recorded.
+
+Since MOSAIC calculus involves functions with multiple inputs early, the gradient vector also appears, to understand the "shape" of such functions and to perform routine tasks such as optimization. (Many students will also see vectors in physics or engineering courses that are co-requisites for calculus.)
+
+As a start, students pick the coefficients on linear combinations by eye and then through software. By the time the linear algebra component of the MOSAIC curriculum begins, students have been working extensively with linear combinations and vectors. The problem of finding coefficients for linear combinations becomes the chief motivation for introducing linear algebra. 
+
+Later in the MOSAIC course, students encounter dynamics/differential equations where the analysis of fixed points is a central topic. Such dynamics involve characteristic behavior that can be understood in terms of eigenvectors and eigenvalues.
 
 ## A Linear algebra core
 
-Anton & Busby (2003) identify the fundamental concepts as "R^n^, orthogonality, linear combinations, spanning, subspaces, linear independence (*not one of ours*), and dimension." These are encountered in chapter 1 of their book
+The linear algebra component of a MOSAIC two-semester curriculum is approximately one third of a semester. It goes without saying that it's not feasible to cover the content of a conventional one-semester linear algebra course. Therefore a core of topics needs to be selected.
+
+I'll avoid belaboring the question of what concepts and methods constitute the core of linear algebra. I'll merely stipulate the existence of a "consensus curricular core" (CCC), that includes topics such as row operations on matrices, determinants, and matrix inverses. In the CCC, a matrix is typically defined as a rectangular array of numbers and the focus is on finding exact, unique solutions to sets of linear equations that are neither over- nor under-determined.
+
+There are linear algebra texts that do not follow the CCC. For example, Anton & Busby (2003) identify the fundamental concepts as "R^n^, orthogonality, linear combinations, spanning, subspaces, linear independence, and dimension." These are all encountered in the first chapter of their book
+
+The MOSAIC curriculum is similar to Anton and Busby's notion of fudamental concepts. Unlike the CCC, the MOSAIC core is motivated not by finding exact, unique solutions to sets of linear equations but by the problem of finding a linear combination of vectors that best approximates a given vector $\vec{{\mathbf b}}$. A matrix may happen to be a rectangular array, but it is primarily to be thought of as a collection of (column) vectors. Combining a matrix with a vector is the way one takes a linear combination of the vectors in the matrix. We don't introduce row vectors.
+
+The MOSAIC curriculum is far from alone in this column-centric approach to matrices. For example, the Lay, Lay, and McDonald textbook (2016) describes a "modern approach" to matrices, writing, "Good notation is crucial, and the text reflects the way scientists and engineers actually use linear algebra in practice. The definitions and proofs focus on the columns of a matrix rather than on the matrix entries. A central theme is to view a matrix–vector product Ax as a linear combination of the columns of A. This modern approach simplifies many arguments, and it ties vector space ideas into the study of linear systems."
+
+
+
+
+In the CCC, the product of a matrix and a vector is often described this way:
+$$\left[\begin{array}{ccc}a_{11} & \cdots & a_{1n}\\
+\vdots &  & \vdots \\
+a_{n1} & \cdots & a_{nn}\end{array}\right] \left[\begin{array}{c}x_1\\\vdots\\x_n\end{array}\right] = \left[\begin{array}{c}
+a_{11} x_1 + \cdots + a_{1n} x_n\\
+\vdots  \\
+a_{n1} x_1 + \cdots + a_{mn} x_n\\
+\end{array}\right]$$
+
+BUT IN THE MOSAIC curriculum, the paradigmatic arrangement is 
+
+SHOW THE LINEAR COMBINATION of vectors.
 
 
 "Target problem"
@@ -55,7 +93,7 @@ Vectors are explicit showing arrows.
 
 Matrices are explicit showing two different arrows.
 
-
+Write a column vector as a column. No row vectors.
 
 
 
@@ -72,5 +110,5 @@ Matrices are explicit showing two different arrows.
 
 - Howard Anton and Robert Busby (2003) *Contemporary Linear Algebra* Wiley
 
-
+- David Lay, Steven Lay, Judi McDonald (2016) *Linear Algebra and Its Applications* (5/e), Pearson 
 
