@@ -131,9 +131,11 @@ Since this paper is oriented to instructors who are familiar with the material c
 
 Pictorially, the target problem with $\mathit{A} = \left[\vec{u}\ \ \vec{v}\right]$ looks like this: 
 
-[![](target-diagram.png)](target-diagram.html)
+```{r child="target-diagram.html"}
+```
 
-Click on the image to open an interactive version of the diagram.
+
+
 
 ## Discussion
 
