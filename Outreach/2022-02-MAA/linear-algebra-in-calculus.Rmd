@@ -129,11 +129,85 @@ Since this paper is oriented to instructors who are familiar with the material c
 - The ***model vector***, written $\hat{b}$, is the projection of $\vec{b}$ onto the model subspace. 
 - The ***residual vector***, $\vec{r}$, is the component of $\vec{b}$ orthogonal to the model subspace. More simply, $\vec{r} = \vec{b} - \hat{b}$.
 
-Pictorially, the target problem with $\mathit{A} = \left[\vec{u}\ \ \vec{v}\right]$ looks like this: 
+A key strategy of the course is to present most every object and concept in four modes:
+
+1. **Graphically**. A vector is an arrow of a specified length and direction. As needed, we use three dimensional graphics where the student can interactively vary the orientation of the graphic. 
+2. **Metaphorically**. A vector is a **step** in the corresponding direction and of the corresponding length. A linear combination is a trip in which steps are taken successively in the directions of the vectors being combined. The scalar coefficients of the linear combination is the number of steps in each of the directions.
+3. **Arithmetically**. A vector is a **column** of numbers. (We don't introduce row vectors at all.) Basic arithmetic operations on a single vector are scaling and length. With two vectors, the basic operations are addition, subtraction, and the dot product.
+4. **Computationally**. There are, of course, many suitable choices for the computing environment, such as MATLAB, Mathematica, or Maple. We think R has important advantages and that is what we use. We'll say more about computation below.
+
+
+### Graphical mode
+
+A pitfall of graphical presentations is that students can (understandably) confuse a vector with a coordinate point. We emphasize the rootlessness of vectors from the very beginning. You can place a vector wherever best suits your needs. For vector addition, the easy placement is head to tail while for subtraction and the included angle, tail to tail. To reinforce the point, early problems involve vectors drawn in arbitrary positions where the student's first step is to move the vectors into an appropriate position to carry out the operation visually. For the most part, the graphics do not include a coordinate grid. (The exception is the very narrow topic of converting between the graphical and arithmetic depictions of vectors.)
+
+To illustrate, here is a simple exercise based in the graphics domain:
+
+Consider the vectors drawn below: 
+```{r echo=FALSE, out.width="3.5in"}
+knitr::include_graphics("www/many-vectors1.png")
+```
+a. Remembering that mathematical vectors have only two properties---length and direction---how many different mathematical vectors are being shown. (Answer: Five. Color is not a property of a mathematical vector. Orientation, however, is.)
+
+b. Measure the length of each vector. (Hint: Use a ruler! You can round to the nearest millimeter.)
+
+c. Find the included angle between the $\color{blue}{\text{blue}}$ and $\color{brown}{\text{brown}}$ vectors. (Your answer should be correct to within $\pm 15^\circ$.) (Answer: About 135 degrees. Note that the orientation makes a difference. The angle is measured with the vectors placed tail to tail.)
+
+d. Find the included angle between the $\color{magenta}{\text{magenta}}$ and $\color{blue}{\text{blue}}$ vectors. (Answer: Magenta points in the same direction as brown, so the answer is the same as in 
+the previous question.)
+
+e. Find the included angle between 0.7 times the $\color{blue}{\text{blue}}$ vector and -11.3 times the $\color{brown}{\text{brown}}$. (Answer: The scaling doesn't matter except that the negative sign for the brown vector means that its orientation will be reversed. This means that the included angle will be 45 degrees, not 135 degrees as in the previous two questions.)
+
+-----
+
+As another example of the graphics mode of presentation, 
+the target problem with $\mathit{A} = \left[\vec{u}\ \ \vec{v}\right]$ looks like this: 
 
 [![](target-diagram.png)](target-diagram.html)
 
 Click on the image to open an interactive version of the diagram.
+
+### Metaphorical mode
+
+
+
+### Arithmetic mode
+
+
+### Computational mode
+
+
+
+## Projection, not inversion
+
+To summarize for the knowledgeable instructor how we solve the target problem: We use QR decomposition. We present an algorithm for the construction of Q but do not cover the construction of R. This would be feasible graphically and arithmetically for subspaces defined by two vectors, but such a demonstration did not have a high priority for classroom time. Instead, we rely on software for the calculation of the coefficients $\vec{x}$ in the target problem.
+
+To highlight the differences between the approach in the MOSAIC curriculum from a conventional curriculum, let's consider first what a conventional presentation of the target problem might look like.
+
+1. We have a matrix $\mathbf{A}$ with more rows than columns and we seek to find $\mathbf{A} \vec{x} = \vec{b}$. Because $\mathbf{A}$ is not square, it does not have an inverse and so there is in general no solution. 
+
+2. We can transform the problem into one that can be solved by multiplying both sides of $\mathbf{A} \vec{x} = \vec{b}$ by $\mathbf{A}^T$, getting
+$$\mathbf{A}^T \mathbf{A}\, \vec{x} = \mathbf{A}^T\, \vec{b}$$
+3. The matrix $\mathbf{A}^T \mathbf{A}$ is square and might therefore have an inverse. If so, we can invert it to find $\vec{x}$:
+$$\vec{x} = (\mathbf{A}^T \mathbf{A})^{-1}\mathbf{A}^T\, \vec{b}$$
+4. We call $(\mathbf{A}^T \mathbf{A})^{-1}\mathbf{A}^T$ the *pseudo-inverse of $\mathbf{A}$*.
+
+Following this argument requires considerable background knowledge. We'll use *italics* to highlight those elements that are not covered in the MOSAIC curriculum. 
+
+Step (1) calls for knowledge about *inverses* and non-square matrices. (The "in general" caveat is somewhat mysterious as stated but could be explained by constructing a non-square $\mathbf{A}$ and corresponding $\vec{b}$ that does have a solution $\vec{x}$, for instance a matrix consisting of two copies of an invertible square matrix stacked on top of one another.)
+
+Step (2) uses the ideas of a *transpose* and *matrix-by-matrix multiplication*.
+
+Step (3) raises the question of *when a square matrix does not have an inverse*.
+
+Step (4) unnecessarily introduces new nomenclature (*pseudo-inverse*) and disparages the process as ungenuine.
+
+We do not claim that the *italicized topics* listed above are not important to a thorough mastery of linear algebra. Our claim that they are not needed to solve the target problem. In addition, the construction of the pseudo-inverse is somewhat disingenuous since this is not the method used by modern software to solve the target problem. (For $\mathbf{A}$ with many columns, the calculation is ill-conditioned and fails to recognize legitimate solutions even when $(\mathbf{A}^T \mathbf{A})^{-1}$ does not exist.
+
+
+
+## Eigenvalues and eigenvectors
+
 
 ## Discussion
 
