@@ -12,6 +12,7 @@ output: distill::distill_article
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(Zcalc)
+library(Znotes)
 ```
 
 ::: {.hidden}
@@ -171,7 +172,13 @@ knitr::include_graphics("www/tiny-blank.png")
 
 ### Metaphorical mode
 
+As stated above, the central metaphor for the target problem is that of a journey in the directions provided by the vectors in $\mathit{A}$. The destination is the tip of the target vector, the starting point is the tail of that vector. 
 
+The journey can be analogized to getting from a train station to a particular building in a city with a street/avenue grid. From the station, one walks along a street until reaching the avenue on which the building is located, then walk along the avenue. 
+
+We have not found a city with a skew street grid, so to illustrate the journey with non-orthogonal $\mathit{A}$ we appeal to Greek mythology where there are wind gods. For instance, Boreas is the god of the north wind and Apeliotes is the southeast wind. A sailor wishing to go from Troy to, say, Ithaka might call first upon Boreas to reach the Mediterranean, then turn to Apeliotes to carry the boat to Ithaka.
+
+An effective table-top demonstration is to mark on the table the point of a tail for $\vec{b}$. A student is assigned to hold some soft object above the table to mark the tip of $\vec{b}$. The projection $\hat{b}$ is found by dropping the object onto the table. Then toss two pencils onto the table to set the vectors $\vec{u}$ and $\vec{v}$. The students are called on to figure how many pencil steps to take in each direction to reach the tip of $\hat{b}$ from its tail. A larger scale version of this game uses the floor as the subspace and a student's stride-length as the step. $\vec{b}$ is a vector from some point marked on the floor to an object on the ceiling, such as a light or projector. Two rulers are placed onto the floor to mark the directions of the vectors in $\mathit{A}$. It also works well to add a third vector to $\mathit{A}$ that has a non-zero vertical component. Students can't walk along this third vector, but they can use it as a pointer to figure out the position they need to reach on the floor so that the third vector can be used to complete the journey. 
 
 ### Arithmetic mode
 
@@ -184,6 +191,125 @@ We do not define the dot product in terms of matrix multiplication as would conv
 
 ### Computational mode
 
+It's common nowadays for linear algebra to be taught with a computational component. In the *MOSAIC Calculus* text, we use R with the `mosaic` and `mosaicCalc` packages. We will use the R notation here, but it should be straightforward to map the examples onto other computational environments such as MATLAB.
+
+The `mosaic` and `mosaicCalc` packages add useful functions for the entire *MOSAIC Calculus* course, including function oriented graphics, symbolic and numerical differentiation and anti-differentiation, numerical integration, ODE solving, and so on. It also adds some convenience functions for vector and matrix calculations. To install the packages, `mosaicCalc` package, use these commands:
+```{r eval=FALSE}
+install.packages("mosaic")
+remotes::install_github("ProjectMOSAIC/mosaicCalc", ref="beta")
+```
+
+Installation is a one-time process. In day-to-day work, for each R session, you need merely reference the packages to make the software they contain available:
+```{r eval=FALSE}
+library(mosaic)
+library(mosaicCalc)
+```
+Most of the linear-algebra commands we use in *MOSAIC Calculus* are part of base R. The exceptions are `%dot%`, `%onto%`, and `%perp%`, which will be introduced below.
+
+
+NOTE IN DRAFT: Currently, the best way to install the *MOSAIC Calc* software is via a package called `Zcalc`. The one-time installation is done with 
+```{r eval=FALSE}
+remotes::install_github("dtkaplan/Zcalc")
+```
+and the only library call that needs to be given explicitly is
+```{r eval=FALSE}
+library(Zcalc)
+```
+END OF NOTE IN DRAFT
+
+
+
+There are two distinct scales at which the students should be comfortable with the basic computations.
+
+1. A demonstration scale involving vectors with a handful of components.
+2. An application scale where vectors are drawn from realistic data sources. 
+
+For demonstration scale problems, students construct column vectors using a base R function, `rbind()`. (The name stands for "bind rows together.") For example:
+
+```{r}
+u <- rbind(8,-2,4)
+v <- rbind(3,2,7)
+u
+v
+```
+
+Scalar multiplication and vector addition are handled natively:
+```{r}
+v + 10*u
+```
+
+We've added an infix operator for the dot product:
+```{r}
+v %dot% u
+```
+Note that we don't use matrix multiplication (which is `%*%` in R) to calculate a dot product. This would require constructing a row vector, but we keep the MOSAIC curriculum column oriented.
+
+The projection of one vector onto another can be demonstrated using the dot product, but we prefer to use a convenience function `%onto%`. 
+```{r}
+(v %dot% u) * u/(u %dot% u)
+v %onto% u
+```
+The residual from a projection can be computed directly from the definition of the residual, but again we provide a convenience function:
+```{r}
+v - (v %onto% u)
+v %perp% u
+```
+Matrices are constructed with `cbind()` applied to (column) vectors:
+```{r}
+cbind(u, v)
+```
+Those familiar with R will know the base `matrix()` function. We do not use `matrix()` because it is strongly oriented toward arranging individual scalar components and not to assembling a matrix as a collection of vectors.
+
+At the *application scale*, vectors are constructed from data frames. In R, a data frame is the standard format for accessing a rectangular array of data. We'll illustrate with the data used earlier in this paper on the properties of internal combustion engines.
+
+R makes it straightforward to load data from external sources. For example, to load the engines data from the URL, use the command
+```{r eval=FALSE}
+# Reading from a URL, 
+Engines <- read.csv("http://www.mosaic-web.org/go/datasets/engines.csv")
+```
+But many data frames, including `Engines`, are available directly by name from the `mosaic` and `mosaicCalc` packages, so you should refer the `read.csv()` method for data sets currated by individual instructors for their courses.
+
+Suppose that we want to model the horsepower (`BHP`) of an engine as a function of displacement and RPM. We would first pull out the horsepower as the $\vec{b}$ vector and displacement and RPM as the vectors to be projected onto. Here, we'll transform the raw data into logarithmic form, as suits the power-law nature of engine relationships.
+```{r}
+b <- with(Engines, log10(BHP))
+disp <- with(Engines, log10(displacement))
+rpm <- with(Engines, log(RPM))
+```
+Constructing the matrix $\mathit{A}$ containing `disp` and `rpm` is done with `cbind()`. (The name stands for "bind columns together.")
+```{r}
+A <- cbind(disp, rpm)
+```
+In statistical modeling, one would usually add a column of 1s, called the "intercept vector" and perhaps other terms such as the product of `disp` and `rpm`. As an example, we'll do that now:
+```{r}
+A <- cbind(1, disp, rpm, disp*rpm)
+```
+
+This is a by-hand approach for constructing vectors and matrices from data frames. In professional work, one would use the standard R functions `lm()` or `model.matrix()`. The notation for using these functions is introduced early in the *MOSAIC Calculus* course, but as we haven't introduced it in this paper, we'll skip it.
+
+What's the linear combination of the vectors in `A` that reaches closest to `b`?
+```{r}
+x <- qr.solve(A, b)
+x
+```
+The model vector and residual vector can be calculated by combining the vectors in `A` using the coefficients in `x`:
+```{r}
+bhat <- A %*% x
+```
+But if you don't need the `x` coefficients, you can use `%onto%` and `%perp%` instead:
+```{r}
+bhat <- b %onto% A
+resid <- b - bhat
+# or
+resid <- b %perp% A
+```
+Confirmation that the residual vector is indeed perpendicular to the model vector:
+```{r}
+bhat %dot% resid
+```
+Confirmation that the model vector plus the residual vector gives `b`:
+```{r}
+sum((bhat + resid - b)^2)
+```
 
 
 ## Projection, not inversion
@@ -242,7 +368,22 @@ By way of explanation, here is the explanation in the *MOSAIC Calculus* text:
 
 The arithmetic and computational depiction of projection is rooted in a special case. Projection of a vector $\vec{b}$ onto the sub-space spanned by a matrix $\mathit{A}$ whose vectors are mutually orthogonal is easy: Just project $\vec{b}$ onto each of the vectors in $\mathit{A}$ one at a time. Adding up those one-at-a-time projections gives $\hat{b}$. 
 
-HERE DESCRIBE THE Q construction process.
+Constructing an orthogonal basis for $\mathit{A}$ is easily accomplished with the Gram-Schmidt process. We demonstrate the algorithm, but don't require students to recall it from memory. The emphasis for the student is to be able to confirm that the set of orthogonal vectors are mutually perpendicular and that any vector in $\mathit{A}$ can be constructed as a linear combination of the orthogonal vectors.
+
+To illustrate, here's the orthogonal version of vectors used in the previous example using `Engines`. 
+
+```{r}
+u1 <- rpm
+u2 <- disp - (disp %onto% u1)
+u3 <- rpm*disp - (rpm*disp %onto% cbind(u1, u2))
+```
+
+Confirming the orthogonality:
+```{r}
+u1 %dot% u2
+u1 %dot% u3
+u2 %dot% u3
+```
 
 
 ## Eigenvalues and eigenvectors
