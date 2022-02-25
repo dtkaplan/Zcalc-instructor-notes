@@ -143,8 +143,8 @@ A pitfall of graphical presentations is that students can (understandably) confu
 
 To illustrate, here is a simple exercise based in the graphics domain:
 
-Consider the vectors drawn below: 
-```{r echo=FALSE, out.width="3.5in"}
+Consider the vectors in Figure \@ref{fig:many-vectors}
+```{r many-vectors, echo=FALSE, out.width="3.5in", fig.cap="The vectors to reference in answering questions (a) through (e)."}
 knitr::include_graphics("www/many-vectors1.png")
 ```
 a. Remembering that mathematical vectors have only two properties---length and direction---how many different mathematical vectors are being shown. (Answer: Five. Color is not a property of a mathematical vector. Orientation, however, is.)
@@ -161,17 +161,25 @@ e. Find the included angle between 0.7 times the $\color{blue}{\text{blue}}$ vec
 -----
 
 As another example of the graphics mode of presentation, 
-the target problem with $\mathit{A} = \left[\vec{u}\ \ \vec{v}\right]$ looks like this: 
+the target problem with $\mathit{A} = \left[\vec{u}\ \ \vec{v}\right]$ is shown in Figure \@ref(fig:target-diagram) 
 
 [![](target-diagram.png)](target-diagram.html)
 
-Click on the image to open an interactive version of the diagram.
+```{r target-diagram, echo=FALSE, fig.cap="The target problem with vectors with three components and two vectors in the model matrix. Click on the image to open an interactive version of the diagram."}
+knitr::include_graphics("www/tiny-blank.png")
+```
 
 ### Metaphorical mode
 
 
 
 ### Arithmetic mode
+
+Arithmetic with vectors is handled in the conventional way, component by component. The embedding dimension of a vector is the number of components in the vector. Addition, scalar multiplication are intuitive. The dot product is introduced for the calculation of lengths and included angles. Later, the dot products are used to find the projection $\hat{b}$ of a vector $\vec{b}$ onto another vector $\vec{u}$, a formula found in standard textbooks:  $$\hat{b} = \frac{\vec{u} \bullet \vec{b}}{\vec{u} \bullet \vec{u}}\, \vec{u}\ .$$ 
+
+The large dot $\bullet$ used to denote the dot product is unconventional, but it helps distinguish dot project from component-wise multiplication. 
+
+We do not define the dot product in terms of matrix multiplication as would conventionally be denoted $\mathbf{b}^T\, \mathbf{u}$. We omit this as part of our policy of avoiding row vectors and transposes.
 
 
 ### Computational mode
@@ -202,8 +210,39 @@ Step (3) raises the question of *when a square matrix does not have an inverse*.
 
 Step (4) unnecessarily introduces new nomenclature (*pseudo-inverse*) and disparages the process as ungenuine.
 
-We do not claim that the *italicized topics* listed above are not important to a thorough mastery of linear algebra. Our claim that they are not needed to solve the target problem. In addition, the construction of the pseudo-inverse is somewhat disingenuous since this is not the method used by modern software to solve the target problem. (For $\mathbf{A}$ with many columns, the calculation is ill-conditioned and fails to recognize legitimate solutions even when $(\mathbf{A}^T \mathbf{A})^{-1}$ does not exist.
+We do not claim that the *italicized topics* listed above are not important to a thorough mastery of linear algebra. Our claim is merely that they are not needed to solve the target problem. In addition, the construction of the pseudo-inverse is somewhat disingenuous since this is not the method used by modern software to solve the target problem. (For $\mathbf{A}$ with many columns, the calculation is ill-conditioned and fails to recognize legitimate solutions even when $(\mathbf{A}^T \mathbf{A})^{-1}$ does not exist.)
 
+Instead of involving matrix inverses, the MOSAIC approach is to divide the target problem into two parts:
+
+a. Projection of the target vector $\vec{b}$ onto the model subspace, the space spanned by the vectors in $\mathit{A}$. The result of this projection is the model vector, $\hat{b}$, which lies in the model subspace.
+
+b. Calculating the coefficients on the linear combination of the vectors in $\mathit{A}$ that reach---exactly---$\hat{b}$.
+
+Both (a) and (b) can be presented graphically for for a one- or two-dimensional model subspace with vectors with two or three components. Projection onto a single vector $\mathit{A} = \vec{u}$ is a standard textbook diagram, as in Figure \@ref(fig:projection-1).
+
+```{r projection-1, echo=FALSE, fig.cap="Projection of $\\vec{b}$ onto $\\vec{u}$"}
+knitr::include_graphics("www/projection-1.png")
+```
+
+
+
+Projection onto a subspace spanned by two vectors is illustrated in Figure \@ref(fig:target-problem). 
+
+The graphical (and metaphorical) presentation of finding the coefficients is shown in Figure \@ref(fig:2-coefs).
+
+```{r 2-coefs, echo=FALSE, fig.cap="Finding the coefficients on $\\vec{u}$ and $\\vec{v}$ to reach the model vector $\\hat{b}$."}
+knitr::include_graphics("www/u-v-spyglass.png")
+```
+
+By way of explanation, here is the explanation in the *MOSAIC Calculus* text: 
+
+> Pick either $\vec{u}$ or $\vec{v}$, it doesn't matter which. In the diagram, we've picked $\vec{v}$. Align your telescope with that vector. Now march along the other vector, $\vec{u}$, carefully keeping the telescope on the bearing aligned with $\vec{v}$. From the diagram, you can see that when you've marched to $\frac{1}{2} \vec{u}$, the telescope does not yet have $\hat{b}$ in view. Similarly, at $1 \vec{u}$, the target $\hat{b}$ isn't yet visible. Marching a little further, to about $1.6 \vec{u}$ brings you to the point in the $\vec{u}$-subspace where the target falls into view. This tells us that the coefficient on $\vec{u}$ will be 1.6.
+
+> To find the coefficient on $\vec{v}$, you'll need to march along the line of the telescope, taking steps of size $\|\vec{v}\|$. In the diagram, we've marked the march with copies of $\vec{v}$ to make the counting easier. We'll need to march *opposite* the direction of $\vec{v}$, so the coefficient will be negative. Taking 2.8 steps of size $\|\vec{v}\|$ brings us to the target.
+
+The arithmetic and computational depiction of projection is rooted in a special case. Projection of a vector $\vec{b}$ onto the sub-space spanned by a matrix $\mathit{A}$ whose vectors are mutually orthogonal is easy: Just project $\vec{b}$ onto each of the vectors in $\mathit{A}$ one at a time. Adding up those one-at-a-time projections gives $\hat{b}$. 
+
+HERE DESCRIBE THE Q construction process.
 
 
 ## Eigenvalues and eigenvectors
@@ -234,9 +273,6 @@ x_1\,\vec{v_1} + x_2\,\vec{v_2} + \cdots x_n\,\vec{v_n}\ .$$
 
 
 
-"Target problem"
-
-"Dot product" because we write it as a dot!
 
 Vectors are explicit showing arrows.
 
