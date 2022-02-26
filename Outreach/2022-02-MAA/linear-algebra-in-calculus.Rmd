@@ -388,40 +388,39 @@ u2 %dot% u3
 
 ## Eigenvalues and eigenvectors
 
+After the linear combinations part of the MOSAIC curriculum, we enter into the final block, about dynamics. This would typically be called "differential equations," but our focus is on the phenomena seen in dynamical systems, particularly fixed points and their stability, rather than initial value problems. We work with nonlinear dynamics in the phase plane, linearizing the dynamics near the fixed point to get a pair of first-order differential equations having the general form:
+$$\begin{array}{c}\partial_t x&=& a x + b y\\
+\partial_t y &=& cx + dy\end{array} = 
+\left[\begin{array}{cc}a & b\\c & d\end{array}\right]  
+\left[\begin{array}{c}x\\y\end{array}\right]$$
+
+The major forms of stability of a fixed point in the phase plane are introduced first *qualitatively*: centers, sources, saddles, and oscillation. In the qualitative analysis, the dynamics are represented as flow fields. For centers, sources, and saddles, the eigenvectors of the flow are visible as the locus of points where the flow field points directly toward or away from the origin. This implies that the abcd matrix applied to an eigenvector produces a multiple of that eigenvector.
+
+Next, we example center/source/saddle dynamics quantitatively, substituting in, as usual, $e^{\lambda t}$ as a trial solution. This leads to the characteristic equation for the system, a quadratic polynomial whose coefficients involve $a$, $b$, $c$, and $d$. The roots of the characteristic equation are the eigenvalues. The calculation gives, of course, the same results as would be produced by an argument using determinants, but we have no need to introduce determinants. 
+
+A proposal for the eigenvectors based on $\lambda$ is given, rather than derived. This is confirmed numerically for a range of cases. This is adequate to develop the concepts of eigenvalues and eigenvectors. Some instructors might prefer to supplement this with a derivation of the eigenvectors, but this would be accessible only to students with a strong mathematical aptitude, and not all students have this. 
+
+Our quantitative analysis of linear fixed points ends with an examination of oscillation. The same characteristic equation approach is used, but here the eigenvalues will be complex. For most students, this is their first view of complex numbers in a concrete setting. Our main goal to to establish that for $\lambda = k \pm i\omega$, the function $e^{\lambda t}$ corresponds to an oscillation whose frequency is set by $\omega$ and exponentially growing or decaying envelope is set by $k$. 
 
 ## Discussion
 
-There are linear algebra texts that do not follow the CCC. For example, Anton & Busby (2003) identify the fundamental concepts as "R^n^, orthogonality, linear combinations, spanning, subspaces, linear independence, and dimension." These are all encountered in the first chapter of their book.
+Our goal with the *MOSAIC Calculus* curriculum is to give a comprehensive overview of the applications of calculus, covering the whole sequence of topics that prepare students for quantitative STEM work. The particular goals of the linear algebra portion of the curriculum is to set students up for statistical modeling and the use of complex exponentials. 
 
-The MOSAIC curriculum is far from alone in this column-centric approach to matrices. For example, the Lay, Lay, and McDonald textbook (2016) describes a "modern approach" to matrices, writing, "Good notation is crucial, and the text reflects the way scientists and engineers actually use linear algebra in practice. The definitions and proofs focus on the columns of a matrix rather than on the matrix entries. A central theme is to view a matrix–vector product Ax as a linear combination of the columns of A. This modern approach simplifies many arguments, and it ties vector space ideas into the study of linear systems."
+STEM students often have a statistics course requirement. The typical introductory statistics course is rooted in techniques developed near 1900 and does not use any linear algebra concepts. The technical parts of that typical course are placed in a framework of "statistical inference," mainly hypothesis testing. Several different tests are covered in sequence: inference on a single mean, on the difference between two means, on differences between multiple groups, and on simple regression. It is not appreciated by many instructors that these various tests are special cases of a more general framework. (Inference on a single probability or on the difference between two probabilities also fits into this framework, the equivalence becoming more exact as $n$ increases above, say, 10.) See Kaplan (2020) for details.
 
-In the CCC, where a matrix is presented as a rectangular array of numbers, the product of a matrix and a vector is often described this way:
-$$\left[\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n}\\
-\vdots &  \vdots & \vdots & \vdots\\
-a_{m1} & a_{m2} & \cdots & a_{mn}\end{array}\right] \left[\begin{array}{c}x_1\\\vdots\\x_n\end{array}\right] = \left[\begin{array}{c}
-a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n\\
-\vdots  \\
-a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{mn} x_n\\
-\end{array}\right]\ .$$
+Rooting the introductory statistics course in basic concepts of linear algebra---the concepts covered in the MOSAIC curriculum---allows the "classical" aspects of introductory statistics to be covered much faster and in more generality, leaving time in an introductory statistics course for topics that are central to contemporary work with statistics and decision making, but ignored by the tradition course.
 
-In the column-oriented MOSAIC curriculum, it's hardly ever necessary to write out a rectangular array of numbers. Instead, we typically write matrix-vector multiplication like this:
-$$\left[\begin{array}{cccc}|&|&&|\\\vec{v_1} & \vec{v_2} & \cdots& \vec{v_n}\\
-|&|&&|\\\end{array}\right] \left[\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right] = 
-x_1\,\vec{v_1} + x_2\,\vec{v_2} + \cdots x_n\,\vec{v_n}\ .$$
+The MOSAIC curriculum is designed to be two semesters long. The first semester is a modeling-based introduction to integral and differential calculus, including functions of multiple variables. The linear algebra and dynamics blocks are in the second semester. For students who have already completed an integral and differential calculus course, a one-semester *MOSAIC Calculus* course could be configured as a rapid view of the modeling and computational elements from the first half of the curriculum followed by the second semester. 
 
+We believe that the *MOSAIC Calculus* curriculum is innovative in important ways, particularly in its mission to make accessible to students early in a calculus sequence the topics usually seen only by the small fraction of students who go on to take four or five semesters of calculus study.
 
+Dynamics (Devaney) (Kaplan and Glass 1995)
 
+The approach to linear algebra used in *MOSAIC Calculus* has roots in previous work. For example, Anton & Busby (2003) identify the fundamental concepts as "R^n^, orthogonality, linear combinations, spanning, subspaces, linear independence, and dimension." These are all encountered in the first chapter of their book.
 
+The column-centric approach to matrices used in *MOSAIC Calculus* is perhaps rooted in numerical linear algebra and its emphasis on matrix factorization, but can also be seen in introductory textbooks. For example, the Lay, Lay, and McDonald textbook (2016) describes a "modern approach" to matrices. Their summary of their reasoning is a fitting conclusion to this paper:
 
-
-
-Vectors are explicit showing arrows.
-
-Matrices are explicit showing two different arrows.
-
-Write a column vector as a column. No row vectors.
-
-
+> *Good notation is crucial, and the text reflects the way scientists and engineers actually use linear algebra in practice. The definitions and proofs focus on the columns of a matrix rather than on the matrix entries. A central theme is to view a matrix–vector product Ax as a linear combination of the columns of A. This modern approach simplifies many arguments, and it ties vector space ideas into the study of linear systems.* --- Lay, Lay, & Mcdonald (2016)
 
 
 ## References
@@ -439,3 +438,9 @@ Write a column vector as a column. No row vectors.
 - David Lay, Steven Lay, Judi McDonald (2016) *Linear Algebra and Its Applications* (5/e), Pearson 
 
 - Thomas McMahon and John Tyler Bonner (1983) *On Size and Life* New York: Scientific American Library, pp. 60-61
+
+- Kaplan 2020 Compact Guide to Statistical Inference.
+
+- Bob Devaney, Dynamics
+
+- Kaplan and Glass 1995, Understanding nonlinear dynamics
