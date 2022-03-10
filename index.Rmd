@@ -30,10 +30,10 @@ The Project MOSAIC [calculus textbook](https://projectmosaic.github.io/MOSAIC-Ca
         - Project: [Retirement and after](Projects/Retirement/retirement.html)
     vi. Mechanics
 
-- [Block 5: Linear combinations](Block-5.html)
+- [Block 5: Linear combinations](Block-5/Block-5.html)
     - Project: [Least squares and engine scaling](Projects/Engine-scaling/Engine-scaling.html)
 
-- [Block 6: Dynamics](Block-6.html)
+- [Block 6: Dynamics](Block-6/Block-6.html)
     - Project: [Using a model to set policy](Projects/SIR-model/using-the-SIR-model.html)
 
 

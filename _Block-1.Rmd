@@ -1,7 +1,0 @@
----
-title: "Block 1"
-listing: Block-1
----
-
-
-site: distill::distill_website
