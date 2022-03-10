@@ -1,0 +1,145 @@
+---
+title: "Ch. 47: Differential Equations"
+description: |
+  Instructor notes for Chapter 47
+author:
+  - name: Daniel Kaplan
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Chapter 47 introduces the components that are needed to specify a dynamical system and the formats by which the action of the system is displayed. 
+
+The components are: 
+
+- The changing quantities, functions of time whose instantaneous value describes the instantaneous configuration of the system. The set of these quantities at a given instant constitutes the **state** (or **dynamical state**) of the system. For a pendulum, for instance, the state has two components: the instantaneous angle that the bob makes with the vertical *and* the time rate of change of that angle.
+
+- The **state space**, each point of which is a possible instantaneous state.
+
+- The **dynamical rule**, which assigns to each and every point in state space a vector. You can think of the state as a kind of generalized "position" and the dynamical rule as the assignment of a "velocity" vector that can vary from place to place in state space.
+
+It's crucial that students understand the distinction between state, state spce, dynamical rule, trajectory, and time series. So take time to have students practice with the ideas. It's likely you'll need two class days for this chapter.
+
+Let's present these components using a children's game, Chutes and Ladders, as the illustration.
+
+```{r echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics("www/Chutes-and-ladders.png")
+```
+
+The game board is the set of possible positions, that is, the **state space**. In chutes and ladders, there are 100 numbered squares on the board so there are only 100 possible values of the state. (For our study of dynamics, the state space will typically be a continuous coordinate plane, on which you can specify position by the horizontal and vertical coordinates.) 
+
+The player has a token that marks the instantaneous state for that player. 
+
+The underlying **dynamical rule** is that the player rolls a die and moves the corresponding number of squares forward. But the dynamical systems we will study are **deterministic**, there is no randomness involved (until Chapter 55). So to make the analogy work, let's replace the roll-and-move logic with something much simpler: Each round will consist of moving the state from its current square to the next numbered square. 
+
+But the dynamical rule is somewhat more complicated than "move one square forward." From place to place there are ladders that connect two squares. When the state reaches a square holding the foot of a ladder, the state is swept up to the higher-numbered square at the top of the ladder. Similarly, there are chutes. These work much like the ladders but carry the state from a higher-numbered square to a lower-numbered square.
+
+The small drawings on the board are not actually part of the action of the game. Rather, they represent the idea that good deeds lead the player to progress, while wrong-doing produces regression. Thus, the productive gardener in square 1 is rewarded by being moved upward to the harvest in square 38. In square 64 a brat is pulling on his sister's braids. This misdeed results in punishment: he is moved back to square 60.
+
+A good class activity is to calculate the movement of one player, starting at square 2. The movement is simple, but carry it forward for a dozen or more steps.
+
+$2 \implies 3 \implies 14 \implies 15 \implies 16 \implies 6 \implies 7 \implies 8 \implies 31 \implies 32 \implies 33 \implies 34 \implies 35 \implies 44 \implies \cdots$
+
+The starting position (square 2 in this example) is called the **initial condition**. It might better be called the "intial state," but we're sticking to the language conventions used in dynamics. The sequence of states is the **trajectory** followed from the initial condition.
+
+As described, this is a very simple-minded game. The dynamical systems we're going to study are similarly **simple-minded**: just follow the rules. 
+
+Still, there are consequences of the chutes-and-ladder dynamics that are not immediately obvious when looking at the board. For instance, is it possible to enter into an unending cycle of movement? Are there some initial conditions that will lead eventually to completion of the game (at square 100), and others that won't? 
+
+Our dynamical systems will have a state space that is: 
+
+- the number line, or
+- the (x,y) coordinate plane, or sometimes
+- a higher-dimensional space.
+
+We will specify the dynamics---the rules of the game---using **two equivalent formats**:
+
+i. A **vector field** (or **flow field**) showing the direction (and speed) of movement for each point in the state space. Here's an example in a two-dimensional state space, with the components of state labelled $R$ and $F$. The flow is a model of how rabbit and fox populations interact over time.
+
+```{r echo=FALSE}
+vectorfield_plot(dt_rabbit(R, F) ~ R & F, dt_fox(R, F) ~ R & F,
+                 domain(R=0:2, F=0:1))
+```
+
+
+ii. A set of functions, one for each dimension of the state space. Each equation gives one of the components of the flow field. We'll call these **dynamical functions**.
+
+In the case of (ii), we use a standard framework called a **differential equation** for reminding us which dynamical function governs which component of the flow. For instance, we might have the system of two differential equations
+$$\partial_t x = f(x, y)\\
+\partial_t y = g(x, y)$$
+
+$f()$ and $g()$ are the dynamical functions. Each takes the coordinates of the state as an input. The notation $\partial_t x =$ is just a way of saying that $f(x,y)$ is the rule for the $x$-component of the flow, while $\partial_t y =$ makes it clear that $g(x,y)$ is the $y$-component of the flow.
+
+## Class activities
+
+### Chutes and ladders
+
+Collectively move one player along the board.
+
+### Rabbits and foxes
+
+1. Trace a trajectory starting at the initial condition $R=1, F=0.25$.
+    - What's the basic form of the trajectory? (Ans: a loop)
+    - Can you tell whether the loop is closed? (Ans: looks like it, but can't be certain from this picture.)
+    - Other than a closed loop, what possibilities are there? (Ans: A spiral inward or a spiral outward.)
+2. What happens near $R=1, F=0.5$? (Ans: the motion is very slow.)
+3. Given that $R$ stands for the population of rabbits and $F$ for the population of foxes, what's a plausible story behind the flow field. 
+
+Note: Don't worry about the equations of motion yet. That's a topic for another chapter.
+
+### Phase line
+
+Students draw a flow field on a one-dimensional state space: the phase line. Their flow field can be whatever they like, but they should have in mind the flow being a continuous function of position on the line, even if they can only draw a handful of vectors in their diagram. 
+
+1. Pick a student's field that points mostly in one direction. Ask whether the speed of movement is constant or varying. Or, ask how to draw a field that will have a non-steady movement.
+2. Pick a student's field that has a pair of adjacent arrows pointing toward one another. Ask what happens in the middle. (Ans: There must be a zero vector, meaning that motion stops and stays stopped.) 
+3. Pick a student's field that has a pair of adjacent arrows pointing away from one another. Must there be a zero vector somewhere in the middle? (Ans: Yes, since the flow is continuous.)
+4. Ask whether it's possible to have non-monotonic movement on the phase line. 
+5. Pick some student's field and translate it into a dynamical function form, by graphing the function using the state space as the input and the output in an orthogonal direction. Like this:
+
+```{r}
+Znotes::phase_line(x*(1-x) ~ x, domain(x=-0.1:1.1), nix_dyn=FALSE)
+```
+6. Translate a trajectory into a graph of $x$ versus time. This is called a **time series** plot. The function that is plotted is a **solution** to the differential equation. Can there be more than one solution to a differential equation? (Ans: Yes, each initial condition has its own solution.)
+
+
+### Blank phase plane
+
+Draw a square around a region on the board. Keep it blank, with no flow field drawn.
+
+1. Draw a loop. Is this a possible trajectory for some set of dynamics? (Ans: Yes)
+2. Draw the flow field near the trajectory. (Arrows running parallel to the trajectory.)
+3. Draw a figure-8. Then have a student draw a flow field just in the region near the trajectory. 
+    i. What happens to the flow field at the crossing point in the figure-8? (Ans: there must be two different vectors at that point. But this means that there is not a singled-valued dynamical function. So trajectories cannot cross one another.)
+4. Point out that in deterministic dynamics, two trajectories can **never cross**. 
+    i. Can two nearby trajectories converge? (Ans: yes)
+    ii. Can two nearby trajectories diverge? (Ans: yes)
+5. Draw a trajectory spiraling in to the center.
+    i. Is the corresponding flow field continuous? That is, are nearby vectors in the flow field similar?
+    ii. Can the trajectory ever find it's way out of the spiral? (Ans: Yes, but it would have to turn around and run parallel to the inbound trajectory. This makes for a very elaborate flow field.)
+    iii. For a smooth flow field, that is one with no intricate changes in direction, what's the inevitable result of a trajectory spiraling in? (Ans: A steady state.)
+
+
+## Pitfalls
+
+We're going to be writing differential equations like this: 
+$$\partial_t x = f(x)$$
+
+- The derivative on the left side is **always** with respect to time.
+- $x$ really stands for $x(t)$, a function of time. We drop the $(t)$ only because it makes the equation harder to read:
+$$\partial_t x(t) = f(x(t))$$
+- In dynamics we have two different types of functions that play different roles:
+
+    1. The **dynamical functions**, like $f(x)$ that are functions of the **state**. 
+    2. The **solution functions**, like $x(t)$ that are functions of **time**.
+    
+- The dynamical functions are the rules of the game. The solution functions are a movie showing the action of the game, that is, how the state changes in time.
+
+
+
+

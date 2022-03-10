@@ -1,0 +1,62 @@
+---
+title: "Dynamics overview"
+description: |
+  Motivation and philosophy for Block 6
+author:
+  - name: Daniel Kaplan
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Differential equations is rightly called "a language of science," since so many fundamental scientific topics are expressed this way, from Newtonian motion to quantum physics to relativity. They are also a very important tool in engineering design and modeling generally. Block 6 provides an introduction to "ordinary differential equations." 
+
+We use the term "dynamics" rather than "differential equations" to emphasize our concern with the **qualitative phenomena** seen in dynamical systems, especially the stability of fixed points. Analytic solutions are derived only in simple linear, constant coefficient systems and some straightforward integration of motion in a constant gravitational field. Often, we use numerical solutions to demonstrate or confirm some aspect of theory.
+
+Following the usual pattern in *MOSAIC Calculus*, much of the focus is on two-dimensional systems. One reason for this emphasis is that graphics can be effective, providing a non-algebraic path to understanding many of the concepts. Another reason is physical: Fundamental concepts in Newtonian dynamics are position, velocity, and acceleration and these can be captured in two-dimensional systems.
+
+A **state space** (a.k.a. "phase space" or "phase plane") approach is used almost exclusively, up until Chapter 54. The components of a state space representation of dynamics are introduced at the beginning: Chapter 47. In a nutshell, each possible instantaneous configuration of the system is a point in the state space. The dynamics are represented as a flow in this state space, that is, a description of how a system in any given state changes state over time. For Newtonian dynamics, for example, simple ballistic motion (in one spatial dimension) has two state components: position $x$ and velocity $v = \partial_t x$.
+
+The dynamical flow is represented as a vector field: the assignment of a vector to every point in state space. Graphically, this is shown by drawing a representative collection of the vectors in the field. 
+
+Alternatively (and equivalently), the dynamical flow is presented as a **system** of differential equations, where there is one equation for each component of the vector flow.  If $x$ and $v$ are the state variables, $\partial_t x$ and $\partial_t v$ are the components of the flow vector.
+
+$$\partial_t x = f(x, u)\\
+\partial_t v = g(x,u)$$
+The left side of this system is the instantaneous change in state. The functions on the right side, $f()$ and $g()$ here, are functions of the instantaneous state. We're calling these functions the **dynamical functions** because they describe the dynamical rule. 
+
+Another way of representing a dynamical system with two state variables is with a **second-order** differential equation, which looks like this:
+$$\partial_{tt} u = h(x,u) \partial_t u + w(x,u)\ .$$
+In contrast to the system of first-order differential equations, where it's very easy to draw the flow, there doesn't seem to be any easy, general method of drawing a picture of the second-order differential equation. (Instead, what is presented is a graph of the **solution**, that is $u(t)$. This leads to a focus on solutions rather than the dynamical phenomenon.) 
+
+When we do use second-order DEs in *MOSAIC Calculus*, it is mainly to show students a format that they will encounter in other courses and, in the case of linear, second-order DEs, to demonstrate the characteristic equation and its link to eigenvalues (Chapter 54) or to examine the response to forcing (Chapter 55).
+
+## Role in modeling
+
+Differential equations (or, equivalently, flow fields in state space) are an important framework for modeling. The flow-field/dynamical-function format is a way of organizing knowledge. Rather than having to keep in mind the whole time evolution of the system, the modeler can focus on the instantaneous change of state (as a function of state).
+
+There's a saying:
+
+> *Think globally, act locally.* 
+
+Differential equations work the other way round:
+
+> **Model locally, let the global stuff sort itself out by the mechanics of flow.**
+
+## Review of material
+
+Block 6 brings together many of the tools developed earlier in *MOSAIC Calculus*, and so provides an opportunity for review.
+
+- Modeling, especially with low-order polynomials
+- Integration
+- Vectors and matrices
+- Numerical approximation and iteration
+
+
+
+
+
+

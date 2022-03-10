@@ -1,0 +1,31 @@
+---
+title: "Computing in Block 5"
+description: |
+  Options for structuring computer commands
+author:
+  - name: Daniel Kaplan
+date: 2022-01-27
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Describe `%dot%`, `%onto%`, and `%perp%`.
+
+
+It's possible to use `cbind()` and `rbind()` in the reverse order than we do in the text, so that the construction statement looks like the matrix itself.
+
+```{r}
+rbind(
+    cbind(1, 10),
+    cbind(2, 11),
+    cbind(3, 12)
+)
+```
+
+This is well suited to presenting the matrix as it will appear. We don't do this because we want to emphasize that a matrix is a collection of vectors, and we use only column vectors in the text.
