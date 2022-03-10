@@ -6,28 +6,28 @@
       "description": "Navigating the blog and links to talks and articles about Zcalc",
       "author": [],
       "contents": "\nPut in links to the USNA talk and the ASEE paper.\nAlso, explain how the categories and tags work.\n2022-02-11 USNA Remodeling the mathematics core at USAFA html pdf\n2022-02-15 Florida Polytechnic An Engineering-oriented Calculus Core html pdf\n\n\n\n",
-      "last_modified": "2022-03-10T14:41:31-07:00"
+      "last_modified": "2022-03-10T15:04:04-07:00"
     },
     {
       "path": "Block-5.html",
       "title": "Block 5",
       "author": [],
       "contents": "\n…\nOther resources\nNotes on linear algebra from the Macalester College Math 135 course. The approach to the topic is substantially refined in the MOSAIC Calculus text, but the exercises and examples may be useful to instructors.\n\n\n\n",
-      "last_modified": "2022-03-10T14:41:32-07:00"
+      "last_modified": "2022-03-10T15:04:05-07:00"
     },
     {
       "path": "Block-6.html",
       "title": "*MOSAIC Calculus*: Block 6",
       "author": [],
       "contents": "\nDynamics overview\nChapter 47: Differential Equations\nInstructor notes\n\nChapter 48: Finding a Solution\nInstructor notes\n\n",
-      "last_modified": "2022-03-10T14:41:33-07:00"
+      "last_modified": "2022-03-10T15:04:06-07:00"
     },
     {
       "path": "index.html",
       "title": "*MOSAIC Calculus*",
       "author": [],
       "contents": "\nThe Project MOSAIC calculus textbook is divided into six blocks and a collection of “manifestations.” Depending on the goals for the course being taught different blocks can be included.\nPreface: What is calculus?\nBlock 1: Introduction to functions and computing\nBlock 1b: Foundations for modeling\nProject: Lessons from Ebola\n\nBlock 2: Differentiation\nProjects:\nHow fast does a bicycle go?\nHow to walk uphill\n\n\nBlock 3: Anti-differentiation and accumulation\nProject: Driving with integrals\n\nBlock 4: Manifestations\nOperations on functions\nInterpolation and splines\nOptimization and constraint\nProbability and evidence\nPresent and future value\nProject: Retirement and after\n\nMechanics\n\nBlock 5: Linear combinations\nProject: Least squares and engine scaling\n\nBlock 6: Dynamics\nProject: Using a model to set policy\n\nWriting for this blog\nKeeping track of objectives\n\n\n\n",
-      "last_modified": "2022-03-10T14:41:34-07:00"
+      "last_modified": "2022-03-10T15:04:06-07:00"
     }
   ],
   "collections": ["posts/posts.json", "Block-5/Block-5.json"]
