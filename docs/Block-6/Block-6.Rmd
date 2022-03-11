@@ -11,4 +11,4 @@ output: distill::distill_article
     - [Instructor notes](Chap-47-diff-eq-notes.html)
     
 - Chapter 48: **Finding a Solution**
-    - [Instructor notes](Chap-48-finding-solution-notes.html)
+    - [Instructor notes](Chap-48-finding-solutions-notes.html)

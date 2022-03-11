@@ -5,7 +5,9 @@ description: |
 author:
   - name: Daniel Kaplan
 date: "`r Sys.Date()`"
-output: distill::distill_article
+output: 
+  pdf_document: null
+  distill::distill_article: null
 ---
 
 ```{r setup, include=FALSE}

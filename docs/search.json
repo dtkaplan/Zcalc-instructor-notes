@@ -6,14 +6,14 @@
       "description": "Navigating the blog and links to talks and articles about Zcalc",
       "author": [],
       "contents": "\nPut in links to the USNA talk and the ASEE paper.\nAlso, explain how the categories and tags work.\n2022-02-11 USNA Remodeling the mathematics core at USAFA html pdf\n2022-02-15 Florida Polytechnic An Engineering-oriented Calculus Core html pdf\n\n\n\n",
-      "last_modified": "2022-03-10T16:36:40-07:00"
+      "last_modified": "2022-03-10T19:33:52-07:00"
     },
     {
       "path": "index.html",
       "title": "*MOSAIC Calculus*",
       "author": [],
       "contents": "\nThe Project MOSAIC calculus textbook is divided into six blocks and a collection of “manifestations.” Depending on the goals for the course being taught different blocks can be included.\nPreface: What is calculus?\nBlock 1: Introduction to functions and computing\nBlock 1b: Foundations for modeling\nProject: Lessons from Ebola\n\nBlock 2: Differentiation\nProjects:\nHow fast does a bicycle go?\nHow to walk uphill\n\n\nBlock 3: Anti-differentiation and accumulation\nProject: Driving with integrals\n\nBlock 4: Manifestations\nOperations on functions\nInterpolation and splines\nOptimization and constraint\nProbability and evidence\nPresent and future value\nProject: Retirement and after\n\nMechanics\n\nBlock 5: Linear combinations\nProject: Least squares and engine scaling\n\nBlock 6: Dynamics\nProject: Using a model to set policy\n\nWriting for this blog\nKeeping track of objectives\n\n\n\n",
-      "last_modified": "2022-03-10T16:36:41-07:00"
+      "last_modified": "2022-03-10T19:33:53-07:00"
     }
   ],
   "collections": ["posts/posts.json"]
