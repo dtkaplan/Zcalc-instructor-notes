@@ -4,10 +4,10 @@ author:
 - name: Daniel Kaplan
 date: "`r Sys.Date()`"
 output:
-  pdf_document: null
-  distill::distill_article: null
   html_document:
     df_print: paged
+  distill::distill_article: null
+  pdf_document: null
 description: |
   Instructor notes for Chapter 47
 ---

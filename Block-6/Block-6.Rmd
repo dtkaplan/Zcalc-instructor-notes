@@ -12,3 +12,6 @@ output: distill::distill_article
     
 - Chapter 48: **Finding a Solution**
     - [Instructor notes](Chap-48-finding-solutions-notes.html)
+
+- Chapter 49: **Flows on the line**
+    - [Instructor notes](Chap-49-flows-on-line.html)
