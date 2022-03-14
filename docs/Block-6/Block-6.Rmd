@@ -4,7 +4,7 @@ subtitle: "Instructor resources"
 output: distill::distill_article
 ---
 
-[Dynamics overview](Dynamics-overview-notes.html)
+**[Dynamics overview](Dynamics-overview-notes.html)**
 
 
 - Chapter 47: **Differential Equations**
@@ -19,5 +19,17 @@ output: distill::distill_article
 - Chapter 50: **Flows on the plane**
     - [Instructor notes](Chap-50-flows-on-plane.html)
     
+- Chapter 51: **Modeling dynamics**
+    - [Instructor notes](Chap-51-modeling-dynamics.html)
+
+- Chapter 52: **Equilibrium and transient**
+    - [Instructor notes](Chap-52-equilibrium-transient.html)    
     
+- Chapter 53:
+
+- Chapter 54:
+
+- Chapter 55:
+
+
 

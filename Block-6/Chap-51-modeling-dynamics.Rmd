@@ -1,0 +1,60 @@
+---
+title: 'Ch. 51: Modeling dynamics'
+author: "Daniel Kaplan"
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article: null
+  pdf_document: null
+  html_document:
+    df_print: paged
+description: |
+  Instructor notes for Chapter 51
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Student outcomes:
+
+S-BOXLN: Identify and interpret mechanistically interaction terms in a second-order differential equation.
+
+WP-205-61: Model and solve population growth problems using the natural and logistic growth models.
+
+L-CGDLK: Understand "coupling" and why oscillation requires that the dynamical functions in a two-state variable system must each take the other state variable as an input.
+
+
+## Overview
+
+This chapter discusses some of the ideas behind the shapes of dynamical functions for some common modeling situations. There are two major mathematical themes 
+
+i. Shapes of functions
+    a. Bounded versus unbounded dynamics 
+    b. Change depends on self versus change depends on the other. This applies only in two- or more-dimensional systems.
+ii. Introducing or reviewing "classical" dynamical models.
+    a. Illustrating how the "shapes of functions" theme corresponds to dynamics that can be intuitively understood. (There are no physics or engineering examples in this chapter.)
+    b. Examples of how constructing a model of the dynamics supports developing new quantities that say something important about the dynamics.
+
+## Shapes of functions
+
+### Bounded versus unbounded dynamics
+
+"Unbounded" dynamics refers to dynamical rules that are monotonically increasing. Linear models with positive coefficients are this way. Growth in such systems is exponential, which means that sooner or later some other mechanism (not included in the current mechanism) must get involved in order to keep the quantities within the bounds of the universe. The linear dynamics can therefore only be valid "close" to fixed points. If we want to explain things further from the fixed points we will need to add nonlinear features to the model.
+
+The chapter deals with a sigmoidally shaped dynamical function. This does not lead to a fixed point, but changes the growth from exponential in time into linear in time.
+
+The chapter doesn't mention hump-shaped functions which introduce a stable fixed point. These were covered in previous chapters (logistic growth). PLEASE ADVISE whether they need to be reviewed in this chapter as well.
+
+### Self and other
+
+
+
+Bounded and unbounded dynamics in 1 state variable.
+- Monod growth
+
+Two state variables
+- Change depends on the other Love and War
+- change depends on self but modulated by the other -- interaction term.
+    - predator prey
+    - SIR -- a somewhat modified version of predator prey, where the prey become the predator, as in a zombie movie.

@@ -1,0 +1,34 @@
+---
+title: 'Ch. 52: Equilibrium and transient'
+author: "Daniel Kaplan"
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article: null
+  pdf_document: null
+  html_document:
+    df_print: paged
+description: |
+  Instructor notes for Chapter 52
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Student outcomes:
+
+H-HAND6: Convert a second-order differential equation into two first-order equations in  order to integrate numerically the second-order DE.
+
+G-I8BZJ: Convert a pair of linear, first-order equations, where one of the coefficients is zero, into a linear second-order differential equation.
+
+D-JJBYA: Use an exponential ansatz in a second-order linear DE to find the exponential rate constants on the two exponential solutions (with real eigenvalues).
+
+K-UAHR5: Demonstrate that a linear combination of two solutions to a differential equation is itself a solution.
+
+
+## Overview
+
+This chapter is a pre-introduction to Chapter 53 on eigenvalues and eigenvectors. It's mean to provide practice plugging in an exponential ansatz to systems of first-order differential equations and the solution as a linear combination of simple exponential solutions. It shows, without vector terminology, the derivation of the coefficients on that linear combination as an application of the target problem with the target vector being the initial conditions.
+
+It also derives 
