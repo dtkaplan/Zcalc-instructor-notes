@@ -1,0 +1,185 @@
+---
+title: 'Ch. 50: Flows on the plane'
+author: "Daniel Kaplan"
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article: null
+  pdf_document: null
+  html_document:
+    df_print: paged
+description: |
+  Instructor notes for Chapter 50
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Student outcomes:
+
+- D-OFZHG: Draw the nullclines of two dynamical functions on the phase plane using software.
+- X-HGCV2: Find fixed points of a 2nd-order dynamical function by finding the intersection point(s) of the nullclines.
+- N-CB2LE: Linearize a dynamical function of two state variables at a fixed point by constructing a first-order polynomial approximation in two variables.
+- N-SCL6M: From a graph of a flow field near a fixed point, identify the qualitative stability of the fixed point as a source, center, saddle, or spiral.
+
+
+## Overview
+
+This chapter is about finding fixed points of flows on the plane and linearizing the dynamics near a fixed point. In later chapters, we'll introduce a quantitative analysis of stability based on the eigenvalues of the linearized dynamics. Here, however, we focus on the *phenomena* of stability in a **qualitative** way and introduce different patterns of dynamics near a fixed point: **center** (sink), **source**, **saddle**, and **orbit**. 
+
+CHECK TEXT TO MAKE SURE center/sink/source are used consistently.
+
+NEED TO ADD TO CHAPTER 50 and example of the linearization of the predator-prey model.
+
+## Nullclines and fixed points
+
+As aways, a fixed point in a flow is a point in state space where all the dynamical functions have an output of zero.
+
+For a dynamical function on the phase plane, the zeros will (generically) be contour curves, not isolated points. In the context of dynamical systems, such a contour is called a ***nullcline***. 
+
+The graph below shows a flow field implied by two randomly constructed dynamical functions. I suggest introducing the topic of fixed points in the phase plane by showing only the flow field. [Computing note: Students should be able to construct the same dynamical functions on their own computers. They just have to match the `seed=` argument.]
+
+Ask the students to locate the fixed points (if any). This is challenging, since there are lots of very short arrows and some students will want to say these are zero length. Try to refine their thought process by pointing out that near a fixed point, the flow will point in different directions. (In the top quarter of the plot below, all the arrows are pointing more or less downward.) 
+
+```{r}
+dyn_fun_x <- rfun(~ x + y, seed=505)
+dyn_fun_y <- rfun(~ x + y, seed=555)
+
+vectorfield_plot(dyn_fun_x(x,y) ~ x & y,
+                 dyn_fun_y(x,y) ~ x & y,
+                 domain(x=-5:5, y=-5:5))
+```
+
+We'll need a tool to help us. Add a zero contour of the $x$-component of flow. This is the $x$ ***nullcline***.
+
+```{r}
+contour_plot(dyn_fun_x(x, y) ~ x & y, 
+             contours_at=0, 
+             domain(x=-5:5, y=-5:5), 
+             contour_color="blue") %>%
+  vectorfield_plot(dyn_fun_x(x,y) ~ x & y,
+                   dyn_fun_y(x,y) ~ x & y)
+```
+[Computing note: Due to a bug in `vectorfield_plot()`, it must be the last layer in the graphics construction.]
+
+- Ask the students to figure out what's the systematic difference between the flow arrows to the left of the nullcline and the flow arrows to the right. (The ones on the right have a negative $x$ component to the flow, the ones on the left have a positive $x$ component.)
+- Is there any systematic difference between the $y$-components of the flow from one side of the nullcline to the other? (No. You can see arrows pointing somewhat upward and others pointing somewhat downward on the right-side of the nullcline. The arrows on the left side of the nullcline point almost exclusively down, but that's just a coincidence; there are two, tiny upward tilted arrows at about $0 \leq x \leq 1$ and $-4 \leq y \leq 3$.)
+
+Just as there's an x-nullcline, there's a y-nullcline. From one side to the other of a y-nullcline, the flow arrows go from pointing downward to pointing upward.
+
+```{r}
+contour_plot(dyn_fun_x(x, y) ~ x & y, 
+             contours_at=0, 
+             domain(x=-5:5, y=-5:5), 
+             #domain(x=0:1.5, y=0:-3.5),
+             contour_color="blue", inherit=FALSE) %>%
+  contour_plot(dyn_fun_y(x, y) ~ x & y, 
+             contours_at=0,  
+             contour_color="magenta", inherit=FALSE) %>%
+  vectorfield_plot(dyn_fun_x(x,y) ~ x & y,
+                   dyn_fun_y(x,y) ~ x & y)
+```
+
+Where the nullclines intersect, both the $x$- and the $y$-components of the flow are zero: a fixed point. So there are two fixed points in this example.
+
+Here we'll zoom in on the region of the two fixed points:
+```{r}
+contour_plot(dyn_fun_x(x, y) ~ x & y, 
+             contours_at=0, 
+             #domain(x=-5:5, y=-5:5), 
+             domain(x=0.25:1.25, y=0:-3.5),
+             contour_color="blue", inherit=FALSE) %>%
+  contour_plot(dyn_fun_y(x, y) ~ x & y, 
+             contours_at=0,  
+             contour_color="magenta", inherit=FALSE) %>%
+  vectorfield_plot(dyn_fun_x(x,y) ~ x & y,
+                   dyn_fun_y(x,y) ~ x & y)
+```
+
+Ask some students to trace the flow from several different initial conditions. 
+- Can the flow go horizontally across the blue nullcline? Can it go horizontally across the magenta nullcline?
+- Confirm that near the magenta nullcline, the flow is entirely horizontal. (Point out places where the flow is slightly upward just to one side of the magenta nullcline and necessarily somewhat downward just to the other side.) [The arrows are drawn centered on the point phase space they represent.]
+
+## Linearization
+
+Review the first-order polynomial approximation to a function of two variables:
+$$f(x, y) = f(x_0, y_0) + \partial_x f(x_0, y_0) [x - x_0] + \partial_y f(x_0, y_0) [y - y_0]$$
+If $(x_0, y_0)$ is a fixed point, then $f(x_0, y_0) = 0$.
+
+Zoom in on one of the fixed point. Have the students figure out precisely where it is. They should use the `D()` operator to construct the partial derivatives and to evaluate them at the fixed point to get a number.
+
+```{r}
+x0 <- 0.572
+y0 <- -1.032  # Student should figure this out on their own
+# partials of dyn_fun_x()
+dx_dynx <- D(dyn_fun_x(x, y) ~ x)
+dy_dynx <- D(dyn_fun_x(x, y) ~ y)
+# partials of dyn_fun_y()
+dx_dyny <- D(dyn_fun_y(x, y) ~ x)
+dy_dyny <- D(dyn_fun_y(x, y) ~ y)
+# Evaluate them
+dyn_fun_x(x0,y0) 
+dyn_fun_y(x0,y0) # close enough to zero to confirm we're near the fixed point
+
+dx_dynx(x0,y0)
+dy_dynx(x0,y0)
+dx_dyny(x0,y0)
+dy_dyny(x0,y0)
+```
+
+The linear equations are
+$$\partial_t x = -5.1 x - 1.64y\\
+\partial_t y = 3.6 x - 1.04y
+$$
+
+
+
+Some other good examples:
+
+```{r}
+dyn_fun_x <- rfun(~ x + y, seed=105)
+dyn_fun_y <- rfun(~ x + y, seed=101)
+contour_plot(dyn_fun_x(x, y) ~ x & y, 
+             contours_at=0, 
+             domain(x=-5:5, y=-5:5), 
+             #domain(x=0:1.5, y=0:-3.5),
+             contour_color="blue") %>%
+  contour_plot(dyn_fun_y(x, y) ~ x & y, 
+             contours_at=0,  
+             contour_color="magenta") %>%
+  vectorfield_plot(dyn_fun_x(x,y) ~ x & y,
+                   dyn_fun_y(x,y) ~ x & y)
+```
+
+```{r}
+dyn_fun_x <- rfun(~ x + y, seed=35)
+dyn_fun_y <- rfun(~ x + y, seed=37)
+contour_plot(dyn_fun_x(x, y) ~ x & y, 
+             contours_at=0, 
+             domain(x=-5:5, y=-5:5), 
+             #domain(x=0:1.5, y=0:-3.5),
+             contour_color="blue") %>%
+  contour_plot(dyn_fun_y(x, y) ~ x & y, 
+             contours_at=0,  
+             contour_color="magenta") %>%
+  vectorfield_plot(dyn_fun_x(x,y) ~ x & y,
+                   dyn_fun_y(x,y) ~ x & y)
+```
+
+Here's one with no fixed points:
+
+```{r}
+dyn_fun_x <- rfun(~ x + y, seed=23)
+dyn_fun_y <- rfun(~ x + y, seed=43)
+contour_plot(dyn_fun_x(x, y) ~ x & y, 
+             contours_at=0, 
+             domain(x=-5:5, y=-5:5), 
+             #domain(x=0:1.5, y=0:-3.5),
+             contour_color="blue") %>%
+  contour_plot(dyn_fun_y(x, y) ~ x & y, 
+             contours_at=0,  
+             contour_color="magenta") %>%
+  vectorfield_plot(dyn_fun_x(x,y) ~ x & y,
+                   dyn_fun_y(x,y) ~ x & y)
+```

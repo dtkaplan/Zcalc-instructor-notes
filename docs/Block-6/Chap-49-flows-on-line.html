@@ -92,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-03-12" />
-  <meta property="article:created" itemprop="dateCreated" content="2022-03-12" />
+  <meta property="article:published" itemprop="datePublished" content="2022-03-13" />
+  <meta property="article:created" itemprop="dateCreated" content="2022-03-13" />
   <meta name="article:author" content="Daniel Kaplan" />
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output","description"]}},"value":[{"type":"character","attributes":{},"value":["Ch. 49: Flows on the line"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Daniel Kaplan"]}]}]},{"type":"character","attributes":{},"value":["2022-03-12"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article","pdf_document","html_document"]}},"value":[{"type":"NULL"},{"type":"NULL"},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["df_print"]}},"value":[{"type":"character","attributes":{},"value":["paged"]}]}]},{"type":"character","attributes":{},"value":["Instructor notes for Chapter 49"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output","description"]}},"value":[{"type":"character","attributes":{},"value":["Ch. 49: Flows on the line"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Daniel Kaplan"]}]}]},{"type":"character","attributes":{},"value":["2022-03-13"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article","pdf_document","html_document"]}},"value":[{"type":"NULL"},{"type":"NULL"},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["df_print"]}},"value":[{"type":"character","attributes":{},"value":["paged"]}]}]},{"type":"character","attributes":{},"value":["Instructor notes for Chapter 49"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Ch. 49: Flows on the line","description":"Instructor notes for Chapter 49","authors":[{"author":"Daniel Kaplan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-03-12T00:00:00.000+00:00","citationText":"Kaplan, 2022"}
+{"title":"Ch. 49: Flows on the line","description":"Instructor notes for Chapter 49","authors":[{"author":"Daniel Kaplan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-03-13T00:00:00.000+00:00","citationText":"Kaplan, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1475,19 +1475,44 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   Daniel Kaplan
   
-<br />2022-03-12
+<br />2022-03-13
 </div>
 
 <div class="d-article">
-<h2 id="student-outcomes-need-to-update-for-this-chapter.">Student outcomes: NEED TO UPDATE FOR THIS CHAPTER.</h2>
+<h2 id="student-outcomes">Student outcomes:</h2>
 <ul>
-<li>Recognize a first-order differential equation.</li>
-<li>Given a set of state variables, write down the framework for a system of first-order differential equations.</li>
-<li>Understand that there can be (infinitely) many <strong>solutions</strong> to a differential equation.</li>
-<li>Each solution has its individual <strong>initial condition</strong>.</li>
-<li>Given dynamical functions, use the computer to sketch the flow field.</li>
-<li>Given dynamical functions, find a trajectory numerically and plot it.</li>
-<li>Plot out the individual time series from a numerically computed trajectory.</li>
+<li>V-YGS71: Find the location of fixed points in a one-state-variable system by finding zeros of the dynamical function:
+<ul>
+<li>graphically or computationally when all parameters are known</li>
+<li>analytically in simple cases (e.g. quadratic polynomial)</li>
+</ul></li>
+<li>J-YOLEG: Deduce the stability of a fixed point by:
+<ul>
+<li>examination of the slope of the dynamical function in a first-order system</li>
+</ul></li>
+<li>F-QSK86: Identify the long-term behavior of trajectories starting near an unstable fixed point. For first-order systems, identify when the long-term behavior terminates at a stable fixed point, and which one.</li>
+<li>X-DE4WK: Construct the linear approximation to a dynamical function at a fixed point:
+<ul>
+<li>evaluate the derivative of the dynamical functions at the fixed point</li>
+<li>for systems, construct the matrix representation of the linear dynamics centered at the fixed point.</li>
+</ul></li>
+<li>C-QDOXL: Given a first-order differential equation of the form <span class="math inline">\(\partial_t x = a x + b\)</span>, find the solution analytically in terms of <span class="math inline">\(x\)</span>.
+<ul>
+<li>Determine the location of the fixed point <span class="math inline">\(x^\star\)</span>.</li>
+<li>Translate the equation to be in terms of <span class="math inline">\(y\)</span>, where <span class="math inline">\(y = x - x^\star\)</span>.</li>
+<li>Write down the solution in terms of <span class="math inline">\(y\)</span>.</li>
+<li>Translate the solution back to be in term of <span class="math inline">\(x\)</span>.</li>
+</ul></li>
+<li>L-ZPTTA: Verify (by differentiation) a proposed solution to a first-order differential equation.</li>
+<li>L-ZPDIJ: Construct graphs, with properly labeled axes, of
+<ul>
+<li>Newton’s Law of Cooling</li>
+<li>population growth with and without a carrying capacity</li>
+</ul></li>
+</ul>
+<p>Still relevant …</p>
+<ul>
+<li>N-O88YI: From a trajectory drawn on a graph of a flow field, construct a plausible time-series plot</li>
 </ul>
 <h2 id="overview">Overview</h2>
 <p>This chapter is about continuous-time systems with one state variable. There are four main objectives of this chapter:</p>
@@ -1506,7 +1531,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><p>Radioactive decay, where the state variable is the amount of mass <span class="math inline">\(M\)</span> of the radioactive material. <span class="math inline">\(\partial_t M = -k M\)</span></p></li>
 <li><p>Credit card debt, where the state variable is the amount of debt <span class="math inline">\(D\)</span>. <span class="math inline">\(\partial_t M = r M\)</span>, where the dimension of the parameter <span class="math inline">\(r\)</span> is T<sup>-1</sup>, as in “2.5 percent per month.”</p></li>
 </ul>
-A useful tool for displaying dynamics on the phase line is a combination plot where the state space is the <span class="math inline">\(x\)</span> axis. The input to the dynamical function is that same <span class="math inline">\(x\)</span> axis, with the output being plotted as the vertical coordinate. (This function is part of the <code>{Znotes}</code> package, which contains among other things software for making specialized pedagogical graphics. To install <code>{Znotes}</code>, use the R command <code>remotes::install_github(&quot;dtkaplan/Znotes&quot;)</code>) The flow vectors are horizontal because they must always be vectors in the state space, which is presented here as a horizontal line.
+<p>A useful tool for displaying dynamics on the phase line is a combination plot where the state space is the <span class="math inline">\(x\)</span> axis. The input to the dynamical function is that same <span class="math inline">\(x\)</span> axis, with the output being plotted as the vertical coordinate. (This function is part of the <code>{Znotes}</code> package, which contains among other things software for making specialized pedagogical graphics. To install <code>{Znotes}</code>, use the R command <code>remotes::install_github(&quot;dtkaplan/Znotes&quot;)</code>) The flow vectors are horizontal because they must always be vectors in the state space, which is presented here as a horizontal line.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class="va">dyn_function</span> <span class="op">&lt;-</span> <span class="fu">rfun</span><span class="op">(</span> <span class="op">~</span> <span class="va">x</span>, seed<span class="op">=</span><span class="fl">101</span><span class="op">)</span>
