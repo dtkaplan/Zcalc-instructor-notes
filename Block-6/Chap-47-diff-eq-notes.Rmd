@@ -17,6 +17,18 @@ library(Zcalc)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Student outcomes
+
+1. D-93XWJ: Given a flow field in one or two dimensions, draw a plausible trajectory
+2. G-MC8XJ: Explain why determinism rules out two different trajectories passing through any single point in state space. 
+3. X-KZLDP: Distinguish between the **instantaneous state** and the **state space**.
+4. M-P1ZSV: Distinguish between graphics of time series and trajectories by examination or construction of the graph's axes.
+5. N-088YI: From a trajectory drawn on a graph of a flow field, construct a plausible time-series plot
+6. X-MO2V8: Understand these terms and describe the relationships among them in the context of dynamics: instantaneous state, state space, state variable, dynamical function, flow field, trajectory, time-series, differential equation, initial condition, solution
+ 
+
+
+
 Chapter 47 introduces the components that are needed to specify a dynamical system and the formats by which the action of the system is displayed. 
 
 The components are: 
@@ -144,14 +156,5 @@ $$\partial_t x(t) = f(x(t))$$
     
 - The dynamical functions are the rules of the game. The solution functions are a movie showing the action of the game, that is, how the state changes in time.
 
-## Student outcomes
-
-1. D-93XWJ: Given a flow field in one or two dimensions, draw a plausible trajectory
-2. G-MC8XJ: Recognize and explain why two trajectories can not cross one another. 
-3. X-KZLDP: Distinguish between the **instantaneous state** and the **state space**.
-4. M-P1ZSV: Distinguish between graphics of time series and trajectories by examination or construction of the graph's axes.
-5. N-088YI: From a trajectory drawn on a graph of a flow field, construct a plausible time-series plot
-6. X-MO2V8: Understand these terms and describe the relationships among them in the context of dynamics: instantaneous state, state space, state variable, dynamical function, flow field, trajectory, time-series, differential equation, initial condition, solution
- 
 
 
