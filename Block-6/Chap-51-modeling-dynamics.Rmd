@@ -18,12 +18,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Student outcomes:
 
-S-BOXLN: Identify and interpret mechanistically interaction terms in a second-order differential equation.
+-S-BOXLN: Identify and interpret mechanistically interaction terms in a two-state variable system.
 
-WP-205-61: Model and solve population growth problems using the natural and logistic growth models.
+- WP-205-61: Model and solve population growth problems using the natural and logistic growth models.
 
-L-CGDLK: Understand "coupling" and why oscillation requires that the dynamical functions in a two-state variable system must each take the other state variable as an input.
+- L-CGDLK: Understand "coupling" and why oscillation requires that the dynamical functions in a two-state variable system must each take the other state variable as an input.
 
+- X-LG744: Apply dynamics skills and concepts to develop a solution to a complex problem of an interdisciplinary nature.
+
+- D-OFZHG:  Draw the nullcline of a dynamical function using software.
+
+- X-HGCV2: Find fixed points of a 2nd-order dynamical function by finding the intersection point(s) of the nullclines.
+
+WP-205-65: Use a differential equation to model a spring-mass system, determine whether the system is undampted, critically damped, under damped, or over damped, and describe the long-term behavior.
 
 ## Overview
 
