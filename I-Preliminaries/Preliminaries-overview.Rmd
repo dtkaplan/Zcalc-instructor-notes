@@ -1,0 +1,21 @@
+---
+title: 'Preliminaries overview'
+author:
+- name: Daniel Kaplan
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+  distill::distill_article: null
+  pdf_document: null
+description: |
+  Overview of the Preliminaries section of *MOSAIC Calculus* 
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+

@@ -1,0 +1,35 @@
+---
+title: "*MOSAIC Calculus*: Block 6"
+subtitle: "Instructor resources"
+output: distill::distill_article
+---
+
+**[Dynamics overview](Dynamics-overview-notes.html)**
+
+
+- Chapter 47: **Differential Equations**
+    - [Instructor notes](Chap-47-diff-eq-notes.html)
+    
+- Chapter 48: **Finding a Solution**
+    - [Instructor notes](Chap-48-finding-solutions-notes.html)
+
+- Chapter 49: **Flows on the line**
+    - [Instructor notes](Chap-49-flows-on-line.html)
+    
+- Chapter 50: **Flows on the plane**
+    - [Instructor notes](Chap-50-flows-on-plane.html)
+    
+- Chapter 51: **Modeling dynamics**
+    - [Instructor notes](Chap-51-modeling-dynamics.html)
+
+- Chapter 52: **Equilibrium and transient**
+    - [Instructor notes](Chap-52-equilibrium-transient.html)    
+    
+- Chapter 53:
+
+- Chapter 54:
+
+- Chapter 55:
+
+
+

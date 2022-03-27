@@ -1,0 +1,12 @@
+---
+title: "*MOSAIC Calculus*: I. Modeling"
+subtitle: "Instructor resources"
+output: distill::distill_article
+---
+
+**[Dynamics overview](Dynamics-overview-notes.html)**
+
+
+- Chapter 8: **Parameters**
+    - [Instructor notes](Chap-8-parameters.html)
+    

@@ -1,0 +1,33 @@
+---
+title: "*MOSAIC Calculus*: Preliminaries"
+subtitle: "Instructor resources"
+output: distill::distill_article
+---
+
+**[Overview](Preliminaries-overview.html)**
+
+
+- Chapter 1: **Modeling change**
+    - [Instructor notes](Chap-01-modeling-change.html)
+    
+- Chapter 2: **Notation**
+    - [Instructor notes](Chap-02-notation.html)
+
+- Chapter 3: **Symbolic necessities**
+    - [Instructor notes](Chap-03-symbolic.html)
+    
+- Chapter 4: **Graphs and graphics**
+    - [Instructor notes](Chap-04-graphs-and-graphics.html)
+    
+- Chapter 5: **Pattern-book functions**
+    - [Instructor notes](Chap-05-pattern-book-functions.html)
+
+- Chapter 6: **Describing functions**
+    - [Instructor notes](Chap-06-describing-functions.html)    
+    
+- Chapter 7: **Data and data graphics**
+    - [Instructor notes](Chap-06-data-and-data-graphics.html)
+
+
+
+

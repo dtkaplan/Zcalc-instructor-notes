@@ -1,0 +1,84 @@
+---
+title: 'Ch. 2: Notation'
+author:
+- name: Daniel Kaplan
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+  distill::distill_article: null
+  pdf_document: null
+description: |
+  Instructor notes for Chapter 2
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Student outcomes
+
+
+## Overview
+
+This chapter has three objectives, one of which is unstated to the student reader.
+
+The first explicit objective is to introduce students to a notation for defining functions that gives a name to the function and to its arguments. The second explicit objective is to get students started with R notation, particularly to "assignment" and constructing functions with `makeFun()`, but also to introduce  "tilde expressions" which we will use extensively throughout the book.
+
+Then there is the unstated objective, which instructors should be clearly aware of.
+
+## What is $x$?
+
+The unstated objective has to do with a style of writing mathematical expressions that pre-dates the introduction (by Euler) of the concept of a mathematical function. In this style, one refers to a function like $\sqrt{x}$ or $e^x$, where $x$ is meant to stand for the input.
+
+Newton referred to $x$, $y$, etc. as *[fluents](https://en.wikipedia.org/wiki/Fluent_(mathematics))*, which were what we now call "functions of time" and would write in the style $x(t)$. Newton introduced the word *fluxion* to stand for what we now call the "derivative of a function." Of course, the derivative of a function is also a function. Distinguishing between functions (e.g. $\sin()$, $\cos()$) and  relationships between functions (e.g. $\cos(t) \equiv \frac{\partial}{\partial t} \sin(t)$ or $\int sin(t) dt = -\cos(t) + C$) is important, as are the ideas of differentiation and anti-differentiation as being *operators* that take a function as input and produce a function as output. 
+
+At this stage in the book, of course, we're not yet working with ideas like differentation and anti-differentiation. Still, when we get there it will help students if they have a notation that makes it easy to express things like "with respect to." This chapter introduces a distinction between *function names* and the *names of inputs* to functions.
+
+This distinction is critical in any situation where there is more than one input to a function. Traditional calculus courses, dealing almost exclusively as they do with functions of a single variable, may get away with $x$ as the standard input name and $y$ as the standard name of a function (as in $y = mx + b$ where $y' = m$) but this becomes confusing  when we have functions like $\text{rainfall}(x, y)$.
+
+## Computer expressions
+
+Since much of professionals' work with mathematics involves computing and computer programming, *MOSAIC Calculus* tries from the beginning to make connections between mathematical notation and computing. I think that some of the reason for students having difficulty learning computer programming is that they have been exposed to a notation that looks an awful lot like expressions in computer languages but either means something entirely different or has no meaning at all.
+
+Take this computer statement which is valid in many mainstream computer languages:
+```{r eval=FALSE}
+y = mx + b
+```
+As a valid statement, it means, "Use the name `y` to refer to the sum of a quantity named `mx` and another named `b`." The statement has no connection whatsoever to the definition of a function.
+
+Creating a function in a computer language involves giving a name to the function and giving names to the arguments.^[There are exceptions to this statement, such as "lambda" or "inline" expressions.]
+
+For instance, here are definitions for a simple mathematical function in a handful of computing languages:
+
+- C: `double f(x) {x^2}`
+- JavaScript: `function f(x) {x*x}`
+- Mathematica: `f[x_] := x**2`
+- R (natively): `f <- function(x) {x^2}`
+
+
+## Parameters of functions
+
+We introduce the word ***parameter*** early, even though we will not use them in a meaningful way until Block 1.
+
+What is a parameter? How is it different from an input? 
+
+We could formally do away with the need for parameters, by treating them simply as arguments. But this violates practice in every discipline.
+
+
+## `makeFun()` and tilde expressions
+
+
+
+## Special values for inputs.
+
+
+## Keyboards and math notation
+
+
+- ***Infix notation*** For functions with two inputs, computing languages often support a different arrangement of the function name and the inputs where the name comes inbetween the arguments. You've seen this "infix" notation in parts of traditional arithmetic notation, for instance, $3 + 5$ or $8/2$. In R, power-law functions are often written in infix notation, e.g. `3^2` or `x^3`. When you see a traditional notation like $e^x$, you will be tempted at first to write this as `e^x`. But in R, the exponential function is written in functional notation: `exp(x)`.
+
+- ***Markup notation*** You are undoubtedly familar with word processing and, particularly, a style of word processing called What-you-see-is-what-you-get (WYSIWYG). In WYSIWYG, you can enter plain text just using the keyboard, but if you want to make something **boldface** or *italics*, you use the mouse to select the text involved and select a style from a menu. Typically, WYSIWYG mathematical content involves a similar mouse-based process. In contrast, in mainstream computer languages, the mouse is not needed at all. The computer commands are constructed from plain, linear sequences of letters and other characters. 
+
+Traditional mathematical notation includes features such as superscripts and special symbols that are easily written out with pencil in hand. Often this notation is beautiful and aesthetically cherished by mathematicians. But computer commands in most computer languages are straight sequences of characters using function or infix notation.^[Some computer languages use notation where the name of the function is contained inside the parentheses as in `(+ 2 3)`.]
