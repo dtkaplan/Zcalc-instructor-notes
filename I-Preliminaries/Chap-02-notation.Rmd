@@ -60,18 +60,63 @@ For instance, here are definitions for a simple mathematical function in a handf
 
 ## Parameters of functions
 
-We introduce the word ***parameter*** early, even though we will not use them in a meaningful way until Block 1.
+We introduce the word ***parameter*** early, even though we will not use them in a meaningful way until Chapter 8. Of the functions we introduce in the Preliminaries section of the book, on the "straight-line function" $$\line(x) \equiv m x + b$$ has parameters. 
 
-What is a parameter? How is it different from an input? 
-
-We could formally do away with the need for parameters, by treating them simply as arguments. But this violates practice in every discipline.
-
+See the next section for how the software handles function parameters.
 
 ## `makeFun()` and tilde expressions
 
+The native way to build functions in R **which we will NOT use, is via the 
+`function` keyword, which has a special syntax involving both parentheses and curly braces. (See the example above.)
+
+Instead, we will use the `{mosaic}` package's `makeFun()`. It's not important to explain the reasons for this to students. I'll mention some of those reasons below.
+
+`makeFun()` takes an argument in the form of a **tilde expression**. (For those familiar with R, tilde expressions are usually called "formulas," but this usage gets confusing in calculus were there are mathematical objects called formulas.)
+
+A tilde expression is built around the tilde character: <span style="font-size:250%'">~</span>
+
+We use tilde expressions when we want to use names **symbolically**, that is, without being bound to a value. The R/mosaic software for the course arranges tilde expressions consistently as:
+
+*formula*  <span style="font-size:250%'">~</span>  *input names*
+
+For example, a straight-line function might be defined
+```{r}
+line <- makeFun(3*x + 2 ~ x)
+```
+
+Functions with two or more inputs have multiple names on the right-hand side of the <span style="font-size:250%'">~</span>, for example:
+
+```{r}
+pulse <- makeFun(exp(-t)*sin(x) ~ x & t)
+```
+
+It's worth taking time to point out that the $\equiv$ used in mathematical notation corresponds to the `<-` used in mathematical notation. Also, the order of things with `makeFun()` is different than with mathematical notation, although exactly the same information is there. Here's the definition of pulse() in mathematical notation: $$\text{pulse}(x, t) \equiv e^t \sin(t)\ .$$
+
+Activity: Give students a table of functions written in `makeFun()` notation and in mathematical notation, and ask them to fill in the blanks. Like this:
+
+`makeFun()` notation       | mathematical notation
+---------------------------|------------------------
+`g <- makeFun(3*exp(2 t))` | 
+                           | $f(y) \equiv \sin(y^2)$
+                           | $h_2(z) \equiv 4z + 2$
 
 
-## Special values for inputs.
+## =, $\equiv$, and `<-`
+
+In defining functions, we don't use the equal sign. Instead, we use $\equiv$ (TeX `\equiv`) for mathematical notation and `<-` for assignment of a name to a computer object. 
+
+Reserve the equal sign for occasions where you expect there may be some re-arrangement from one side of the equation to the other. For example, $3 x - 2 = x^2$ which you might re-arrange to $x^2 - 3x + 2 = 0$ or  $(x - 2)(x-1) = 0$. These are different forms of the same relationship, with some forms making desired information readily visible (e.g. the roots 1 and 2).
+
+You can't do any re-arrangement with the sides of function definition in either R or the mathematical notation we're using. For example,
+```{r}
+f <- makeFun(y + 2 ~ y)
+``` 
+is a perfectly reasonable function definition in R/mosaic. But this re-arrangement is no good:
+```{r error=TRUE}
+f - 2 <- makeFun(y ~ y)
+```
+
+With mathematical notation, there's no machine interpreting what you write to make sure it's in a proper form, so it's physically possible for you to write $f(y) - 2 \equiv y$. But don't. Only the function name, parentheses, commas, and input names should go to the left of $\equiv$.
 
 
 ## Keyboards and math notation

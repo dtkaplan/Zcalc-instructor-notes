@@ -7,6 +7,9 @@ output: distill::distill_article
 **[Dynamics overview](Dynamics-overview-notes.html)**
 
 
+What is a parameter? How is it different from an input? 
+
+
 - Chapter 8: **Parameters**
     - [Instructor notes](Chap-8-parameters.html)
     
