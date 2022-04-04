@@ -1,0 +1,21 @@
+---
+title: 'Ch. 4: Graphs and graphics'
+author:
+- name: Daniel Kaplan
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+  distill::distill_article: null
+  pdf_document: null
+description: |
+  Instructor notes for Chapter 4
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Student outcomes
+

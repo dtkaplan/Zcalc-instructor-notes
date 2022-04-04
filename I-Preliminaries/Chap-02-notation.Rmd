@@ -127,3 +127,16 @@ With mathematical notation, there's no machine interpreting what you write to ma
 - ***Markup notation*** You are undoubtedly familar with word processing and, particularly, a style of word processing called What-you-see-is-what-you-get (WYSIWYG). In WYSIWYG, you can enter plain text just using the keyboard, but if you want to make something **boldface** or *italics*, you use the mouse to select the text involved and select a style from a menu. Typically, WYSIWYG mathematical content involves a similar mouse-based process. In contrast, in mainstream computer languages, the mouse is not needed at all. The computer commands are constructed from plain, linear sequences of letters and other characters. 
 
 Traditional mathematical notation includes features such as superscripts and special symbols that are easily written out with pencil in hand. Often this notation is beautiful and aesthetically cherished by mathematicians. But computer commands in most computer languages are straight sequences of characters using function or infix notation.^[Some computer languages use notation where the name of the function is contained inside the parentheses as in `(+ 2 3)`.]
+
+
+## Slides
+
+```{r echo=FALSE}
+knitr::include_graphics("www/makeFun-intro.png")
+```
+
+
+```{r echo=FALSE}
+knitr::include_graphics("www/makeFun-slide.png")
+```
+
