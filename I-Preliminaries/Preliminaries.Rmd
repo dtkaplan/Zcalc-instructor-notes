@@ -13,19 +13,16 @@ output: distill::distill_article
 - Chapter 2: **Notation**
     - [Instructor notes](Chap-02-notation.html)
 
-- Chapter 3: **Symbolic necessities**
-    - [Instructor notes](Chap-03-symbolic.html)
+- Chapter 3: **Graphs and graphics**
+    - [Instructor notes](Chap-03-graphs-and-graphics.html)
     
-- Chapter 4: **Graphs and graphics**
-    - [Instructor notes](Chap-04-graphs-and-graphics.html)
-    
-- Chapter 5: **Pattern-book functions**
-    - [Instructor notes](Chap-05-pattern-book-functions.html)
+- Chapter 4: **Pattern-book functions**
+    - [Instructor notes](Chap-04-pattern-book-functions.html)
 
-- Chapter 6: **Describing functions**
-    - [Instructor notes](Chap-06-describing-functions.html)    
+- Chapter 5: **Describing functions**
+    - [Instructor notes](Chap-05-describing-functions.html)    
     
-- Chapter 7: **Data and data graphics**
+- Chapter 6: **Data and data graphics**
     - [Instructor notes](Chap-06-data-and-data-graphics.html)
 
 

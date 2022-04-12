@@ -11,5 +11,19 @@ What is a parameter? How is it different from an input?
 
 
 - Chapter 8: **Parameters**
-    - [Instructor notes](Chap-8-parameters.html)
+    - [Instructor notes](Chap-08-parameters.html)
     
+- Chapter 9: **Assembling functions**
+    - [Instructor notes](Chap-09-assembling-functions.html)
+    
+- Chapter 10: **Linear combinations**
+    - [Instructor notes](Chap-10-linear-combinations.html)
+    
+
+## Resources
+
+Don't be a turkey. Lots of functions have similar shapes. There's no virtue in finding a single basic modeling function that seems closest to the data: Use a linear combination or a spline.  [Paper on turkey growth models](Resources/1807-8672-asas-41-e45990.pdf). Attribution: Beth Schaubroeck, USAFA
+
+Datasets in Zcalc
+
+`Effective_oxygen`, `UK_GDP`, `CPUs`

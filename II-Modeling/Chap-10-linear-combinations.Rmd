@@ -1,0 +1,41 @@
+---
+title: 'Ch. 10: Linear combinations'
+author:
+- name: Daniel Kaplan
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+  distill::distill_article: null
+  pdf_document: null
+description: |
+  Instructor notes for Chapter 10
+---
+
+```{r setup, include=FALSE}
+library(Zcalc)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Student outcomes
+
+
+## Overview
+
+
+Seen very abstractly, a mathematical model is a set of ***functions*** that represent the relationships between inputs and outputs.  `r mark(900)`
+
+At the most simple level, building a model can be a short process:
+
+1. Develop an understanding of the relationship you want to model. Often, part of this "understanding" is the pattern seen in data.
+2. Choose a function type---e.g. exponential, sinusoidal, sigmoid---that you think would be a good match to the relationship.
+3. Find ***parameters*** that scales your function to be able to accept real-world inputs and generate real-world outputs.
+
+It's important to distinguish between two basic types of model:
+
+1. ***Empirical models*** which are rooted in ***observation*** and ***data***.
+2. ***Mechanistic models*** such as those created by applying fundamental laws of physics, chemistry, and such.
+
+We are going to put off mechanistic models for a while, for two reasons. First, the "fundamental laws of physics, chemistry, and such" are often expressed with the concepts and methods of calculus. We are heading there, but at this point you don't yet know the core concepts and methods of calculus. Second, most students don't make a careful study of the "fundamental laws of physics, chemistry, and such" until *after* they have studied calculus. So examples of mechanistic models will be a bit hollow at this point.
+
+We'll start then with empirical modeling: finding functions that are a good summary of data. The process of constructing a model that is a good match for data is called ***curve fitting***, or, more generally, ***fitting a model***.
