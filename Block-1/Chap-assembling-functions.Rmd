@@ -1,0 +1,51 @@
+---
+title: Instructor notes: Assembling functions (Block 1, 2nd chap, new version)
+---
+
+
+## Classroom examples of piecewise functions
+
+1. As a classroom activity, show students the graph of the ramp function and ask them to define it, using both traditional and computer notation.
+
+```{r echo=FALSE}
+#| column: margin
+#| fig-pos: "h"
+ramp <- makeFun(ifelse(0 < x, x, 0) ~ x)
+slice_plot(ramp(x) ~ x, domain(x=c(-3, 3)))
+```
+
+The ***ramp function*** is a kind of one-sided absolute value:
+$$\text{ramp}(x) \equiv \left\{
+\begin{array}{cl} x & \text{for}\ 0 \leq x\\0 & \text{otherwise}\end{array}
+\right.$$
+Or, in computer notation:
+
+```{r results="hide"}
+ramp <- makeFun(ifelse(0 < x, x, 0) ~ x)
+slice_plot(ramp(x) ~ x, domain(x=c(-3, 3)))
+```
+
+2. Ask students to use three-pieces of the domain to define this chunky. From easier to harder:
+
+i. identify the three pieces
+2. write down the leftmost and rightmost functions
+3. construct the linear function for the middle piece
+4. put them together in mathematical notation. 
+5. implement the function in R. You can do this by nesting one `ifelse()` inside another 
+
+```{r}
+sig <- 
+  makeFun(
+    ifelse(x < -1, 
+           0, # leftmost branch
+           ifelse(x > 1, 1, (x+1)/2)) # rightmost and middle branches
+    ~ x)
+slice_plot(sig(x) ~ x, domain(x=c(-3, 3)), npts=501)
+```  
+
+
+A more elegant construction uses a linear combination of two input-shifted ramp functions.
+
+```{r}
+sig <- makeFun(0.5*(ramp(x+1) - ramp(x-1)) ~ x)
+```
